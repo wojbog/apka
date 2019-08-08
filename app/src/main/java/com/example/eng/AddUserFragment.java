@@ -51,6 +51,7 @@ public class AddUserFragment extends Fragment {
 
                Username.setText("");
                Usersurname.setText("");
+               //ale jaja
 
            }
        });
