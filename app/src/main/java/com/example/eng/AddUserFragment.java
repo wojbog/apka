@@ -20,6 +20,7 @@ public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname;
     private Button BNsave;
+    private String imie, nazwisko;
 
     public AddUserFragment() {
         // Required empty public constructor
@@ -44,18 +45,20 @@ public class AddUserFragment extends Fragment {
        BNsave.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               String imie = Username.getText().toString();
-               String nazwisko = Usersurname.getText().toString();
 
-               User user = new User();
-               user.setName(imie);
-               user.setSurname(nazwisko);
+                   imie = Username.getText().toString();
+                   nazwisko = Usersurname.getText().toString();
 
-               MainActivity.baza.myDao().addUser(user);
-               Toast.makeText(getContext(),"Dodany!!!!",Toast.LENGTH_LONG).show();
+                   User user = new User();
+                   user.setName(imie);
+                   user.setSurname(nazwisko);
 
-               Username.setText("");
-               Usersurname.setText("");
+                   MainActivity.baza.myDao().addUser(user);
+                   Toast.makeText(getContext(),"Dodany!!!!",Toast.LENGTH_LONG).show();
+
+                   Username.setText("");
+                   Usersurname.setText("");
+
                //ale jaja
 
            }

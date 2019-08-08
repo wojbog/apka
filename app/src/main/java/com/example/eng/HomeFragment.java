@@ -35,6 +35,8 @@ private Button BnAddUser,Bnviewusers,BNdelete;
         Bnviewusers.setOnClickListener(this);
         BNdelete= view.findViewById(R.id.bn_delete);
         BNdelete.setOnClickListener(this);
+//        BNkartkowka= view.findViewById(R.id.bn_kartkowka);
+//        BNkartkowka.setOnClickListener(this);
         return view;
     }
 
@@ -53,6 +55,10 @@ private Button BnAddUser,Bnviewusers,BNdelete;
             case R.id.bn_delete:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new DeleteFragment()).addToBackStack(null).commit();
                 break;
+//
+//            case R.id.bn_kartkowka:
+//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new Fragment()).addToBackStack(null).commit();
+//                break;
         }
 
     }

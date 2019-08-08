@@ -35,13 +35,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/bn_kartkowka"
             android:layout_width="205dp"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="516dp"
             android:layout_marginEnd="8dp"
-            android:text="update user"
+            android:text="kartkówka"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
