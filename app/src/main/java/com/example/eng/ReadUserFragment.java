@@ -49,7 +49,7 @@ TextView textView;
             String name =s.getName();
             String nazwisko = s.getSurname();
 
-            info = info+"\n\n"+"id: "+s.id+"po polsku: "+name+"po angilsku: "+nazwisko;
+            info += "\n\n"+"id: "+s.id+", name: "+name+", surname: "+nazwisko;
         }
 
         textView.setText(info);
