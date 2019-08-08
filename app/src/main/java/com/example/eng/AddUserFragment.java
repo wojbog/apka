@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-/**
+/**tyma
  * A simple {@link Fragment} subclass.
  */
 public class AddUserFragment extends Fragment {
@@ -24,7 +24,7 @@ public class AddUserFragment extends Fragment {
     public AddUserFragment() {
         // Required empty public constructor
     }
-
+/*yeuiwcevuy*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +35,11 @@ public class AddUserFragment extends Fragment {
        Username = view.findViewById(R.id.nameofimie);
        Usersurname = view.findViewById(R.id.surnameofnazwisko);
        BNsave = view.findViewById(R.id.zapisz);
+
+       Username.setText("");
+       Username.setHint("name");
+       Usersurname.setText("");
+       Usersurname.setHint("surname");
 
        BNsave.setOnClickListener(new View.OnClickListener() {
            @Override
