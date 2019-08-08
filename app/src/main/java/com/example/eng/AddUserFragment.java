@@ -36,6 +36,11 @@ public class AddUserFragment extends Fragment {
        Usersurname = view.findViewById(R.id.surnameofnazwisko);
        BNsave = view.findViewById(R.id.zapisz);
 
+       Username.setText("");
+       Username.setHint("name");
+       Usersurname.setText("");
+       Usersurname.setHint("surname");
+
        BNsave.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
