@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,15 +36,25 @@ public class DeleteFragment extends Fragment {
         TxUserId = view.findViewById(R.id.editText2);
         Dlbut=view.findViewById(R.id.delete);
 
+        TxUserId.setText("");
+
         Dlbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int id =Integer.parseInt(TxUserId.getText().toString());
-                User user =new User();
+                User user = new User();
+
+                try
+                {
                 user = MainActivity.baza.myDao().loadUserById(id);
                 MainActivity.baza.myDao().deleteUsers(user);
-
                 Toast.makeText(getActivity(),"Usunięty",Toast.LENGTH_SHORT).show();
+                TxUserId.setText("");
+                }
+                catch(Exception e)
+                {
+                    Toast.makeText(getContext(), "nie ma takiego id", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
