@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUserFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/adduser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="212dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="80dp"
+            android:text="Add User"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nameofimie"
+            android:layout_width="280dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="96dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/surnameofnazwisko"
+            android:layout_width="271dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="88dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Surname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameofimie" />
+
+        <Button
+            android:id="@+id/zapisz"
+            android:layout_width="256dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="88dp"
+            android:text="save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/surnameofnazwisko" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
