@@ -14,9 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DeleteFragment extends Fragment {
 
     private EditText TxUserId;
@@ -24,14 +21,14 @@ public class DeleteFragment extends Fragment {
 
 
     public DeleteFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_delete, container, false);
         TxUserId = view.findViewById(R.id.editText2);
         Dlbut=view.findViewById(R.id.delete);

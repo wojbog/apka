@@ -13,9 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-/**test
- * A simple {@link Fragment} subclass.
- */
 public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname;
@@ -23,14 +20,12 @@ public class AddUserFragment extends Fragment {
     private String imie, nazwisko;
 
     public AddUserFragment() {
-        // Required empty public constructor
+        //potrzebny pusty publiczny konstruktor
     }
-/*test*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_add_user, container, false);
 
        Username = view.findViewById(R.id.nameofimie);
@@ -58,8 +53,6 @@ public class AddUserFragment extends Fragment {
 
                    Username.setText("");
                    Usersurname.setText("");
-
-               //ale jaja
 
            }
        });

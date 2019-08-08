@@ -11,16 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
 private Button BnAddUser,Bnviewusers,BNdelete;
 
 
     public HomeFragment() {
-        // Required empty public constructor
+
     }
 
 
