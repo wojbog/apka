@@ -46,20 +46,28 @@ public class AddUserFragment extends Fragment {
             public void onClick(View view) {
 
                 Log.d(TAG, "onClick: called.");
+
                     imie = Username.getText().toString();
                     nazwisko = Usersurname.getText().toString();
 
-                    User user = new User();
-                    user.setName(imie);
-                    user.setSurname(nazwisko);
+                    if ((!imie.equals(""))&&(!nazwisko.equals("")))
+                    {
+                        User user = new User();
+                        user.setName(imie);
+                        user.setSurname(nazwisko);
 
-                    MainActivity.baza.myDao().addUser(user);
+                        MainActivity.baza.myDao().addUser(user);
+//                        Toast.makeText(getContext(), "Dodano!!", Toast.LENGTH_SHORT).show();
                         Snackbar.make(view, "DODANO!!", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
 
-                    Username.setText("");
-                    Usersurname.setText("");
-
+                        Username.setText("");
+                        Usersurname.setText("");
+                    }
+                    else {
+                        Snackbar.make(view, "Najpierw wpisz słówko", Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
+                    }
             }
         });
 
