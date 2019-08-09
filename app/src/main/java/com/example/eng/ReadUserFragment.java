@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import java.util.List;
 public class ReadUserFragment extends Fragment {
 
 TextView textView;
+String TAG="ReadUserFragment";
 
 
     public ReadUserFragment() {
@@ -33,26 +35,25 @@ TextView textView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        Log.d(TAG, "onCreateView: called.");
         View view =  inflater.inflate(R.layout.fragment_read_user, container, false);
         textView=view.findViewById(R.id.zobacz);
 
 
-
-
         final List<User> users =MainActivity.baza.myDao().getUsers();
 
-        String info ="";
+        StringBuilder info = new StringBuilder();
 
         for(User s:users)
         {
             String name =s.getName();
             String nazwisko = s.getSurname();
 
-            info += "\n\n"+"id: "+s.id+", name: "+name+", surname: "+nazwisko;
+            //String Builder
+            info.append("\n\n" + "id: ").append(s.id).append(", name: ").append(name).append(", surname: ").append(nazwisko);
         }
 
-        textView.setText(info);
+        textView.setText(info.toString());
 
     return view;
     }
