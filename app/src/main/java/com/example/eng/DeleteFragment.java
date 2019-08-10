@@ -39,6 +39,7 @@ public class DeleteFragment extends Fragment {
         Dlbut=view.findViewById(R.id.delete);
 
         TxUserId.setText("");
+        TxUserId.setHint("id");
 
         Dlbut.setOnClickListener(new View.OnClickListener() {
             @Override

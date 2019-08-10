@@ -1,10 +1,12 @@
 package com.example.eng;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +15,8 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-private Button BnAddUser,Bnviewusers,BNdelete;
-
+private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka;
+private String TAG="HomeFragment";
 
     public HomeFragment() {
 
@@ -32,8 +34,8 @@ private Button BnAddUser,Bnviewusers,BNdelete;
         Bnviewusers.setOnClickListener(this);
         BNdelete= view.findViewById(R.id.bn_delete);
         BNdelete.setOnClickListener(this);
-//        BNkartkowka= view.findViewById(R.id.bn_kartkowka);
-//        BNkartkowka.setOnClickListener(this);
+        BNkartkowka = view.findViewById(R.id.bn_kartkowka);
+        BNkartkowka.setOnClickListener(this);
         return view;
     }
 
@@ -52,10 +54,14 @@ private Button BnAddUser,Bnviewusers,BNdelete;
             case R.id.bn_delete:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new DeleteFragment()).addToBackStack(null).commit();
                 break;
-//
-//            case R.id.bn_kartkowka:
-//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new Fragment()).addToBackStack(null).commit();
-//                break;
+
+            case R.id.bn_kartkowka:
+                Log.d(TAG, "onClick: bn_kartkowka klikniety");
+                Intent intent = new Intent(getActivity().getApplication(), KartkowkaActivity.class);
+                Log.d(TAG, "onClick: wyznaczono intent");
+                view.getContext().startActivity(intent);
+                Log.d(TAG, "onClick: wystartowano intent");
+                break;
         }
 
     }
