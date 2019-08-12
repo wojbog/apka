@@ -15,6 +15,9 @@ public class User {
     @ColumnInfo(name = "nazwisko")
     private String surname;
 
+    @ColumnInfo(name = "kategoria")
+    private String category;
+
     public User() {
     }
 
@@ -34,4 +37,11 @@ public class User {
         this.surname = surname;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
