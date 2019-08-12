@@ -36,7 +36,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     private String
             imie="brak",
             nazwisko="brak",
-            nazwiskoWpisane="  ",
+            nazwiskoWpisane="",
             TAG = "katrkowka";
 
 
@@ -148,6 +148,11 @@ public class KartkowkaActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(), "Dodaj przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    void napelnijStringiKategoriom(String kateg)
+    {
+        //final List<User> usersByCategory = MainActivity.baza.myDao().loadUserByKategoria(kateg);
     }
 
     @Override

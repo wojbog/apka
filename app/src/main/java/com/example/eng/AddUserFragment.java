@@ -18,9 +18,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class AddUserFragment extends Fragment {
 
-    private EditText Username, Usersurname;
+    private EditText Username, Usersurname, UserCategory;
     private Button BNsave;
-    private String imie, nazwisko, TAG="AddUserFragment";
+    private String imie, nazwisko, kategoria, TAG="AddUserFragment";
 
     public AddUserFragment() {
         //potrzebny pusty publiczny konstruktor
@@ -34,12 +34,15 @@ public class AddUserFragment extends Fragment {
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
+        UserCategory = view.findViewById(R.id.categoryOfKategoria);
         BNsave = view.findViewById(R.id.zapisz);
 
         Username.setText("");
         Username.setHint("name");
         Usersurname.setText("");
         Usersurname.setHint("surname");
+        UserCategory.setText("");
+        UserCategory.setHint("Category");
 
         BNsave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +50,16 @@ public class AddUserFragment extends Fragment {
 
                 Log.d(TAG, "onClick: called.");
 
-                    imie = Username.getText().toString();
-                    nazwisko = Usersurname.getText().toString();
+                    imie = Username.getText().toString().trim();
+                    nazwisko = Usersurname.getText().toString().trim();
+                    kategoria = UserCategory.getText().toString().trim();
 
                     if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {
                         User user = new User();
                         user.setName(imie);
                         user.setSurname(nazwisko);
+                        user.setCategory(kategoria);
 
                         MainActivity.baza.myDao().addUser(user);
 //                        Toast.makeText(getContext(), "Dodano!!", Toast.LENGTH_SHORT).show();
@@ -63,6 +68,7 @@ public class AddUserFragment extends Fragment {
 
                         Username.setText("");
                         Usersurname.setText("");
+                        UserCategory.setText("");
                     }
                     else {
                         Snackbar.make(view, "Najpierw wpisz słówko", Snackbar.LENGTH_SHORT)
