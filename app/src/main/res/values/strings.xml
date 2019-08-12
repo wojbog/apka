@@ -4,4 +4,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="to_tu_musi_by">to tu musi być!?</string>
+    <string name="title_activity_kartkowka">KartkowkaActivity</string>
+    <string name="przyk_adowe_s_wko">Przykładowe słówko</string>
+    <string name="przyk_adowe_t_umaczenie">Przykładowe tłumaczenie</string>
+    <string name="przeci_gnij_w_lewo_aby_zatwierdzi">Przeciągnij w lewo aby zatwierdzić</string>
+    <string name="jakie_s_wko">jakieś słówko</string>
+    <string name="podaj_t_umaczenie">Podaj tłumaczenie</string>
+    <string name="zatwierd">Zatwierdź</string>
+    <string name="z_ych_odpowiedzi">Złych odpowiedzi:</string>
+    <string name="dobrych_odpowiedzi">Dobrych odpowiedzi:</string>
+    <string name="_34">34</string>
+    <string name="_11">11</string>
 </resources>
