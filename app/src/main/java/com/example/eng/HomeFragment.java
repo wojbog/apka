@@ -64,7 +64,7 @@ private String TAG="HomeFragment";
                 break;
 
             case R.id.bn_fiszki:
-                Intent intents = new Intent(getActivity().getApplication(), fiszki.class);
+                Intent intents = new Intent(getActivity().getApplication(), Fiszki.class);
                 view.getContext().startActivity(intents);
                 break;
         }
