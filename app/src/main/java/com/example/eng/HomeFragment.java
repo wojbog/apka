@@ -15,7 +15,7 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka;
+private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka, Bnfiszki;
 private String TAG="HomeFragment";
 
     public HomeFragment() {
@@ -36,6 +36,8 @@ private String TAG="HomeFragment";
         BNdelete.setOnClickListener(this);
         BNkartkowka = view.findViewById(R.id.bn_kartkowka);
         BNkartkowka.setOnClickListener(this);
+        Bnfiszki = view.findViewById(R.id.bn_fiszki);
+        Bnfiszki.setOnClickListener(this);
         return view;
     }
 
