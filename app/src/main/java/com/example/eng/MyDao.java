@@ -20,7 +20,7 @@ public interface MyDao {
     public User loadUserById(int td);
 
     @Query("select * from users where kategoria = :cat")
-    public User loadUserByKategoria(String cat);
+    public List<User> loadUserByKategoria(String cat);
 
     @Delete
   public void deleteUsers (User user);

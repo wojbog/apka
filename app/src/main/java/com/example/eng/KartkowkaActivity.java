@@ -152,7 +152,7 @@ public class KartkowkaActivity extends AppCompatActivity {
 
     void napelnijStringiKategoriom(String kateg)
     {
-        //final List<User> usersByCategory = MainActivity.baza.myDao().loadUserByKategoria(kateg);
+        final List<User> usersByCategory = MainActivity.baza.myDao().loadUserByKategoria(kateg);
     }
 
     @Override
