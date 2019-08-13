@@ -6,56 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/bn_add_user"
-            android:layout_width="205dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="84dp"
-            android:layout_marginEnd="8dp"
-            android:text="Add User"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/bn_view_users"
-            android:layout_width="205dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="220dp"
-            android:layout_marginEnd="8dp"
-            android:text="View users"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/bn_add_user"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="8dp"
+                android:text="Add User"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/bn_kartkowka"
-            android:layout_width="205dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="516dp"
-            android:layout_marginEnd="8dp"
-            android:text="kartkówka"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/bn_view_users"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="8dp"
+                android:text="View users"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/bn_delete"
-            android:layout_width="205dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="372dp"
-            android:layout_marginEnd="8dp"
-            android:text="Delete user"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/bn_kartkowka"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="516dp"
+                android:layout_marginEnd="8dp"
+                android:text="kartkówka"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/bn_delete"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="372dp"
+                android:layout_marginEnd="8dp"
+                android:text="Delete user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/bn_fiszki"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="628dp"
+                android:layout_marginEnd="8dp"
+                android:text="fiszki"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </FrameLayout>
