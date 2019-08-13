@@ -60,9 +60,7 @@ private String TAG="HomeFragment";
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
                 Intent intent = new Intent(getActivity().getApplication(), KartkowkaActivity.class);
-                Log.d(TAG, "onClick: wyznaczono intent");
                 view.getContext().startActivity(intent);
-                Log.d(TAG, "onClick: wystartowano intent");
                 break;
 
             case R.id.bn_fiszki:
