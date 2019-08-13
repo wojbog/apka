@@ -62,6 +62,11 @@ private String TAG="HomeFragment";
                 view.getContext().startActivity(intent);
                 Log.d(TAG, "onClick: wystartowano intent");
                 break;
+
+            case R.id.bn_fiszki:
+                Intent intents = new Intent(getActivity().getApplication(), fiszki.class);
+                view.getContext().startActivity(intents);
+                break;
         }
 
     }
