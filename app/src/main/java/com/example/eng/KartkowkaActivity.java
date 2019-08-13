@@ -75,6 +75,7 @@ public class KartkowkaActivity extends AppCompatActivity {
             Log.d(TAG, "sprawdz: dobre");
             dobrych++;
             Toast.makeText(this, "BOBRZE", Toast.LENGTH_SHORT).show();
+
             restart();
         }else
         {
