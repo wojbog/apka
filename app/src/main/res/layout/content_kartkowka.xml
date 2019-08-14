@@ -52,12 +52,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tlumaczenieET" />
 
     <TextView
-        android:id="@+id/zlychNapis"
+        android:id="@+id/dobrychNapis"
         android:layout_width="199dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
         android:text="@string/dobrych_odpowiedzi"
         android:textAlignment="center"
+        android:background="@android:color/holo_green_light"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,12 +66,13 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/dobrychNapis"
+        android:id="@+id/zlychNapis"
         android:layout_width="212dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
         android:text="@string/z_ych_odpowiedzi"
         android:textAlignment="center"
+        android:background="@android:color/holo_red_dark"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +86,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/_11"
         android:textAlignment="center"
+        android:background="@android:color/holo_red_dark"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintStart_toStartOf="parent" />
@@ -95,6 +98,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/_34"
         android:textAlignment="center"
+        android:background="@android:color/holo_green_light"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent" />
