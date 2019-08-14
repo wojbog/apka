@@ -13,12 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:text="@string/jakie_s_wko"
         android:textAlignment="center"
         android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,66 +28,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/podaj_t_umaczenie"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slowkoTV"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bn_sprawdz"
         android:layout_width="207dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="8dp"
         android:text="@string/zatwierd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlumaczenieET" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dobrychNapis"
         android:layout_width="199dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
+        android:background="#05b06f"
         android:text="@string/dobrych_odpowiedzi"
         android:textAlignment="center"
-        android:background="@android:color/holo_green_light"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/zlychNapis"
         android:layout_width="212dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
+        android:background="#b00440"
         android:text="@string/z_ych_odpowiedzi"
         android:textAlignment="center"
-        android:background="@android:color/holo_red_dark"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/zlychTV"
         android:layout_width="212dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="#b00440"
         android:text="@string/_11"
         android:textAlignment="center"
-        android:background="@android:color/holo_red_dark"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintStart_toStartOf="parent" />
@@ -95,10 +97,10 @@
         android:id="@+id/dobrychTV"
         android:layout_width="199dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="#05b06f"
         android:text="@string/_34"
         android:textAlignment="center"
-        android:background="@android:color/holo_green_light"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent" />

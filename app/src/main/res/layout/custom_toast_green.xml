@@ -5,7 +5,7 @@
     android:id="@+id/custom_toast_container_green"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/holo_green_light">
+    android:background="#05b06f">
 
     <TextView
         android:id="@+id/text"
