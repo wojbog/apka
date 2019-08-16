@@ -2,16 +2,16 @@ package com.example.eng;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -67,20 +67,45 @@ public class KartkowkaActivity extends AppCompatActivity {
     void sprawdz()
     {
         EditText tlumaczenieET = findViewById(R.id.tlumaczenieET);
+        TextView zlychTV = findViewById(R.id.zlychTV);
+        TextView dobrychTV = findViewById(R.id.dobrychTV);
         nazwiskoWpisane = tlumaczenieET.getText().toString();
         boolean ok = nazwiskoWpisane.matches(nazwisko);
+
         if (nazwiskoWpisane.matches("")) Toast.makeText(getApplicationContext(), "Wpisz tłumaczenie", Toast.LENGTH_SHORT).show();
         else if(ok)
         {
             Log.d(TAG, "sprawdz: dobre");
             dobrych++;
-            Toast.makeText(this, "BOBRZE", Toast.LENGTH_SHORT).show();
+
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.custom_toast_green,
+                    (ViewGroup) findViewById(R.id.custom_toast_container_green));
+            TextView text = (TextView) layout.findViewById(R.id.text);
+            text.setText("Dobrze!!!!");
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+
             restart();
         }else
         {
             Log.d(TAG, "sprawdz: zle");
             zlych++;
-            Toast.makeText(this, "ŹLE!!", Toast.LENGTH_SHORT).show();
+
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.custom_toast_red,
+                    (ViewGroup) findViewById(R.id.custom_toast_container));
+            TextView text = (TextView) layout.findViewById(R.id.text);
+            text.setText("Źle!!");
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+
             restart();
         }
     }
