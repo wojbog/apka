@@ -8,14 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class MyPozycjaRecyclerViewAdapter extends RecyclerView.Adapter<MyPozycjaRecyclerViewAdapter.ViewHolder> {
+public class AdapterReadCategoryFragment extends RecyclerView.Adapter<AdapterReadCategoryFragment.ViewHolder> {
 
     private final ArrayList<Listakategorii> mValues;
 
 
-    public MyPozycjaRecyclerViewAdapter(ArrayList<Listakategorii> items) {
+    public AdapterReadCategoryFragment(ArrayList<Listakategorii> items) {
         mValues = items;
     }
 

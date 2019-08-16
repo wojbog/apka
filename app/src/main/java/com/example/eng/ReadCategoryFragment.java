@@ -12,9 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.eng.dummy.DummyContent;
-import com.example.eng.dummy.DummyContent.DummyItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +21,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class PozycjaFragment extends Fragment {
+public class ReadCategoryFragment extends Fragment {
 
 
     private int mColumnCount = 1;
@@ -35,7 +32,7 @@ public class PozycjaFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public PozycjaFragment() {
+    public ReadCategoryFragment() {
     }
 
     @Override
@@ -65,7 +62,7 @@ public class PozycjaFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyPozycjaRecyclerViewAdapter(felix));
+            recyclerView.setAdapter(new AdapterReadCategoryFragment(felix));
         }
         return view;
     }
