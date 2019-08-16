@@ -4,7 +4,6 @@ package com.example.eng;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,20 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AddCategoryFragment extends Fragment {
 
 
-    private EditText elo;
+    private EditText napiszKategorieET;
         private Button przycisk;
-        private String linia,TAG = "AddCategoryyFargment";
+        private String kategoria, TAG = "LOGAddCategoryFragment";
         private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
         private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
 
@@ -38,22 +33,22 @@ public class AddCategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_category, container, false);
-        elo=view.findViewById(R.id.napisz_kategorie);
+        napiszKategorieET =view.findViewById(R.id.napisz_kategorieET);
         przycisk =view.findViewById(R.id.button_add_category);
-        elo.setText("");
-        elo.setHint("Podaj kategorie");
+        napiszKategorieET. setText("");
+        napiszKategorieET.setHint("Podaj kategorie");
         przycisk.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: called.");
 
-                linia = elo.getText().toString().trim();
+                kategoria = napiszKategorieET.getText().toString().trim();
 
-                if (!linia.equals(""))
+                if (!kategoria.equals(""))
                 {
                     User user = new User();
-                    user.setName(linia);
+                    user.setName(kategoria);
                     user.setSurname(su);
                     user.setCategory(ka);
 
@@ -62,11 +57,13 @@ public class AddCategoryFragment extends Fragment {
                     Snackbar.make(view, "DODANO!!", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
 
-                    elo.setText("");
+                    napiszKategorieET.setText("");
+                    Log.d(TAG, "onClick: Dodano");
                 }
                 else {
                     Snackbar.make(view, "Najpierw wpisz słówko", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
+                    Log.d(TAG, "onClick: najpierw slowko");
                 }
             }
         });

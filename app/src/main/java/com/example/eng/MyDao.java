@@ -26,12 +26,12 @@ public interface MyDao {
 //    public List<User> loadKategorie();
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
-    public List<User> allCategory();
+    public List<User> loadAllCategory();
 
     //meldojthgsbxgslwojrfidyvsnrownxossaa
     //hdshjaiasaslokasjdjasadkjjdiayucxzpw
     @Delete
-  public void deleteUsers (User user);
+  public void deleteUsers(User user);
 
 
 

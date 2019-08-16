@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
 
 
 
-
+    String TAG = "LOGReadCategoryFragment";
     private int mColumnCount = 1;
 
 
@@ -41,16 +42,17 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.d(TAG, "onCreate: called.");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
 
         ArrayList<Listakategorii> felix = new ArrayList<>();
-        final List<User> elo = MainActivity.bazaKategorii.myDao().allCategory();
+        final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
           for (User s:elo)
           {
               String cos = s.getName();

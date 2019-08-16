@@ -7,7 +7,7 @@
     tools:context=".AddCategoryFragment">
 
     <EditText
-        android:id="@+id/napisz_kategorie"
+        android:id="@+id/napisz_kategorieET"
         android:layout_width="331dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"

@@ -36,7 +36,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     private String
             imie="brak",
             nazwisko="brak",
-            TAG = "katrkowka";
+            TAG = "LOGKartkowkaActivity";
 
 
     @Override

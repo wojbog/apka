@@ -20,7 +20,7 @@ public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname, UserCategory;
     private Button BNsave;
-    private String imie, nazwisko, kategoria, TAG="AddUserFragment";
+    private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
 
     public AddUserFragment() {
         //potrzebny pusty publiczny konstruktor
@@ -65,6 +65,7 @@ public class AddUserFragment extends Fragment {
 //                        Toast.makeText(getContext(), "Dodano!!", Toast.LENGTH_SHORT).show();
                         Snackbar.make(view, "DODANO!!", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
+                        Log.d(TAG, "onClick: Dodano");
 
                         Username.setText("");
                         Usersurname.setText("");
@@ -73,6 +74,7 @@ public class AddUserFragment extends Fragment {
                     else {
                         Snackbar.make(view, "Najpierw wpisz słówko", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
+                        Log.d(TAG, "onClick: najpierw slowko");
                     }
             }
         });

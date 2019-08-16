@@ -21,7 +21,7 @@ public class DeleteFragment extends Fragment {
 
     private EditText TxUserId;
     private Button Dlbut;
-    private String TAG="DeleteFragment";
+    private String TAG="LOGDeleteFragment";
 
 
     public DeleteFragment() {

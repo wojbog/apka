@@ -72,7 +72,7 @@ String TAG="ReadUserFragment";
 
 
         }
-andrzej.add(new ExampleItem("Line 1","Line 1a","last"));
+//andrzej.add(new ExampleItem("Line 1","Line 1a","last"));
         recyclerView = view.findViewById(R.id.rower);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
