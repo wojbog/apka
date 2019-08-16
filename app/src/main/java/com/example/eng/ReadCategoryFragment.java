@@ -72,7 +72,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     @Override
     public void onClickKlikniecie(int position) {
         //na razie tylko toast
-        Toast.makeText(getContext(),"clik",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),"klik pozycja: "+position,Toast.LENGTH_SHORT).show();
 
     }
 

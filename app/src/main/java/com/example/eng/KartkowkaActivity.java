@@ -1,9 +1,9 @@
 package com.example.eng;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.Gravity;
@@ -44,8 +44,6 @@ public class KartkowkaActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kartkowka);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         napelnijStringi();
         losujSlowko();
@@ -60,11 +58,11 @@ public class KartkowkaActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     void sprawdz()
     {
+        Log.d(TAG, "sprawdz: called.");
         EditText tlumaczenieET = findViewById(R.id.tlumaczenieET);
         String nazwiskoWpisane = tlumaczenieET.getText().toString();
         boolean ok = nazwiskoWpisane.matches(nazwisko);
@@ -74,39 +72,17 @@ public class KartkowkaActivity extends AppCompatActivity {
         {
             Log.d(TAG, "sprawdz: dobre");
             dobrych++;
+            pokazToast("green");
 
-            LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.custom_toast_green,
-                    (ViewGroup) findViewById(R.id.custom_toast_container_green));
-            TextView text = (TextView) layout.findViewById(R.id.text);
-            text.setText("Dobrze!!!!");
-            TextView text2 = (TextView) layout.findViewById(R.id.text2);
-            text2.setText(imie+" - "+nazwisko);
-            Toast toast = new Toast(getApplicationContext());
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setView(layout);
-            toast.show();
-
+            Log.d(TAG, "sprawdz: pokazano toast");
             restart();
         }else
         {
             Log.d(TAG, "sprawdz: zle");
             zlych++;
+            pokazToast("red");
 
-            LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.custom_toast_red,
-                    (ViewGroup) findViewById(R.id.custom_toast_container));
-            TextView text = (TextView) layout.findViewById(R.id.text);
-            text.setText("Źle!!");
-            TextView text2 = (TextView) layout.findViewById(R.id.text2);
-            text2.setText(imie+" - "+nazwisko);
-            Toast toast = new Toast(getApplicationContext());
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setView(layout);
-            toast.show();
-
+            Log.d(TAG, "sprawdz: pokazano toast");
             restart();
         }
     }
@@ -176,10 +152,6 @@ public class KartkowkaActivity extends AppCompatActivity {
         }
     }
 
-    void napelnijStringiKategoriom(String kateg)
-    {
-        final List<User> usersByCategory = MainActivity.baza.myDao().loadUserByKategoria(kateg);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -200,6 +172,33 @@ public class KartkowkaActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    void pokazToast(String kolor)
+    {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+        TextView text = layout.findViewById(R.id.text);
+
+        if (kolor.equals("red"))
+        {
+            text.setText(R.string.zle);
+            layout.setBackgroundResource(R.color.kartkowkaRed);
+        }else
+            if (kolor.equals("green"))
+        {
+            text.setText(R.string.dobrze);
+            layout.setBackgroundResource(R.color.kartkowkaGreen);
+        }
+
+        TextView text2 = layout.findViewById(R.id.text2);
+        text2.setText(imie + " - " + nazwisko);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
     }
 
 }
