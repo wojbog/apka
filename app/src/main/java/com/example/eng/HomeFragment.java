@@ -68,7 +68,7 @@ private String TAG="HomeFragment";
                 break;
 
             case R.id.bn_fiszki:
-                Intent intents = new Intent(getActivity().getApplication(), Fiszki.class);
+                Intent intents = new Intent(getActivity().getApplication(), FiszkiActivity.class);
                 view.getContext().startActivity(intents);
                 break;
             case R.id.add:
@@ -76,7 +76,7 @@ private String TAG="HomeFragment";
                 view.getContext().startActivity(xam);
                 break;
             case R.id.zobacz_category:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new PozycjaFragment()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment()).addToBackStack(null).commit();
                 break;
         }
 

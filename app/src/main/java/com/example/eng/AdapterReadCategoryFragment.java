@@ -8,23 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class MyPozycjaRecyclerViewAdapter extends RecyclerView.Adapter<MyPozycjaRecyclerViewAdapter.ViewHolder> {
+public class AdapterReadCategoryFragment extends RecyclerView.Adapter<AdapterReadCategoryFragment.ViewHolder> {
 
     private final ArrayList<Listakategorii> mValues;
-private Click mclick;
 
-    public MyPozycjaRecyclerViewAdapter(ArrayList<Listakategorii> items,Click m) {
+
+    public AdapterReadCategoryFragment(ArrayList<Listakategorii> items) {
         mValues = items;
-        mclick=m;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_pozycja, parent, false);
-        return new ViewHolder(view,mclick);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -49,33 +47,20 @@ private Click mclick;
         return mValues.size();
     }
 
-
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView nazwak;
-        Click click;
 
-        public ViewHolder(View view,Click click) {
+
+        public ViewHolder(View view) {
             super(view);
             mView = view;
             nazwak= (TextView) view.findViewById(R.id.content);
-            this.click=click;
-            view.setOnClickListener(this);
         }
 
         @Override
         public String toString() {
             return super.toString() + " '" + nazwak.getText() + "'";
         }
-
-
-        @Override
-        public void onClick(View view) {
-click.onClickKlikniecie(getAdapterPosition());
-        }
-    }
-    public interface Click{
-        void onClickKlikniecie(int position);
     }
 }

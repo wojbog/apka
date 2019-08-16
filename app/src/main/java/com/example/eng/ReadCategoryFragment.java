@@ -11,11 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
-import com.example.eng.dummy.DummyContent;
-import com.example.eng.dummy.DummyContent.DummyItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +21,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class PozycjaFragment extends Fragment implements MyPozycjaRecyclerViewAdapter.Click {
+public class ReadCategoryFragment extends Fragment {
 
 
     private int mColumnCount = 1;
@@ -37,7 +32,7 @@ public class PozycjaFragment extends Fragment implements MyPozycjaRecyclerViewAd
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public PozycjaFragment() {
+    public ReadCategoryFragment() {
     }
 
     @Override
@@ -67,16 +62,11 @@ public class PozycjaFragment extends Fragment implements MyPozycjaRecyclerViewAd
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyPozycjaRecyclerViewAdapter(felix,this));
+            recyclerView.setAdapter(new AdapterReadCategoryFragment(felix));
         }
         return view;
     }
 
 
-    @Override
-    public void onClickKlikniecie(int position) {
-       //na razie tylko toast
-        Toast.makeText(getContext(),"clik",Toast.LENGTH_SHORT).show();
 
-    }
 }
