@@ -19,10 +19,9 @@ public class AddCategoryFragment extends Fragment {
 
 
     private EditText napiszKategorieET;
-        private Button przycisk;
-        private String kategoria, TAG = "LOGAddCategoryFragment";
-        private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
-        private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
+    private String kategoria, TAG = "LOGAddCategoryFragment";
+    private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
+    private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
 
     public AddCategoryFragment() {
         // Required empty public constructor
@@ -34,7 +33,7 @@ public class AddCategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_category, container, false);
         napiszKategorieET =view.findViewById(R.id.napisz_kategorieET);
-        przycisk =view.findViewById(R.id.button_add_category);
+        Button przycisk = view.findViewById(R.id.button_add_category);
         napiszKategorieET. setText("");
         napiszKategorieET.setHint("Podaj kategorie");
         przycisk.setOnClickListener(new View.OnClickListener(){

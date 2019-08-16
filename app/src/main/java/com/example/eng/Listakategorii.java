@@ -2,9 +2,9 @@ package com.example.eng;
 
 public class Listakategorii {
     private String nazwa;
-    public Listakategorii (String n)
+    Listakategorii(String n)
     {
         nazwa=n;
     }
-    public String getNazwa () {return nazwa;}
+    String getNazwa() {return nazwa;}
 }

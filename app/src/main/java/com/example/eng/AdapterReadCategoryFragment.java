@@ -51,14 +51,14 @@ public class AdapterReadCategoryFragment extends RecyclerView.Adapter<AdapterRea
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public final View mView;
-        public final TextView nazwak;
+        final View mView;
+        final TextView nazwak;
         Click click;
 
-        public ViewHolder(View view,Click click) {
+        ViewHolder(View view, Click click) {
             super(view);
             mView = view;
-            nazwak= (TextView) view.findViewById(R.id.content);
+            nazwak= view.findViewById(R.id.content);
             this.click=click;
             view.setOnClickListener(this);
 

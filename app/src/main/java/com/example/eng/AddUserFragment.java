@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,7 +18,6 @@ import com.google.android.material.snackbar.Snackbar;
 public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname, UserCategory;
-    private Button BNsave;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
 
     public AddUserFragment() {
@@ -35,7 +33,7 @@ public class AddUserFragment extends Fragment {
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         UserCategory = view.findViewById(R.id.categoryOfKategoria);
-        BNsave = view.findViewById(R.id.zapisz);
+        Button BNsave = view.findViewById(R.id.zapisz);
 
         Username.setText("");
         Username.setHint("name");

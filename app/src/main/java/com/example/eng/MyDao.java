@@ -11,27 +11,27 @@ import java.util.List;
 public interface MyDao {
 
     @Insert
-    public void addUser(User user);
+    void addUser(User user);
 
     @Query("select *from users")
-    public List<User> getUsers();
+    List<User> getUsers();
 
     @Query("select * from users where id = :td LIMIT 1 ")
-    public User loadUserById(int td);
-
-    @Query("select * from users where kategoria = :cat")
-    public List<User> loadUserByKategoria(String cat);
+    User loadUserById(int td);
+//
+//    @Query("select * from users where kategoria = :cat")
+//    List<User> loadUserByKategoria(String cat);
 //
 //    @Query("select kategoria from users LIMIT 1 ")
 //    public List<User> loadKategorie();
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
-    public List<User> loadAllCategory();
+    List<User> loadAllCategory();
 
     //meldojthgsbxgslwojrfidyvsnrownxossaa
     //hdshjaiasaslokasjdjasadkjjdiayucxzpw
     @Delete
-  public void deleteUsers(User user);
+    void deleteUsers(User user);
 
 
 

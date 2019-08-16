@@ -29,7 +29,7 @@ public class User {
         this.name = name;
     }
 
-    public String getSurname() {
+    String getSurname() {
         return surname;
     }
 

@@ -15,8 +15,7 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka, Bnfiszki,BnDodaj,bn_zobacz;
-private String TAG="LOGHomeFragment";
+    private String TAG="LOGHomeFragment";
 
     public HomeFragment() {
 
@@ -30,25 +29,25 @@ private String TAG="LOGHomeFragment";
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        BnAddUser = view.findViewById(R.id.bn_add_user);
-        BnAddUser.setOnClickListener(this);
+        Button bnAddUser = view.findViewById(R.id.bn_add_user);
+        bnAddUser.setOnClickListener(this);
 
-        Bnviewusers = view.findViewById(R.id.bn_view_users);
-        Bnviewusers.setOnClickListener(this);
+        Button bnviewusers = view.findViewById(R.id.bn_view_users);
+        bnviewusers.setOnClickListener(this);
 
-        BNdelete= view.findViewById(R.id.bn_delete);
+        Button BNdelete = view.findViewById(R.id.bn_delete);
         BNdelete.setOnClickListener(this);
 
-        BNkartkowka = view.findViewById(R.id.bn_kartkowka);
+        Button BNkartkowka = view.findViewById(R.id.bn_kartkowka);
         BNkartkowka.setOnClickListener(this);
 
-        Bnfiszki = view.findViewById(R.id.bn_fiszki);
-        Bnfiszki.setOnClickListener(this);
+        Button bnfiszki = view.findViewById(R.id.bn_fiszki);
+        bnfiszki.setOnClickListener(this);
 
-        BnDodaj= view.findViewById(R.id.add);
-        BnDodaj.setOnClickListener(this);
+        Button bnDodaj = view.findViewById(R.id.add);
+        bnDodaj.setOnClickListener(this);
 
-        bn_zobacz= view.findViewById(R.id.zobacz_category);
+        Button bn_zobacz = view.findViewById(R.id.zobacz_category);
         bn_zobacz.setOnClickListener(this);
         return view;
     }

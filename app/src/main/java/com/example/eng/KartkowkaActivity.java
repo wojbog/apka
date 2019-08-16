@@ -1,6 +1,5 @@
 package com.example.eng;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -153,26 +150,26 @@ public class KartkowkaActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        tu będą kategorie
-        menu.add(1, 1, 1, "test");
-        menu.add(1, 1, 1, "test2");
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        switch (id) {
-            case 1:
-                break;
-            case 2:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+////        tu będą kategorie
+//        menu.add(1, 1, 1, "test");
+//        menu.add(1, 1, 1, "test2");
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        //noinspection SimplifiableIfStatement
+//        switch (id) {
+//            case 1:
+//                break;
+//            case 2:
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     void pokazToast(String kolor)
     {
@@ -193,7 +190,7 @@ public class KartkowkaActivity extends AppCompatActivity {
         }
 
         TextView text2 = layout.findViewById(R.id.text2);
-        text2.setText(imie + " - " + nazwisko);
+        text2.setText(String.format("%s - %s", imie, nazwisko));
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setDuration(Toast.LENGTH_SHORT);

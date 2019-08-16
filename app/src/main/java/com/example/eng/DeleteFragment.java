@@ -5,14 +5,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,7 +18,6 @@ import com.google.android.material.snackbar.Snackbar;
 public class DeleteFragment extends Fragment {
 
     private EditText TxUserId;
-    private Button Dlbut;
     private String TAG="LOGDeleteFragment";
 
 
@@ -36,12 +33,12 @@ public class DeleteFragment extends Fragment {
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_delete, container, false);
         TxUserId = view.findViewById(R.id.editText2);
-        Dlbut=view.findViewById(R.id.delete);
+        Button dlbut = view.findViewById(R.id.delete);
 
         TxUserId.setText("");
         TxUserId.setHint("id");
 
-        Dlbut.setOnClickListener(new View.OnClickListener() {
+        dlbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -49,7 +46,7 @@ public class DeleteFragment extends Fragment {
                 try
                 {
                 int id =Integer.parseInt(TxUserId.getText().toString());
-                User user = new User();
+                User user;
                 user = MainActivity.baza.myDao().loadUserById(id);
                 MainActivity.baza.myDao().deleteUsers(user);
                     Snackbar.make(view, "Usunięto", Snackbar.LENGTH_SHORT)
