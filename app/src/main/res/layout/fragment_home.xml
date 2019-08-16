@@ -19,7 +19,7 @@
                 android:layout_width="205dp"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="8dp"
                 android:text="Add User"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
                 android:layout_width="205dp"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="188dp"
+                android:layout_marginTop="140dp"
                 android:layout_marginEnd="8dp"
                 android:text="View users"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
                 android:layout_width="205dp"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="444dp"
+                android:layout_marginTop="340dp"
                 android:layout_marginEnd="8dp"
                 android:text="kartkówka"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
                 android:layout_width="205dp"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="320dp"
+                android:layout_marginTop="240dp"
                 android:layout_marginEnd="8dp"
                 android:text="Delete user"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,13 +67,34 @@
                 android:layout_width="205dp"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="564dp"
+                android:layout_marginTop="432dp"
                 android:layout_marginEnd="8dp"
                 android:text="fiszki"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <Button
+                android:id="@+id/add"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="528dp"
+                android:layout_marginEnd="8dp"
+                android:text="dodaj"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/zobacz_category"
+                android:layout_width="205dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="624dp"
+                android:layout_marginEnd="100dp"
+                android:text="zobacz"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
