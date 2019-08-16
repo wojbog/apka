@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">eng</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="to_tu_musi_by">to tu musi być!?</string>
-    <string name="title_activity_kartkowka">KartkowkaActivity</string>
+    <string name="title_activity_kartkowka">Kartkówka z słówek</string>
     <string name="przyk_adowe_s_wko">Przykładowe słówko</string>
     <string name="przyk_adowe_t_umaczenie">Przykładowe tłumaczenie</string>
     <string name="przeci_gnij_w_lewo_aby_zatwierdzi">Przeciągnij w lewo aby zatwierdzić</string>

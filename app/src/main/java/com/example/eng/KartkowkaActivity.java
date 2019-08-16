@@ -36,7 +36,6 @@ public class KartkowkaActivity extends AppCompatActivity {
     private String
             imie="brak",
             nazwisko="brak",
-            nazwiskoWpisane="",
             TAG = "katrkowka";
 
 
@@ -67,9 +66,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     void sprawdz()
     {
         EditText tlumaczenieET = findViewById(R.id.tlumaczenieET);
-        TextView zlychTV = findViewById(R.id.zlychTV);
-        TextView dobrychTV = findViewById(R.id.dobrychTV);
-        nazwiskoWpisane = tlumaczenieET.getText().toString();
+        String nazwiskoWpisane = tlumaczenieET.getText().toString();
         boolean ok = nazwiskoWpisane.matches(nazwisko);
 
         if (nazwiskoWpisane.matches("")) Toast.makeText(getApplicationContext(), "Wpisz tłumaczenie", Toast.LENGTH_SHORT).show();
@@ -83,6 +80,8 @@ public class KartkowkaActivity extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.custom_toast_container_green));
             TextView text = (TextView) layout.findViewById(R.id.text);
             text.setText("Dobrze!!!!");
+            TextView text2 = (TextView) layout.findViewById(R.id.text2);
+            text2.setText(imie+" - "+nazwisko);
             Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.setDuration(Toast.LENGTH_SHORT);
@@ -100,6 +99,8 @@ public class KartkowkaActivity extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.custom_toast_container));
             TextView text = (TextView) layout.findViewById(R.id.text);
             text.setText("Źle!!");
+            TextView text2 = (TextView) layout.findViewById(R.id.text2);
+            text2.setText(imie+" - "+nazwisko);
             Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.setDuration(Toast.LENGTH_SHORT);
