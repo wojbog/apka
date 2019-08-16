@@ -21,6 +21,9 @@ public interface MyDao {
 
     @Query("select * from users where kategoria = :cat")
     public List<User> loadUserByKategoria(String cat);
+//
+//    @Query("select kategoria from users LIMIT 1 ")
+//    public List<User> loadKategorie();
 
     @Delete
   public void deleteUsers (User user);
