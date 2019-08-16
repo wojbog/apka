@@ -12,17 +12,20 @@ import java.util.ArrayList;
 public class AdapterReadCategoryFragment extends RecyclerView.Adapter<AdapterReadCategoryFragment.ViewHolder> {
 
     private final ArrayList<Listakategorii> mValues;
+    private Click mclick;
 
 
-    public AdapterReadCategoryFragment(ArrayList<Listakategorii> items) {
+
+    public AdapterReadCategoryFragment(ArrayList<Listakategorii> items, Click m) {
         mValues = items;
+        mclick=m;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_pozycja, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view,mclick);
     }
 
     @Override
@@ -47,20 +50,32 @@ public class AdapterReadCategoryFragment extends RecyclerView.Adapter<AdapterRea
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final View mView;
         public final TextView nazwak;
+        Click click;
 
-
-        public ViewHolder(View view) {
+        public ViewHolder(View view,Click click) {
             super(view);
             mView = view;
             nazwak= (TextView) view.findViewById(R.id.content);
+            this.click=click;
+            view.setOnClickListener(this);
+
+
         }
 
         @Override
         public String toString() {
             return super.toString() + " '" + nazwak.getText() + "'";
         }
+
+        @Override
+        public void onClick(View view) {
+            click.onClickKlikniecie(getAdapterPosition());
+        }
+    }
+    public interface Click{
+        void onClickKlikniecie(int position);
     }
 }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,9 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ReadCategoryFragment extends Fragment {
+public class ReadCategoryFragment extends Fragment implements AdapterReadCategoryFragment.Click {
+
+
 
 
     private int mColumnCount = 1;
@@ -62,11 +65,16 @@ public class ReadCategoryFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new AdapterReadCategoryFragment(felix));
+            recyclerView.setAdapter(new AdapterReadCategoryFragment(felix,this));
         }
         return view;
     }
+    @Override
+    public void onClickKlikniecie(int position) {
+        //na razie tylko toast
+        Toast.makeText(getContext(),"clik",Toast.LENGTH_SHORT).show();
 
+    }
 
 
 }
