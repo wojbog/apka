@@ -22,6 +22,11 @@ public interface MyDao {
     @Query("select * from users where kategoria = :cat")
     public List<User> loadUserByKategoria(String cat);
 
+    @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
+    public List<User> allCategory();
+
+    //meldojthgsbxgslwojrfidyvsnrownxossaa
+    //hdshjaiasaslokasjdjasadkjjdiayucxzpw
     @Delete
   public void deleteUsers (User user);
 

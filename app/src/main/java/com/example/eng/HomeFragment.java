@@ -15,7 +15,7 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka, Bnfiszki;
+private Button BnAddUser,Bnviewusers,BNdelete, BNkartkowka, Bnfiszki,BnDodaj,bn_zobacz;
 private String TAG="HomeFragment";
 
     public HomeFragment() {
@@ -38,6 +38,10 @@ private String TAG="HomeFragment";
         BNkartkowka.setOnClickListener(this);
         Bnfiszki = view.findViewById(R.id.bn_fiszki);
         Bnfiszki.setOnClickListener(this);
+        BnDodaj= view.findViewById(R.id.add);
+        BnDodaj.setOnClickListener(this);
+        bn_zobacz= view.findViewById(R.id.zobacz_category);
+        bn_zobacz.setOnClickListener(this);
         return view;
     }
 
@@ -66,6 +70,13 @@ private String TAG="HomeFragment";
             case R.id.bn_fiszki:
                 Intent intents = new Intent(getActivity().getApplication(), Fiszki.class);
                 view.getContext().startActivity(intents);
+                break;
+            case R.id.add:
+                Intent xam = new Intent(getActivity().getApplication(), Dodaj.class);
+                view.getContext().startActivity(xam);
+                break;
+            case R.id.zobacz_category:
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new PozycjaFragment()).addToBackStack(null).commit();
                 break;
         }
 

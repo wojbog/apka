@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
   public static FragmentManager fragmentManager;
-  public static MyappDatabase baza;
+  public static MyappDatabase baza,bazaKategorii;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         baza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanych").allowMainThreadQueries().build();
+        bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
 
         if(findViewById(R.id.stefan)!=null)
         {
