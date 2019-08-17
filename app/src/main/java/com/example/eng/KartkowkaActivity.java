@@ -113,7 +113,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     void losujSlowko()
     {
         Log.d(TAG, "losujSlowko: called.");
-        if (users.size()>0) {
+        if (users.size()>1) {
             int los = random.nextInt(users.size());
             while (lastLos == los) {los = random.nextInt(users.size());}
             lastLos = los;
@@ -122,7 +122,8 @@ public class KartkowkaActivity extends AppCompatActivity {
             Log.d(TAG, "losujSlowko: wylosowano");
         }else
         {
-            Toast.makeText(getApplicationContext(), "dodaj przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "dodaj przynajmniej dwa słówka aby rozpocząć", Toast.LENGTH_SHORT).show();
+            finish();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
     }
