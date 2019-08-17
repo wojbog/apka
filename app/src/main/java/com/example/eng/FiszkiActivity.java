@@ -7,6 +7,8 @@ import android.util.Log;
 
 public class FiszkiActivity extends AppCompatActivity {
 
+    //TODO: Fiszki trzeba zrobić
+
     String TAG = "LOGFiszkiActivity";
 
     @Override

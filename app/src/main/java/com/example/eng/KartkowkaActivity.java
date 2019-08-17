@@ -1,9 +1,7 @@
 package com.example.eng;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,20 +11,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
 public class KartkowkaActivity extends AppCompatActivity {
 
+    //TODO: piękne toasty dla całej aplikacji
+    //TODO: Ekran końcowy kartkówki
+
     Random random = new Random();
     final List<User> users = MainActivity.baza.myDao().getUsers();
 
     private int
             dobrych=0,
-            zlych=0,
-            lastLos=234432;
+            zlych=0;
     private String[]
             imiona = new String[users.size()],
             nazwiska = new String[users.size()];
@@ -34,6 +33,8 @@ public class KartkowkaActivity extends AppCompatActivity {
             imie="brak",
             nazwisko="brak",
             TAG = "LOGKartkowkaActivity";
+    private int[] ostatnieLosy;
+    private int test=0;
 
 
     @Override
@@ -112,14 +113,37 @@ public class KartkowkaActivity extends AppCompatActivity {
 
     void losujSlowko()
     {
-        Log.d(TAG, "losujSlowko: called.");
+        int los;
+        Log.d(TAG, "losujSlowko: called. "+users.size());
+
         if (users.size()>1) {
-            int los = random.nextInt(users.size());
-            while (lastLos == los) {los = random.nextInt(users.size());}
-            lastLos = los;
-            imie = imiona[los];
-            nazwisko = nazwiska[los];
-            Log.d(TAG, "losujSlowko: wylosowano");
+            for (int i=0; i<users.size(); i++)
+            {
+                if (ostatnieLosy[i] == 1)
+                {
+                    test++;
+                    Log.d(TAG, "losujSlowko: wylosowanych: "+test+" wielkość: "+users.size());
+                }
+            }
+
+            if (test == users.size())
+            {
+                Log.d(TAG, "losujSlowko: finish");
+                pokazToast("koniec");
+            }
+
+            else {
+                do {
+                    los = random.nextInt(users.size());
+                }
+                while (ostatnieLosy[los] == 1);
+
+                test = 0;
+                ostatnieLosy[los] = 1;
+                imie = imiona[los];
+                nazwisko = nazwiska[los];
+                Log.d(TAG, "losujSlowko: wylosowano");
+            }
         }else
         {
             Toast.makeText(getApplicationContext(), "dodaj przynajmniej dwa słówka aby rozpocząć", Toast.LENGTH_SHORT).show();
@@ -131,7 +155,10 @@ public class KartkowkaActivity extends AppCompatActivity {
     private void napelnijStringi()
     {
         Log.d(TAG, "napelnijStringi: called.");
-        int i=0;
+        int g =0;
+
+        ostatnieLosy = new int[users.size()];
+        for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
 
         if (users.size()>0)
         {
@@ -139,9 +166,9 @@ public class KartkowkaActivity extends AppCompatActivity {
             {
                 String imie =s.getName();
                 String nazwisko = s.getSurname();
-                imiona[i] = imie;
-                nazwiska[i] = nazwisko;
-                i++;
+                imiona[g] = imie;
+                nazwiska[g] = nazwisko;
+                g++;
             }
             Log.d(TAG, "napelnijStringi: napelniono.");
         }else
@@ -175,7 +202,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     void pokazToast(String kolor)
     {
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_toast,
+        View layout = inflater.inflate(R.layout.custom_toast_flscr_kartkowka,
                 (ViewGroup) findViewById(R.id.custom_toast_container));
         TextView text = layout.findViewById(R.id.text);
 
@@ -183,20 +210,40 @@ public class KartkowkaActivity extends AppCompatActivity {
         {
             text.setText(R.string.zle);
             layout.setBackgroundResource(R.color.kartkowkaRed);
+            TextView text2 = layout.findViewById(R.id.text2);
+            text2.setText(String.format("%s - %s", imie, nazwisko));
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
         }else
             if (kolor.equals("green"))
         {
             text.setText(R.string.dobrze);
             layout.setBackgroundResource(R.color.kartkowkaGreen);
+            TextView text2 = layout.findViewById(R.id.text2);
+            text2.setText(String.format("%s - %s", imie, nazwisko));
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+        }else
+            if (kolor.equals("koniec"))
+        {
+            text.setText(R.string.koniec);
+            layout.setBackgroundResource(R.color.kartkowkaKoniec);
+            TextView text2 = layout.findViewById(R.id.text2);
+            text2.setText(String.format("Dobrych: %s  \nZłych: %s", dobrych, zlych));
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setDuration(Toast.LENGTH_LONG);
+            toast.setView(layout);
+            toast.show();
+            finish();
         }
 
-        TextView text2 = layout.findViewById(R.id.text2);
-        text2.setText(String.format("%s - %s", imie, nazwisko));
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();
     }
 
 }
