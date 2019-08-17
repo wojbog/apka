@@ -62,7 +62,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     {
         Log.d(TAG, "sprawdz: called.");
         EditText tlumaczenieET = findViewById(R.id.tlumaczenieET);
-        String nazwiskoWpisane = tlumaczenieET.getText().toString();
+        String nazwiskoWpisane = tlumaczenieET.getText().toString().trim();
         boolean ok = nazwiskoWpisane.matches(nazwisko);
 
         if (nazwiskoWpisane.matches("")) Toast.makeText(getApplicationContext(), "Wpisz tłumaczenie", Toast.LENGTH_SHORT).show();
