@@ -64,7 +64,7 @@ public class KartkowkaActivity extends AppCompatActivity {
         String nazwiskoWpisane = tlumaczenieET.getText().toString().trim();
         boolean ok = nazwiskoWpisane.matches(nazwisko);
 
-        if (nazwiskoWpisane.matches("")) Toast.makeText(getApplicationContext(), "Wpisz tłumaczenie", Toast.LENGTH_SHORT).show();
+        if (nazwiskoWpisane.matches("")) zrobToast("Wpisz tłumaczenie");
         else if(ok)
         {
             Log.d(TAG, "sprawdz: dobre");
@@ -145,7 +145,7 @@ public class KartkowkaActivity extends AppCompatActivity {
             }
         }else
         {
-            Toast.makeText(getApplicationContext(), "dodaj przynajmniej dwa słówka aby rozpocząć", Toast.LENGTH_SHORT).show();
+            zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
             finish();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
@@ -172,7 +172,7 @@ public class KartkowkaActivity extends AppCompatActivity {
             Log.d(TAG, "napelnijTabele: napelniono.");
         }else
         {
-            Toast.makeText(getApplicationContext(), "Dodaj przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "DodajActivity przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -202,7 +202,7 @@ public class KartkowkaActivity extends AppCompatActivity {
     {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast_flscr_kartkowka,
-                (ViewGroup) findViewById(R.id.custom_toast_container));
+                (ViewGroup) findViewById(R.id.custom_toast_contain));
         TextView text = layout.findViewById(R.id.text);
 
         if (kolor.equals("red"))
@@ -243,6 +243,20 @@ public class KartkowkaActivity extends AppCompatActivity {
             finish();
         }
 
+    }
+
+    private void zrobToast(String coNapisac) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(coNapisac);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 
 }

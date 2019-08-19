@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
-public class Dodaj extends AppCompatActivity {
+public class DodajActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

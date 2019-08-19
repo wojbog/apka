@@ -6,11 +6,14 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,6 +22,7 @@ public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname, UserCategory;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
+    View layout;
 
     public AddUserFragment() {
         //potrzebny pusty publiczny konstruktor
@@ -29,6 +33,7 @@ public class AddUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_add_user, container, false);
+        layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
@@ -60,9 +65,7 @@ public class AddUserFragment extends Fragment {
                         user.setCategory(kategoria);
 
                         MainActivity.baza.myDao().addUser(user);
-//                        Toast.makeText(getContext(), "Dodano!!", Toast.LENGTH_SHORT).show();
-                        Snackbar.make(view, "DODANO!!", Snackbar.LENGTH_SHORT)
-                                .setAction("Action", null).show();
+                        zrobToast("Dodano!");
                         Log.d(TAG, "onClick: Dodano");
 
                         Username.setText("");
@@ -70,8 +73,7 @@ public class AddUserFragment extends Fragment {
                         UserCategory.setText("");
                     }
                     else {
-                        Snackbar.make(view, "Najpierw wpisz słówko", Snackbar.LENGTH_SHORT)
-                                .setAction("Action", null).show();
+                        zrobToast("Najpierw wpisz słówko!");
                         Log.d(TAG, "onClick: najpierw slowko");
                     }
             }
@@ -79,6 +81,17 @@ public class AddUserFragment extends Fragment {
 
         return view;
 
+    }
+
+    private void zrobToast(String coNapisac) {
+        TextView text = (TextView) layout.findViewById(R.id.text);
+        text.setText(coNapisac);
+
+        Toast toast = new Toast(getContext());
+        toast.setGravity(Gravity.CENTER, 0, -600);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 
 }

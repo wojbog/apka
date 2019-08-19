@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
 
     String TAG = "LOGReadCategoryFragment";
     private int mColumnCount = 1;
+    View layout;
 
 
 
@@ -44,6 +47,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
+        layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
 
         ArrayList<Listakategorii> felix = new ArrayList<>();
         final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
@@ -68,8 +72,19 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     @Override
     public void onClickKlikniecie(int position) {
         //na razie tylko toast
-        Toast.makeText(getContext(),"klik pozycja: "+position,Toast.LENGTH_SHORT).show();
+        zrobToast("Klik pozycja: "+position);
 
+    }
+
+    private void zrobToast(String coNapisac) {
+        TextView text = (TextView) layout.findViewById(R.id.text);
+        text.setText(coNapisac);
+
+        Toast toast = new Toast(getContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 
 

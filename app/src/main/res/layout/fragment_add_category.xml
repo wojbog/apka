@@ -12,27 +12,31 @@
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="168dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_add_category"
         android:layout_width="260dp"
         android:layout_height="75dp"
-        android:background="@drawable/buttonshape"
-        android:textColor="#FBFF85"
-        android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="312dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/buttonshape"
         android:text="Add"
+        android:textColor="#FBFF85"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 

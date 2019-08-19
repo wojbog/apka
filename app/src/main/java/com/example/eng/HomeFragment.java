@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.add:
                 Log.d(TAG, "onClick: bn_add clicked.");
-                Intent xam = new Intent(getActivity().getApplication(), Dodaj.class);
+                Intent xam = new Intent(getActivity().getApplication(), DodajActivity.class);
                 view.getContext().startActivity(xam);
                 Log.d(TAG, "onClick: fragment zmieniony");
                 break;
