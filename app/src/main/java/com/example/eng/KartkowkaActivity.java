@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class KartkowkaActivity extends AppCompatActivity {
 
-    //TODO: piękne toasty dla całej aplikacji
+    //TODO:
 
     Random random = new Random();
     final List<User> users = MainActivity.baza.myDao().getUsers();
@@ -253,7 +253,7 @@ public class KartkowkaActivity extends AppCompatActivity {
         text.setText(coNapisac);
 
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 100);
+        toast.setGravity(Gravity.CENTER, 0, -450);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
