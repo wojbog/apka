@@ -18,7 +18,6 @@ import java.util.Random;
 public class KartkowkaActivity extends AppCompatActivity {
 
     //TODO: piękne toasty dla całej aplikacji
-    //TODO: Ekran końcowy kartkówki
 
     Random random = new Random();
     final List<User> users = MainActivity.baza.myDao().getUsers();
@@ -43,7 +42,7 @@ public class KartkowkaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kartkowka);
 
-        napelnijStringi();
+        napelnijTabele();
         losujSlowko();
         ustawWyglad();
 
@@ -152,9 +151,9 @@ public class KartkowkaActivity extends AppCompatActivity {
         }
     }
 
-    private void napelnijStringi()
+    private void napelnijTabele()
     {
-        Log.d(TAG, "napelnijStringi: called.");
+        Log.d(TAG, "napelnijTabele: called.");
         int g =0;
 
         ostatnieLosy = new int[users.size()];
@@ -170,7 +169,7 @@ public class KartkowkaActivity extends AppCompatActivity {
                 nazwiska[g] = nazwisko;
                 g++;
             }
-            Log.d(TAG, "napelnijStringi: napelniono.");
+            Log.d(TAG, "napelnijTabele: napelniono.");
         }else
         {
             Toast.makeText(getApplicationContext(), "Dodaj przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
