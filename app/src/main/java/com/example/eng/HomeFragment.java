@@ -29,8 +29,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button bnAddUser = view.findViewById(R.id.bn_add_user);
-        bnAddUser.setOnClickListener(this);
 
         Button bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);
@@ -47,8 +45,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Button bnDodaj = view.findViewById(R.id.add);
         bnDodaj.setOnClickListener(this);
 
-        Button bn_zobacz = view.findViewById(R.id.zobacz_category);
-        bn_zobacz.setOnClickListener(this);
+
+
         return view;
     }
 
@@ -56,11 +54,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch(view.getId())
         {
-            case R.id.bn_add_user:
-                Log.d(TAG, "onClick: bn_add_user clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new AddUserFragment()).addToBackStack(null).commit();
-                Log.d(TAG, "onClick: fragment zmieniony");
-                break;
 
             case R.id.bn_view_users:
                 Log.d(TAG, "onClick: bn_view_users clicked.");
@@ -95,11 +88,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Log.d(TAG, "onClick: fragment zmieniony");
                 break;
 
-            case R.id.zobacz_category:
-                Log.d(TAG, "onClick: bn_zobacz_category clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment()).addToBackStack(null).commit();
-                Log.d(TAG, "onClick: fragment zmieniony");
-                break;
+
+
+
         }
 
     }

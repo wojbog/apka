@@ -1,6 +1,7 @@
 package com.example.eng;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,7 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadCategoryFragment extends Fragment implements AdapterReadCategoryFragment.Click {
-
+        public String nazwa[];
+        public String klucz;
 
 
     String TAG = "LOGReadCategoryFragment";
@@ -51,10 +53,14 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
 
         ArrayList<Listakategorii> felix = new ArrayList<>();
         final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
+        nazwa=new String[elo.size()];
+        int i=0;
           for (User s:elo)
           {
               String cos = s.getName();
+              nazwa[i]=cos;
               felix.add(new Listakategorii(cos));
+              i++;
           }
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -72,7 +78,10 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     @Override
     public void onClickKlikniecie(int position) {
         //na razie tylko toast
-        zrobToast("Klik pozycja: "+position);
+        klucz=nazwa[position];
+        zrobToast("Klik pozycja: "+position+klucz);
+        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
+        startActivity(intents);
 
     }
 

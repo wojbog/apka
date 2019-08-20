@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DodajActivity"></activity>
+        <activity android:name=".DodajUser"></activity>
+        <activity android:name=".Dodaj_kategorie" />
+        <activity android:name=".DodajActivity" />
         <activity android:name=".FiszkiActivity" />
         <activity
             android:name=".KartkowkaActivity"
