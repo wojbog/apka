@@ -39,7 +39,7 @@
             android:layout_marginTop="184dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
-            android:inputType="textPersonName"
+
             android:text="Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
@@ -77,19 +77,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/categoryOfKategoria"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="360dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
+        <TextView
+            android:id="@+id/categoryofkategoria"
+            android:layout_width="275dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="364dp"
+            android:layout_marginEnd="64dp"
+            android:textSize="25dp"
+            android:text="Trzeba dodac"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

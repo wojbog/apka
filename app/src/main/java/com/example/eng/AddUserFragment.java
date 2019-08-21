@@ -20,8 +20,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class AddUserFragment extends Fragment {
 
-    private EditText Username, Usersurname, UserCategory;
+    private EditText Username, Usersurname;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
+    private TextView UserCategory;
     View layout;
 
     public AddUserFragment() {
@@ -37,15 +38,17 @@ public class AddUserFragment extends Fragment {
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
-        UserCategory = view.findViewById(R.id.categoryOfKategoria);
+        UserCategory = view.findViewById(R.id.categoryofkategoria);
         Button BNsave = view.findViewById(R.id.zapisz);
 
+       // ReadCategoryFragment readCategoryFragment = new ReadCategoryFragment();
+       // kategoria=readCategoryFragment.klucz;
+        //tu chciałem dodac aby tak kategoria automatycznie się przekazała ale to nie działa
+        UserCategory.setText("tak nie działa");
         Username.setText("");
         Username.setHint("name");
         Usersurname.setText("");
         Usersurname.setHint("surname");
-        UserCategory.setText("");
-        UserCategory.setHint("Category");
 
         BNsave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +58,7 @@ public class AddUserFragment extends Fragment {
 
                     imie = Username.getText().toString().trim();
                     nazwisko = Usersurname.getText().toString().trim();
-                    kategoria = UserCategory.getText().toString().trim();
+                   kategoria = "koniec zabawy";
 
                     if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {
@@ -70,7 +73,7 @@ public class AddUserFragment extends Fragment {
 
                         Username.setText("");
                         Usersurname.setText("");
-                        UserCategory.setText("");
+                       // UserCategory.setText("");
                     }
                     else {
                         zrobToast("Najpierw wpisz słówko!");

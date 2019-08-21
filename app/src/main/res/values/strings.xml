@@ -16,4 +16,5 @@
     <string name="zatwierdz">Zatwierdź</string>
     <string name="koniec">KONIEC!!</string>
     <string name="title_activity_fiszki">FiszkiActivity</string>
+    <string name="title_activity_elomordocp">elomordocp</string>
 </resources>
