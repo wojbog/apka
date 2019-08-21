@@ -9,10 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".FiszkiActivity"
+            android:label="@string/title_activity_fiszki"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.eng.MainActivity" />
+        </activity>
+        <activity android:name=".DodajActivity" />
         <activity android:name=".DodajUser"></activity>
         <activity android:name=".Dodaj_kategorie" />
-        <activity android:name=".DodajActivity" />
-        <activity android:name=".FiszkiActivity" />
         <activity
             android:name=".KartkowkaActivity"
             android:label="@string/title_activity_kartkowka"

@@ -11,9 +11,10 @@
     <string name="dobrych_odpowiedzi">Dobrych odpowiedzi:</string>
     <string name="_34">34</string>
     <string name="_11">11</string>
-    <string name="zle">ŹLE >:(</string>
+    <string name="zle">ŹLE :(</string>
     <string name="dobrze">Dobrze :)</string>
     <string name="zatwierdz">Zatwierdź</string>
     <string name="koniec">KONIEC!!</string>
+    <string name="title_activity_fiszki">FiszkiActivity</string>
     <string name="title_activity_elomordocp">elomordocp</string>
 </resources>

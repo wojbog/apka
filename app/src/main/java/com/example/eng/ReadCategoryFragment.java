@@ -80,9 +80,9 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         //na razie tylko toast
         klucz=nazwa[position];
         zrobToast("Klik pozycja: "+position+klucz);
-        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
-        startActivity(intents);
-
+//        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
+//        startActivity(intents);
+          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
     }
 
     private void zrobToast(String coNapisac) {
