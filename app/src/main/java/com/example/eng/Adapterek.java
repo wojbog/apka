@@ -9,9 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder> {
-  private ArrayList<ExampleItem> mlist;
+  private List<User> mlist;
     static class ExampleViewHolder extends RecyclerView.ViewHolder {
        TextView jedynka, dwojka,kolejny;
 
@@ -22,7 +24,7 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
            kolejny = itemView.findViewById(R.id.numerek);
        }
    }
-   Adapterek(ArrayList<ExampleItem> lista){
+   Adapterek(List<User> lista){
         mlist=lista;
    }
 
@@ -34,17 +36,21 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
-    ExampleItem currentItem = mlist.get(position);
-    holder.jedynka.setText(currentItem.getText1());
-    holder.dwojka.setText(currentItem.getText2());
-    holder.kolejny.setText(currentItem.getNumer());
+    User currentItem = mlist.get(position);
+    holder.jedynka.setText(currentItem.getName());
+    holder.dwojka.setText(currentItem.getSurname());
+    holder.kolejny.setText(String.format(Locale.getDefault(),"%d",currentItem.id));
     }
-
+public void setMlist(List<User> notes)
+{
+    mlist=notes;
+   // notifyDataSetChanged();
+}
     @Override
     public int getItemCount() {
         return mlist.size();
     }
 
-
+    
 
 }
