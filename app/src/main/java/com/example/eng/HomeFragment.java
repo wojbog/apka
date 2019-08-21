@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_view_users:
                 Log.d(TAG, "onClick: bn_view_users clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment("")).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony");
                 break;
 

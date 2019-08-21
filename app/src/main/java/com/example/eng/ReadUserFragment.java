@@ -28,13 +28,16 @@ public class ReadUserFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    String kate;
 
 
     TextView textView;
 String TAG="ReadUserFragment";
 
 
-    //public ReadUserFragment() {}
+    public ReadUserFragment(String k) {
+        kate = k;
+    }
 
 
     @Override
@@ -61,7 +64,7 @@ String TAG="ReadUserFragment";
 
         textView.setText(info.toString());*/
         ArrayList<ExampleItem> andrzej = new ArrayList<>();
-        final List<User> users =MainActivity.baza.myDao().getUsers();
+        final List<User> users =MainActivity.baza.myDao().loadUserByKategoria(kate);
         for(User s:users)
         {
             String name =s.getName();
