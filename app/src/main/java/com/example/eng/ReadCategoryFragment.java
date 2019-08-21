@@ -83,6 +83,10 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
        startActivity(intents);
          // DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
+//        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
+//        startActivity(intents);
+//          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
+          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment()).commit();
     }
 
     private void zrobToast(String coNapisac) {

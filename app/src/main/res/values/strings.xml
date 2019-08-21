@@ -17,4 +17,6 @@
     <string name="koniec">KONIEC!!</string>
     <string name="title_activity_fiszki">FiszkiActivity</string>
     <string name="title_activity_elomordocp">elomordocp</string>
+    <string name="odwroc">odwróć</string>
+    <string name="jakies_tlumaczenie">Jakieś Tłumaczenie</string>
 </resources>

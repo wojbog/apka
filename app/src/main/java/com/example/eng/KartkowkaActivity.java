@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -34,6 +36,7 @@ public class KartkowkaActivity extends AppCompatActivity {
             TAG = "LOGKartkowkaActivity";
     private int[] ostatnieLosy;
     private int test=0;
+    private boolean odwrotnie=false;
 
 
     @Override
@@ -55,6 +58,17 @@ public class KartkowkaActivity extends AppCompatActivity {
             }
         });
 
+        final Button odw = findViewById(R.id.odw);
+        odw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (odwrotnie) odwrotnie=false;
+                else if (!odwrotnie) odwrotnie=true;
+                ustawWyglad();
+                odw.setVisibility(View.INVISIBLE);
+            }
+        });
+
     }
 
     void sprawdz()
@@ -62,7 +76,9 @@ public class KartkowkaActivity extends AppCompatActivity {
         Log.d(TAG, "sprawdz: called.");
         EditText tlumaczenieET = findViewById(R.id.tlumaczenieET);
         String nazwiskoWpisane = tlumaczenieET.getText().toString().trim();
-        boolean ok = nazwiskoWpisane.matches(nazwisko);
+        boolean ok=false;
+        if (odwrotnie) ok = nazwiskoWpisane.matches(imie);
+        else if (!odwrotnie) ok = nazwiskoWpisane.matches(nazwisko);
 
         if (nazwiskoWpisane.matches("")) zrobToast("Wpisz tłumaczenie");
         else if(ok)
@@ -102,7 +118,8 @@ public class KartkowkaActivity extends AppCompatActivity {
                 tlumaczenieET = findViewById(R.id.tlumaczenieET);
 
         Log.d(TAG, "ustawWyglad: called.");
-        slowkoTV.setText(imie);
+        if (!odwrotnie) slowkoTV.setText(imie);
+        else if (odwrotnie) slowkoTV.setText(nazwisko);
         dobrychTV.setText(String.format(Locale.getDefault(), "%d", dobrych));
         zlychTV.setText(String.format(Locale.getDefault(), "%d", zlych));
         tlumaczenieET.setHint("Tu wpisz tłumaczenie");
@@ -139,8 +156,15 @@ public class KartkowkaActivity extends AppCompatActivity {
 
                 test = 0;
                 ostatnieLosy[los] = 1;
-                imie = imiona[los];
-                nazwisko = nazwiska[los];
+//                if (odwrotnie)
+//                {
+//                imie = nazwiska[los];
+//                nazwisko = imiona[los];
+//                }else if (!odwrotnie)
+//                {
+                    imie = imiona[los];
+                    nazwisko = nazwiska[los];
+//                }
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
         }else
@@ -179,9 +203,7 @@ public class KartkowkaActivity extends AppCompatActivity {
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
-////        tu będą kategorie
-//        menu.add(1, 1, 1, "test");
-//        menu.add(1, 1, 1, "test2");
+//        menu.add(1, 1, 1, "zmień kolejność");
 //        return true;
 //    }
 //
@@ -191,8 +213,8 @@ public class KartkowkaActivity extends AppCompatActivity {
 //        //noinspection SimplifiableIfStatement
 //        switch (id) {
 //            case 1:
-//                break;
-//            case 2:
+//                if (odwrotnie) odwrotnie=false;
+//                else if (!odwrotnie) odwrotnie=true;
 //                break;
 //        }
 //        return super.onOptionsItemSelected(item);

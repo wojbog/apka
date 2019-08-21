@@ -29,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         Log.d(TAG, "onCreate: zbudowano bazy");
 
-        LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_toast_flscr_kartkowka,
-                (ViewGroup) findViewById(R.id.custom_toast_contain));
-        TextView text = layout.findViewById(R.id.text);
-        text.setText("WITAMY W APLIKACJI");
-        layout.setBackgroundResource(R.color.kartkowkaKoniec);
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();
+//        LayoutInflater inflater = getLayoutInflater();
+//        View layout = inflater.inflate(R.layout.custom_toast_flscr_kartkowka,
+//                (ViewGroup) findViewById(R.id.custom_toast_contain));
+//        TextView text = layout.findViewById(R.id.text);
+//        text.setText("WITAMY W APLIKACJI");
+//        layout.setBackgroundResource(R.color.kartkowkaKoniec);
+//        Toast toast = new Toast(getApplicationContext());
+//        toast.setGravity(Gravity.CENTER, 0, 0);
+//        toast.setDuration(Toast.LENGTH_LONG);
+//        toast.setView(layout);
+//        toast.show();
 
         if(findViewById(R.id.stefan)!=null)
         {

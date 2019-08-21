@@ -42,9 +42,9 @@ public class ReadUserFragment extends Fragment {
 String TAG="ReadUserFragment";
 
 
-    public ReadUserFragment(String k) {
-        kate = k;
-    }
+//    public ReadUserFragment(String k) {
+//        kate = k;
+//    }
 
 
     @Override
@@ -78,7 +78,7 @@ String TAG="ReadUserFragment";
         /*for(User s:users)
 =======
         ArrayList<ExampleItem> andrzej = new ArrayList<>();
-        final List<User> users =MainActivity.baza.myDao().loadUserByKategoria(kate);
+        final List<User> users =MainActivity.baza.myDao().getUsers();
         for(User s:users)
 >>>>>>> origin/master
         {
