@@ -110,11 +110,13 @@ String TAG="ReadUserFragment";
                 try
                 {
                    int id= viewHolder.getAdapterPosition();
-
-                   User user= andrzej.get(id);
+                    User user= andrzej.get(id);
+                   andrzej.remove(id);
+                    mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);
                    MainActivity.baza.myDao().deleteUsers(user);
                     Toast.makeText(getContext() ,"Usunięto",Toast.LENGTH_LONG).show();
+
                     //TxUserId.setText("");
                     //Log.d(TAG, "onClick: Deleted.");
                 }
