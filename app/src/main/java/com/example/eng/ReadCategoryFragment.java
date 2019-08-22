@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ReadCategoryFragment extends Fragment implements AdapterReadCategoryFragment.Click {
         public String nazwa[];
-        public String klucz;
+        public String klucz, skont;
 
 
     String TAG = "LOGReadCategoryFragment";
@@ -35,7 +35,8 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ReadCategoryFragment() {
+    public ReadCategoryFragment(String skond) {
+        skont = skond;
     }
 
     @Override
@@ -80,10 +81,17 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         //na razie tylko toast
         klucz=nazwa[position];
         zrobToast("Klik pozycja: "+position+klucz);
-        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
-        startActivity(intents);
+//        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
+//        startActivity(intents);
 //          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
 //          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment()).commit();
+
+        if (skont.equals("kategoria")) {
+            DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
+        }
+        if (skont.equals("kartkowka")) {
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(klucz)).addToBackStack(null).commit();
+        }
     }
 
     private void zrobToast(String coNapisac) {

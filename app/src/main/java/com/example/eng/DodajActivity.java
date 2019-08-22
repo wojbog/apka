@@ -25,7 +25,7 @@ public class DodajActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.kontener,new ReadCategoryFragment()).commit();
+            fragmentManager.beginTransaction().add(R.id.kontener,new ReadCategoryFragment("kategoria")).commit();
         }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

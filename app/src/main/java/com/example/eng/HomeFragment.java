@@ -33,9 +33,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Button bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);
 
-        Button BNdelete = view.findViewById(R.id.bn_delete);
-        BNdelete.setOnClickListener(this);
-
         Button BNkartkowka = view.findViewById(R.id.bn_kartkowka);
         BNkartkowka.setOnClickListener(this);
 
@@ -62,16 +59,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Log.d(TAG, "onClick: fragment zmieniony");
                 break;
 
-            case R.id.bn_delete:
-                Log.d(TAG, "onClick: bn_delete clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new DeleteFragment()).addToBackStack(null).commit();
-                Log.d(TAG, "onClick: fragment zmieniony");
-                break;
-
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-                Intent intent = new Intent(getActivity().getApplication(), KartkowkaActivity.class);
-                view.getContext().startActivity(intent);
+//                Intent intent = new Intent(getActivity().getApplication(), artkowkaActivity.class);
+//                view.getContext().startActivity(intent);
+
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment("kartkowka")).addToBackStack(null).commit();
+
                 Log.d(TAG, "onClick: fragment zmieniony");
                 break;
 
