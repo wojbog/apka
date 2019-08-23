@@ -22,6 +22,7 @@ public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
+    private TextView Categoryname;
     View layout;
 
     public AddUserFragment(String katego) {
@@ -37,12 +38,14 @@ public class AddUserFragment extends Fragment {
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
+        Categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
 
        // ReadCategoryFragment readCategoryFragment = new ReadCategoryFragment();
        // kategoria=readCategoryFragment.klucz;
         //tu chciałem dodac aby tak kategoria automatycznie się przekazała ale to nie działa
         //już działa :)
+        Categoryname.setText(kategoria);
         Username.setText("");
         Username.setHint("Słówko");
         Usersurname.setText("");

@@ -51,7 +51,6 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
-
         ArrayList<Listakategorii> felix = new ArrayList<>();
         final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
         nazwa=new String[elo.size()];

@@ -21,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate: called.");
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: called.");
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         baza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanych").allowMainThreadQueries().build();
