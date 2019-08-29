@@ -56,31 +56,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Log.d(TAG, "onClick: bn_view_users clicked.");
 //                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment("")).addToBackStack(null).commit();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment()).addToBackStack(null).commit();
-                Log.d(TAG, "onClick: fragment zmieniony");
+                Log.d(TAG, "onClick: fragment zmieniony na odczytanie slowek");
                 break;
 
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-//                Intent intent = new Intent(getActivity().getApplication(), artkowkaActivity.class);
-//                view.getContext().startActivity(intent);
-
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment("kartkowka")).addToBackStack(null).commit();
-
-                Log.d(TAG, "onClick: fragment zmieniony");
+                Log.d(TAG, "onClick: fragment zmieniony na kategorie z kartkowki");
                 break;
 
             case R.id.bn_fiszki:
                 Log.d(TAG, "onClick: bn_fiszki clicked.");
-                Intent intents = new Intent(getActivity().getApplication(), FiszkiActivity.class);
-                view.getContext().startActivity(intents);
-                Log.d(TAG, "onClick: fragment zmieniony");
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment("jedzenie")).addToBackStack(null).commit();
+                Log.d(TAG, "onClick: fragment zmieniony na fiszki");
                 break;
 
             case R.id.add:
                 Log.d(TAG, "onClick: bn_add clicked.");
                 Intent xam = new Intent(getActivity().getApplication(), DodajActivity.class);
                 view.getContext().startActivity(xam);
-                Log.d(TAG, "onClick: fragment zmieniony");
+                Log.d(TAG, "onClick: fragment zmieniony na dodaj activity");
                 break;
 
 

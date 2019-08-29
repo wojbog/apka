@@ -141,7 +141,7 @@ public class KartkowkaFragment extends Fragment {
 
     private void losujSlowko()
     {
-
+//-------napelnij stringi-----------
         String[]
                 imiona = new String[users.size()],
                 nazwiska = new String[users.size()];
@@ -167,7 +167,7 @@ public class KartkowkaFragment extends Fragment {
                 Toast.makeText(getContext(), "DodajActivity przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
             }
 
-
+//--------losuj slowko---------------
         int los;
         Log.d(TAG, "losujSlowko: called. "+users.size());
 
@@ -209,7 +209,6 @@ public class KartkowkaFragment extends Fragment {
         }else
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().remove(this).commit();
             startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
