@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#006064</color>
+    <!--<color name="primaryColor">#006064</color>
     <color name="primaryLightColor">#428e92</color>
     <color name="primaryDarkColor">#00363a</color>
     <color name="primaryTextColor">#ffffff</color>
@@ -8,7 +8,18 @@
     <color name="secondaryColor">#90caf9</color>
     <color name="secondaryLightColor">#c3fdff</color>
     <color name="secondaryDarkColor">#5d99c6</color>
-    <color name="secondaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>-->
+
+    <color name="primaryColor">#37474f</color>
+    <color name="primaryLightColor">#62727b</color>
+    <color name="primaryDarkColor">#102027</color>
+    <color name="primaryTextColor">#A4BAD3</color>
+
+    <color name="secondaryColor">#546e7a</color>
+    <color name="secondaryLightColor">#819ca9</color>
+    <color name="secondaryDarkColor">#29434e</color>
+    <color name="secondaryTextColor">#ffffff</color>
+
 
     <color name="kartkowkaGreen">#05b06f</color>
     <color name="kartkowkaRed">#a90220</color>

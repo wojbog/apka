@@ -14,7 +14,7 @@
 
             <Button
                 android:id="@+id/bn_view_users"
-                android:layout_width="205dp"
+                android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
@@ -31,7 +31,7 @@
 
             <Button
                 android:id="@+id/bn_kartkowka"
-                android:layout_width="205dp"
+                android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
@@ -48,7 +48,7 @@
 
             <Button
                 android:id="@+id/bn_fiszki"
-                android:layout_width="205dp"
+                android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
@@ -65,7 +65,7 @@
 
             <Button
                 android:id="@+id/add"
-                android:layout_width="205dp"
+                android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"

@@ -8,8 +8,9 @@
 
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primaryDarkColor"
        >
 
         <TextView
@@ -21,7 +22,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="19dp"
             android:text="line 1"
-            android:textColor="@android:color/black"
+            android:textColor="@color/primaryTextColor"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -34,13 +35,14 @@
             android:layout_marginStart="55dp"
             android:layout_marginTop="48dp"
             android:text="line 12"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/primaryTextColor"
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/numerek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/primaryTextColor"
             android:text="20"
             android:layout_marginStart="3dp"
             android:layout_marginTop="19dp"/>

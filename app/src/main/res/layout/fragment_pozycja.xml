@@ -17,5 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:text="elo mordo co tam u ciebie"
+        android:textColor="@color/primaryTextColor"
         android:textAppearance="?attr/textAppearanceListItem" />
 </LinearLayout>
