@@ -35,6 +35,7 @@ public class ReadUserFragment extends Fragment {
     List<User> andrzej;
 
     String kate;
+    View view;
 
 
 
@@ -51,7 +52,7 @@ String TAG="ReadUserFragment";
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: called.");
-        View view =  inflater.inflate(R.layout.fragment_read_user, container, false);
+        view =  inflater.inflate(R.layout.fragment_read_user, container, false);
 
 
         final List<User> users =MainActivity.baza.myDao().getUsers();
@@ -82,7 +83,17 @@ String TAG="ReadUserFragment";
                     mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);
                    MainActivity.baza.myDao().deleteUsers(user);
-                    Toast.makeText(getContext() ,"Usunięto",Toast.LENGTH_LONG).show();
+
+//                    Toast.makeText(getContext() ,"Usunięto",Toast.LENGTH_LONG).show();
+                    LayoutInflater inflater = getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.custom_toast,
+                            (ViewGroup) view.findViewById(R.id.custom_toast_container));
+                    TextView text = layout.findViewById(R.id.text);
+                    text.setText("Usunięto");
+                    Toast toast = new Toast(getContext());
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(layout);
+                    toast.show();
 
                     //TxUserId.setText("");
                     //Log.d(TAG, "onClick: Deleted.");

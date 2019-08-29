@@ -90,7 +90,6 @@ public class AddUserFragment extends Fragment {
         text.setText(coNapisac);
 
         Toast toast = new Toast(getContext());
-        toast.setGravity(Gravity.CENTER, 0, -600);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();

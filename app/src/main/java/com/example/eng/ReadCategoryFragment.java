@@ -91,6 +91,9 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         if (skont.equals("kartkowka")) {
             MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(klucz)).addToBackStack(null).commit();
         }
+        if (skont.equals("fiszki")) {
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(klucz)).addToBackStack(null).commit();
+        }
     }
 
     private void zrobToast(String coNapisac) {
@@ -98,7 +101,6 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         text.setText(coNapisac);
 
         Toast toast = new Toast(getContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();

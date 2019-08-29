@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".KartkowkaActivity"
-    tools:showIn="@layout/activity_kartkowka">
+    tools:context=".KartkowkaFragment"
+    tools:showIn="@layout/fragment_kartkowka">
 
     <TextView
         android:id="@+id/slowkoTV"
@@ -46,7 +46,7 @@
         android:layout_width="207dp"
         android:layout_height="75dp"
         android:background="@drawable/buttonshape"
-        android:textColor="#FBFF85"
+        android:textColor="@color/primaryTextColor"
         android:textSize="30sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="328dp"
@@ -116,7 +116,7 @@
         android:layout_marginTop="512dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/buttonshape"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/primaryTextColor"
         android:text="Zmień języki"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

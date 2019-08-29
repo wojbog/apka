@@ -63,6 +63,10 @@ public class AddCategoryFragment extends Fragment {
                     napiszKategorieET.setText("");
                     Log.d(TAG, "onClick: Dodano");
                 }
+                else if (kc("/")||kc("|")||kc("\\")||kc("!")||kc("@")||kc("#")||kc("$")||kc("%")||kc("^")||kc("&")||kc("*")||kc("(")||kc(")")||kc("_")||kc("-")||kc("=")||kc("+")||kc("{")||kc("[")||kc("}")||kc("]")||kc(":")||kc(";")||kc("'")||kc("")||kc("<")||kc(",")||kc(".")||kc(">")||kc("?")||kc("/"))
+                {
+                    zrobToast("Nie używaj jakihś dziwnych znaków");
+                }
                 else {
                     zrobToast("Najpierw wpisz słówko");
                     Log.d(TAG, "onClick: najpierw slowko");
@@ -73,12 +77,16 @@ public class AddCategoryFragment extends Fragment {
         return view;
     }
 
+    boolean kc(String a)
+    {
+        return kategoria.contains(a);
+    }
+
     private void zrobToast(String coNapisac) {
         TextView text = (TextView) layout.findViewById(R.id.text);
         text.setText(coNapisac);
 
         Toast toast = new Toast(getContext());
-        toast.setGravity(Gravity.CENTER, 0, 100);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();

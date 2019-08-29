@@ -149,7 +149,7 @@ public class FiszkiFragment extends Fragment {
         }else
         {
             Toast.makeText(getContext(), "dodaj przynajmniej dwa słówka aby rozpocząć", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).addToBackStack(null).commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
     }
