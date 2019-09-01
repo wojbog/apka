@@ -50,7 +50,12 @@ public class AddCategoryFragment extends Fragment {
 
                 kategoria = napiszKategorieET.getText().toString().trim();
 
-                if (!kategoria.equals(""))
+
+                if (kc("/")||kc("|")||kc("\\")||kc("!")||kc("@")||kc("#")||kc("$")||kc("%")||kc("^")||kc("&")||kc("*")||kc("(")||kc(")")||kc("_")||kc("-")||kc("=")||kc("+")||kc("{")||kc("[")||kc("}")||kc("]")||kc(":")||kc(";")||kc("'")||kc("")||kc("<")||kc(",")||kc(".")||kc(">")||kc("?")||kc("/"))
+                {
+                    zrobToast("Nieodpowiedni znak!");
+                }
+                else if (!kategoria.equals(""))
                 {
                     User user = new User();
                     user.setName(kategoria);
@@ -62,10 +67,6 @@ public class AddCategoryFragment extends Fragment {
 
                     napiszKategorieET.setText("");
                     Log.d(TAG, "onClick: Dodano");
-                }
-                else if (kc("/")||kc("|")||kc("\\")||kc("!")||kc("@")||kc("#")||kc("$")||kc("%")||kc("^")||kc("&")||kc("*")||kc("(")||kc(")")||kc("_")||kc("-")||kc("=")||kc("+")||kc("{")||kc("[")||kc("}")||kc("]")||kc(":")||kc(";")||kc("'")||kc("")||kc("<")||kc(",")||kc(".")||kc(">")||kc("?")||kc("/"))
-                {
-                    zrobToast("Nie używaj jakihś dziwnych znaków");
                 }
                 else {
                     zrobToast("Najpierw wpisz słówko");

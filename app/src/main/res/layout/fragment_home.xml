@@ -7,12 +7,27 @@
     tools:context=".HomeFragment">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <Button
+        <TextView
+            android:id="@+id/tytulApkiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:text="Tytuł apki"
+            android:textAlignment="center"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/bn_view_users"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
                 android:id="@+id/bn_view_users"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"

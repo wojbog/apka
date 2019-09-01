@@ -92,7 +92,38 @@ public class KartkowkaFragment extends Fragment {
         if (odwrotnie) ok = nazwiskoWpisane.matches(imie);
         else if (!odwrotnie) ok = nazwiskoWpisane.matches(nazwisko);
 
-        if (nazwiskoWpisane.matches("")) zrobToast("Wpisz tłumaczenie");
+        if (
+                nazwiskoWpisane.contains("\\")||
+                nazwiskoWpisane.contains("@")||
+                nazwiskoWpisane.contains("#")||
+                nazwiskoWpisane.contains("$")||
+                nazwiskoWpisane.contains("%")||
+                nazwiskoWpisane.contains("^")||
+                nazwiskoWpisane.contains("&")||
+                nazwiskoWpisane.contains("*")||
+                nazwiskoWpisane.contains("(")||
+                nazwiskoWpisane.contains(")")||
+                nazwiskoWpisane.contains("-")||
+                nazwiskoWpisane.contains("_")||
+                nazwiskoWpisane.contains("=")||
+                nazwiskoWpisane.contains("{")||
+                nazwiskoWpisane.contains("}")||
+                nazwiskoWpisane.contains("[")||
+                nazwiskoWpisane.contains("]")||
+                nazwiskoWpisane.contains(":")||
+                nazwiskoWpisane.contains(";")||
+                nazwiskoWpisane.contains("<")||
+                nazwiskoWpisane.contains(">")||
+                nazwiskoWpisane.contains(",")||
+                nazwiskoWpisane.contains(".")||
+                nazwiskoWpisane.contains("/")||
+                nazwiskoWpisane.contains("|")||
+                nazwiskoWpisane.contains("\"")||
+                nazwiskoWpisane.contains("+")
+
+        ) zrobToast("Nieodpowiedni znak!");
+
+        else if (nazwiskoWpisane.matches("")) zrobToast("Wpisz tłumaczenie");
         else if(ok)
         {
             Log.d(TAG, "sprawdz: dobre");
@@ -164,7 +195,7 @@ public class KartkowkaFragment extends Fragment {
                 Log.d(TAG, "napelnijTabele: napelniono.");
             }else
             {
-                Toast.makeText(getContext(), "DodajActivity przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
+                zrobToast("Dodaj przynajmniej dwa słówka aby rozpocząć");
             }
 
 //--------losuj slowko---------------
@@ -209,7 +240,7 @@ public class KartkowkaFragment extends Fragment {
         }else
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).addToBackStack(null).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).disallowAddToBackStack().commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
     }
@@ -292,17 +323,8 @@ public class KartkowkaFragment extends Fragment {
                 break;
             }
             case "koniec": {
-                text.setText(R.string.koniec);
-                layout.setBackgroundResource(R.color.kartkowkaKoniec);
-                TextView text2 = layout.findViewById(R.id.text2);
-                text2.setText(String.format("Dobrych: %s  \nZłych: %s", dobrych, zlych));
-                Toast toast = new Toast(getContext());
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-                toast.show();
-                MainActivity.fragmentManager.beginTransaction().remove(this).commit();
-                startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KoniecKartkowkiFragment(String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych), String.format(Locale.getDefault(), "złych:\n%d", zlych))).disallowAddToBackStack().commit();
+//                startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
                 break;
             }
         }

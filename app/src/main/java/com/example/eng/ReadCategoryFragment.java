@@ -79,7 +79,6 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     public void onClickKlikniecie(int position) {
         //na razie tylko toast
         klucz=nazwa[position];
-        zrobToast("Klik pozycja: "+position+klucz);
 //        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
 //        startActivity(intents);
 //          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
@@ -89,7 +88,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
             DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
         }
         if (skont.equals("kartkowka")) {
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(klucz)).addToBackStack(null).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(klucz)).commit();
         }
         if (skont.equals("fiszki")) {
             MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(klucz)).addToBackStack(null).commit();

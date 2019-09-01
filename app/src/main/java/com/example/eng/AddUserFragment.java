@@ -23,7 +23,7 @@ public class AddUserFragment extends Fragment {
     private EditText Username, Usersurname;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
     private TextView Categoryname;
-    View layout;
+    View layout, dofaba;
 
     public AddUserFragment(String katego) {
         kategoria = katego;
@@ -35,6 +35,7 @@ public class AddUserFragment extends Fragment {
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_add_user, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
+        dofaba = inflater.inflate(R.layout.activity_dodaj, container, false);
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
@@ -60,7 +61,64 @@ public class AddUserFragment extends Fragment {
                     imie = Username.getText().toString().trim();
                     nazwisko = Usersurname.getText().toString().trim();
 
-                    if ((!imie.equals(""))&&(!nazwisko.equals("")))
+                    if (
+                            nazwisko.contains("\\")||
+                            nazwisko.contains("@")||
+                            nazwisko.contains("#")||
+                            nazwisko.contains("$")||
+                            nazwisko.contains("%")||
+                            nazwisko.contains("^")||
+                            nazwisko.contains("&")||
+                            nazwisko.contains("*")||
+                            nazwisko.contains("(")||
+                            nazwisko.contains(")")||
+                            nazwisko.contains("-")||
+                            nazwisko.contains("_")||
+                            nazwisko.contains("=")||
+                            nazwisko.contains("{")||
+                            nazwisko.contains("}")||
+                            nazwisko.contains("[")||
+                            nazwisko.contains("]")||
+                            nazwisko.contains(":")||
+                            nazwisko.contains(";")||
+                            nazwisko.contains("<")||
+                            nazwisko.contains(">")||
+                            nazwisko.contains(",")||
+                            nazwisko.contains(".")||
+                            nazwisko.contains("/")||
+                            nazwisko.contains("|")||
+                            nazwisko.contains("\"")||
+                            nazwisko.contains("+")||
+
+                            imie.contains("\\")||
+                            imie.contains("@")||
+                            imie.contains("#")||
+                            imie.contains("$")||
+                            imie.contains("%")||
+                            imie.contains("^")||
+                            imie.contains("&")||
+                            imie.contains("*")||
+                            imie.contains("(")||
+                            imie.contains(")")||
+                            imie.contains("-")||
+                            imie.contains("_")||
+                            imie.contains("=")||
+                            imie.contains("{")||
+                            imie.contains("}")||
+                            imie.contains("[")||
+                            imie.contains("]")||
+                            imie.contains(":")||
+                            imie.contains(";")||
+                            imie.contains("<")||
+                            imie.contains(">")||
+                            imie.contains(",")||
+                            imie.contains(".")||
+                            imie.contains("/")||
+                            imie.contains("|")||
+                            imie.contains("\"")||
+                            imie.contains("+")
+                    ) zrobToast("Nieodpowiedni znak!");
+                    else if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {
                         User user = new User();
                         user.setName(imie);

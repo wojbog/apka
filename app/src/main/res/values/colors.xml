@@ -24,4 +24,5 @@
     <color name="kartkowkaGreen">#05b06f</color>
     <color name="kartkowkaRed">#a90220</color>
     <color name="kartkowkaKoniec">#384596</color>
+    <color name="buttonBackground">#1d3741</color>
 </resources>

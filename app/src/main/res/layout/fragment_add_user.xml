@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/primaryTextColor"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +25,7 @@
             android:layout_marginTop="68dp"
             android:layout_marginEnd="8dp"
             android:text="Dodaj słówko"
+            android:textColor="@color/primaryTextColor"
             android:textAlignment="center"
             android:textSize="50sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +41,7 @@
             android:layout_marginTop="184dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
+            android:textColor="@color/primaryTextColor"
 
             android:text="Słówko"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +57,7 @@
             android:layout_marginTop="268dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
+            android:textColor="@color/primaryTextColor"
             android:inputType="textPersonName"
             android:text="Tłumaczenie"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +74,7 @@
             android:layout_marginBottom="8dp"
             android:text="TextView"
             android:textSize="20dp"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.521"
