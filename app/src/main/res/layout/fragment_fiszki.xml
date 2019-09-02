@@ -29,7 +29,7 @@
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginTop="524dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshapepusty"
         android:text="@string/kolejne"
         android:textColor="@color/primaryTextColor"
         app:layout_constraintEnd_toEndOf="parent"

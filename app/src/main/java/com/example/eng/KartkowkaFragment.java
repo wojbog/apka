@@ -237,11 +237,17 @@ public class KartkowkaFragment extends Fragment {
 //                }
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
-        }else
+        }else if (!kateg.equals("Wybierz"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).disallowAddToBackStack().commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).disallowAddToBackStack().commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
+        }
+        else
+        {
+            zrobToast("Najpierw wybierz kategorię!");
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).disallowAddToBackStack().commit();
+            Log.d(TAG, "losujSlowko: nie wybrano kategorii");
         }
     }
 
@@ -323,7 +329,7 @@ public class KartkowkaFragment extends Fragment {
                 break;
             }
             case "koniec": {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KoniecKartkowkiFragment(String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych), String.format(Locale.getDefault(), "złych:\n%d", zlych))).disallowAddToBackStack().commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KoniecKartkowkiFragment(String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych), String.format(Locale.getDefault(), "złych:\n%d", zlych), kateg)).disallowAddToBackStack().commit();
 //                startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
                 break;
             }

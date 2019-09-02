@@ -15,10 +15,20 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private String TAG="LOGHomeFragment";
+    private String
+            TAG="LOGHomeFragment",
+            kategoria;
 
-    public HomeFragment() {
+//    TODO:
+//        -usuwanie kategorii to od razu z wszystkimi slowkami
+//        -floating Action btn w kategoriach (Próbowałem i się nie udało)
+//        -dogadać się co do designu
+//        -zrobić logo
+//        -dogadać się co do nazwy apki
+//        -w miarę możliwości animacje i gesty
 
+    public HomeFragment(String kat) {
+        kategoria = kat;
     }
 
 
@@ -42,7 +52,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Button bnDodaj = view.findViewById(R.id.add);
         bnDodaj.setOnClickListener(this);
 
-
+        Button wybierzKategorieBtn = view.findViewById(R.id.wybierzKategorieBtn);
+        wybierzKategorieBtn.setOnClickListener(this);
+        wybierzKategorieBtn.setText(kategoria);
 
         return view;
     }
@@ -54,20 +66,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_view_users:
                 Log.d(TAG, "onClick: bn_view_users clicked.");
-//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment("")).addToBackStack(null).commit();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment()).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na odczytanie slowek");
                 break;
 
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment("kartkowka")).addToBackStack(null).commit();
+//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment("kartkowka")).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(kategoria)).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na kategorie z kartkowki");
                 break;
 
             case R.id.bn_fiszki:
                 Log.d(TAG, "onClick: bn_fiszki clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("fiszki")).addToBackStack(null).commit();
+//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("fiszki")).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(kategoria)).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na fiszki");
                 break;
 
@@ -78,7 +91,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Log.d(TAG, "onClick: fragment zmieniony na dodaj activity");
                 break;
 
-
+            case R.id.wybierzKategorieBtn:
+                Log.d(TAG, "onClick: wybierzKategorieBtn clicked.");
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie")).addToBackStack(null).commit();
+                Log.d(TAG, "onClick: fragment zmieniony na readCategoryFragment");
 
 
         }

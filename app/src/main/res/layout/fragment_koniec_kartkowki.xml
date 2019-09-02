@@ -51,7 +51,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="504dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshapepusty"
         android:text="Zakończ"
         android:textColor="@color/primaryTextColor"
         android:textSize="20sp"

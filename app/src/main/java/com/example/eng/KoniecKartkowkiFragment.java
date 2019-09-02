@@ -18,13 +18,14 @@ import android.widget.TextView;
  */
 public class KoniecKartkowkiFragment extends Fragment {
 
-    String dobrych, zlych;
+    String dobrych, zlych, kategoria;
     TextView dobrychTVkoniec, zlychTVkoniec;
     Button zakoncz;
 
-    public KoniecKartkowkiFragment(String dobryh, String zlyh) {
+    public KoniecKartkowkiFragment(String dobryh, String zlyh, String kateg) {
         dobrych = dobryh;
         zlych = zlyh;
+        kategoria = kateg;
     }
 
 
@@ -43,7 +44,7 @@ public class KoniecKartkowkiFragment extends Fragment {
         zakoncz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).disallowAddToBackStack().commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).disallowAddToBackStack().commit();
             }
         });
 

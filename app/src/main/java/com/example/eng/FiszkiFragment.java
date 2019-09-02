@@ -109,7 +109,7 @@ public class FiszkiFragment extends Fragment {
             Log.d(TAG, "napelnijTabele: napelniono.");
         }else
         {
-            Toast.makeText(getContext(), "DodajActivity przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
+            zrobToast("Dodaj przynajmniej dwa słówka aby rozpocząć");
         }
 
         int los;
@@ -146,12 +146,29 @@ public class FiszkiFragment extends Fragment {
                 nazwisko = nazwiska[los];
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
-        }else
+        }else if (!kategoria.equals("Wybierz"))
         {
-            Toast.makeText(getContext(), "dodaj przynajmniej dwa słówka aby rozpocząć", Toast.LENGTH_LONG).show();
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment()).addToBackStack(null).commit();
+            zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).addToBackStack(null).commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
+        else
+        {
+            zrobToast("Najpierw wybierz kategorię!");
+        }
+    }
+
+    private void zrobToast(String coNapisac) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) view.findViewById(R.id.custom_toast_container));
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(coNapisac);
+
+        Toast toast = new Toast(getContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 
 }
