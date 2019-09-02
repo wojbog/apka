@@ -1,11 +1,7 @@
 package com.example.eng;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,12 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
-
-
 
 public class KartkowkaFragment extends Fragment {
 
@@ -226,15 +219,8 @@ public class KartkowkaFragment extends Fragment {
 
                 test = 0;
                 ostatnieLosy[los] = 1;
-//                if (odwrotnie)
-//                {
-//                imie = nazwiska[los];
-//                nazwisko = imiona[los];
-//                }else if (!odwrotnie)
-//                {
                 imie = imiona[los];
                 nazwisko = nazwiska[los];
-//                }
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
         }else if (!kateg.equals("Wybierz"))
@@ -250,51 +236,6 @@ public class KartkowkaFragment extends Fragment {
             Log.d(TAG, "losujSlowko: nie wybrano kategorii");
         }
     }
-
-//    private void napelnijTabele()
-//    {
-//        Log.d(TAG, "napelnijTabele: called.");
-//        int g =0;
-//
-//        ostatnieLosy = new int[users.size()];
-//        for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
-//
-//        if (users.size()>0)
-//        {
-//            for(User s:users)
-//            {
-//                String imie =s.getName();
-//                String nazwisko = s.getSurname();
-//                imiona[g] = imie;
-//                nazwiska[g] = nazwisko;
-//                g++;
-//            }
-//            Log.d(TAG, "napelnijTabele: napelniono.");
-//        }else
-//        {
-//            Toast.makeText(getContext(), "DodajActivity przynajmniej jedno słówko", Toast.LENGTH_SHORT).show();
-//        }
-//    }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        menu.add(1, 1, 1, "zmień kolejność");
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        //noinspection SimplifiableIfStatement
-//        switch (id) {
-//            case 1:
-//                if (odwrotnie) odwrotnie=false;
-//                else if (!odwrotnie) odwrotnie=true;
-//                break;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
     private void pokazToast(String kolor)
     {
@@ -329,8 +270,18 @@ public class KartkowkaFragment extends Fragment {
                 break;
             }
             case "koniec": {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KoniecKartkowkiFragment(String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych), String.format(Locale.getDefault(), "złych:\n%d", zlych), kateg)).disallowAddToBackStack().commit();
-//                startActivity(new Intent(getActivity().getApplication(), MainActivity.class));
+                MainActivity
+                    .fragmentManager
+                    .beginTransaction()
+                    .replace(
+                        R.id.stefan, new KoniecKartkowkiFragment(
+                            String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych),
+                            String.format(Locale.getDefault(), "złych:\n%d", zlych),
+                            kateg
+                        )
+                    )
+                    .disallowAddToBackStack()
+                    .commit();
                 break;
             }
         }

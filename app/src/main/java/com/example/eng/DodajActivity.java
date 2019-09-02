@@ -2,13 +2,10 @@ package com.example.eng;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class DodajActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;

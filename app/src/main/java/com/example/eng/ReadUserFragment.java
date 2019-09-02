@@ -5,27 +5,18 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ReadUserFragment extends Fragment {
 
     private RecyclerView recyclerView;
@@ -95,8 +86,6 @@ String TAG="ReadUserFragment";
                     toast.setView(layout);
                     toast.show();
 
-                    //TxUserId.setText("");
-                    //Log.d(TAG, "onClick: Deleted.");
                 }
                 catch(Exception e)
                 {

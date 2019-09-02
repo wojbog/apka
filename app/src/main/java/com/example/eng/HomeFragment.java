@@ -1,17 +1,13 @@
 package com.example.eng;
 
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -23,20 +19,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        -usuwanie kategorii to od razu z wszystkimi slowkami
 //        -floating Action btn w kategoriach (Próbowałem i się nie udało)
 //        -dogadać się co do designu
+//        -usunąć zbędne komentarze w kodzie
+//        -zrobić porządek w kodzie
 //        -zrobić logo
 //        -dogadać się co do nazwy apki
 //        -w miarę możliwości animacje i gesty
 
-    public HomeFragment(String kat) {
-        kategoria = kat;
-    }
+    public HomeFragment(String kat) { kategoria = kat; }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: called.");
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
@@ -72,14 +67,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadCategoryFragment("kartkowka")).addToBackStack(null).commit();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(kategoria)).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na kategorie z kartkowki");
                 break;
 
             case R.id.bn_fiszki:
                 Log.d(TAG, "onClick: bn_fiszki clicked.");
-//                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("fiszki")).addToBackStack(null).commit();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(kategoria)).addToBackStack(null).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na fiszki");
                 break;

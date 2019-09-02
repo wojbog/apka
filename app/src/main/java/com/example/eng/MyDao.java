@@ -21,9 +21,6 @@ public interface MyDao {
 
     @Query("select * from users where kategoria = :cat")
     List<User> loadUserByKategoria(String cat);
-//
-//    @Query("select kategoria from users LIMIT 1 ")
-//    public List<User> loadKategorie();
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
     List<User> loadAllCategory();

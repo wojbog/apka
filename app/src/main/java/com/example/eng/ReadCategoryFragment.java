@@ -1,22 +1,15 @@
 package com.example.eng;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,12 +70,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     }
     @Override
     public void onClickKlikniecie(int position) {
-        //na razie tylko toast
         klucz=nazwa[position];
-//        Intent intents = new Intent(getActivity().getApplication(), DodajUser.class);
-//        startActivity(intents);
-//          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment(klucz)).commit();
-//          DodajActivity.fragmentManager.beginTransaction().add(R.id.kontener,new ReadUserFragment()).commit();
 
         if (skont.equals("kategoria")) {
             DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
@@ -90,23 +78,6 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         if (skont.equals("wybierzKategorie")) {
             MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(klucz)).commit();
         }
-//        if (skont.equals("kartkowka")) {
-//            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(klucz)).commit();
-//        }
-//        if (skont.equals("fiszki")) {
-//            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(klucz)).addToBackStack(null).commit();
-//        }
     }
-
-    private void zrobToast(String coNapisac) {
-        TextView text = (TextView) layout.findViewById(R.id.text);
-        text.setText(coNapisac);
-
-        Toast toast = new Toast(getContext());
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();
-    }
-
 
 }

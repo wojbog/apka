@@ -1,12 +1,8 @@
 package com.example.eng;
 
-
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-
 
 public class AddUserFragment extends Fragment {
 
     private EditText Username, Usersurname;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
-    private TextView Categoryname;
-    View layout, dofaba;
+    private View layout;
 
     public AddUserFragment(String katego) {
         kategoria = katego;
@@ -35,18 +28,13 @@ public class AddUserFragment extends Fragment {
         Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_add_user, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
-        dofaba = inflater.inflate(R.layout.activity_dodaj, container, false);
 
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
-        Categoryname = view.findViewById(R.id.zobacz_category);
+        TextView categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
 
-       // ReadCategoryFragment readCategoryFragment = new ReadCategoryFragment();
-       // kategoria=readCategoryFragment.klucz;
-        //tu chciałem dodac aby tak kategoria automatycznie się przekazała ale to nie działa
-        //już działa :)
-        Categoryname.setText(kategoria);
+        categoryname.setText(kategoria);
         Username.setText("");
         Username.setHint("Słówko");
         Usersurname.setText("");

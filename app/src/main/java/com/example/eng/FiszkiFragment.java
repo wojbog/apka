@@ -1,12 +1,8 @@
 package com.example.eng;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.List;
 import java.util.Random;
-
 
 public class FiszkiFragment extends Fragment {
 
@@ -30,7 +24,6 @@ public class FiszkiFragment extends Fragment {
     private boolean odwrocone=false;
     private List<User> users;
     private TextView kartaTV;
-    private Button button;
     private int[] ostatnieLosy;
     private int test=0;
     private Random random = new Random();
@@ -48,7 +41,7 @@ public class FiszkiFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_fiszki, container, false);
         users = MainActivity.baza.myDao().loadUserByKategoria(kategoria);
         kartaTV = view.findViewById(R.id.kartaTV);
-        button = view.findViewById(R.id.kolejneBtn);
+        Button button = view.findViewById(R.id.kolejneBtn);
 
         ostatnieLosy = new int[users.size()];
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
@@ -60,7 +53,7 @@ public class FiszkiFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 losujSlowko();
-                if (!odwrocone) kartaTV.setText(imie); else if (odwrocone) kartaTV.setText(nazwisko);
+                if (!odwrocone) kartaTV.setText(imie); else kartaTV.setText(nazwisko);
             }
         });
 
@@ -72,8 +65,7 @@ public class FiszkiFragment extends Fragment {
                     kartaTV.setText(nazwisko);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishapereversed));
                     odwrocone=true;
-                }else if (odwrocone)
-                {
+                }else {
                     kartaTV.setText(imie);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishape));
                     odwrocone=false;
@@ -85,7 +77,7 @@ public class FiszkiFragment extends Fragment {
         return view;
     }
 
-    void losujSlowko()
+    private void losujSlowko()
     {
         String[]
                 imiona = new String[users.size()],

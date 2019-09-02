@@ -1,12 +1,8 @@
 package com.example.eng;
 
-
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.snackbar.Snackbar;
-
 
 public class AddCategoryFragment extends Fragment {
 
@@ -28,7 +21,7 @@ public class AddCategoryFragment extends Fragment {
     View layout;
 
     public AddCategoryFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -51,8 +44,39 @@ public class AddCategoryFragment extends Fragment {
                 kategoria = napiszKategorieET.getText().toString().trim();
 
 
-                if (kc("/")||kc("|")||kc("\\")||kc("!")||kc("@")||kc("#")||kc("$")||kc("%")||kc("^")||kc("&")||kc("*")||kc("(")||kc(")")||kc("_")||kc("-")||kc("=")||kc("+")||kc("{")||kc("[")||kc("}")||kc("]")||kc(":")||kc(";")||kc("'")||kc("")||kc("<")||kc(",")||kc(".")||kc(">")||kc("?")||kc("/"))
-                {
+                if (
+                        kc("/")||
+                        kc("|")||
+                        kc("\\")||
+                        kc("!")||
+                        kc("@")||
+                        kc("#")||
+                        kc("$")||
+                        kc("%")||
+                        kc("^")||
+                        kc("&")||
+                        kc("*")||
+                        kc("(")||
+                        kc(")")||
+                        kc("_")||
+                        kc("-")||
+                        kc("=")||
+                        kc("+")||
+                        kc("{")||
+                        kc("[")||
+                        kc("}")||
+                        kc("]")||
+                        kc(":")||
+                        kc(";")||
+                        kc("'")||
+                        kc("\"")||
+                        kc("<")||
+                        kc(",")||
+                        kc(".")||
+                        kc(">")||
+                        kc("?")||
+                        kc("/")
+                ) {
                     zrobToast("Nieodpowiedni znak!");
                 }
                 else if (!kategoria.equals(""))
@@ -78,13 +102,13 @@ public class AddCategoryFragment extends Fragment {
         return view;
     }
 
-    boolean kc(String a)
+    private boolean kc(String a)
     {
         return kategoria.contains(a);
     }
 
     private void zrobToast(String coNapisac) {
-        TextView text = (TextView) layout.findViewById(R.id.text);
+        TextView text = layout.findViewById(R.id.text);
         text.setText(coNapisac);
 
         Toast toast = new Toast(getContext());
