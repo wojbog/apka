@@ -155,6 +155,7 @@ public class FiszkiFragment extends Fragment {
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).addToBackStack(null).commit();
         }
     }
 
