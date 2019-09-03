@@ -45,7 +45,6 @@ public class AddCategoryFragment extends Fragment {
 
 
                 if (
-                        kc("/")||
                         kc("|")||
                         kc("\\")||
                         kc("!")||
