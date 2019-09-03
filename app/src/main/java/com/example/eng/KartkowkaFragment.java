@@ -226,13 +226,13 @@ public class KartkowkaFragment extends Fragment {
         }else if (!kateg.equals("Wybierz"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).disallowAddToBackStack().commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).disallowAddToBackStack().commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).commit();
             Log.d(TAG, "losujSlowko: nie wybrano kategorii");
         }
     }
@@ -280,7 +280,6 @@ public class KartkowkaFragment extends Fragment {
                             kateg
                         )
                     )
-                    .disallowAddToBackStack()
                     .commit();
                 break;
             }

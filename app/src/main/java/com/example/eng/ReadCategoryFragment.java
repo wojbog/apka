@@ -73,7 +73,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         klucz=nazwa[position];
 
         if (skont.equals("kategoria")) {
-            DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
+            DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).commit();
         }
         if (skont.equals("wybierzKategorie")) {
             MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(klucz)).commit();

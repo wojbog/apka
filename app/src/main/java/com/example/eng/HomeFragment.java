@@ -61,19 +61,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_view_users:
                 Log.d(TAG, "onClick: bn_view_users clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan,new ReadUserFragment()).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na odczytanie slowek");
                 break;
 
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(kategoria)).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new KartkowkaFragment(kategoria)).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na kategorie z kartkowki");
                 break;
 
             case R.id.bn_fiszki:
                 Log.d(TAG, "onClick: bn_fiszki clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(kategoria)).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(kategoria)).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na fiszki");
                 break;
 
@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.wybierzKategorieBtn:
                 Log.d(TAG, "onClick: wybierzKategorieBtn clicked.");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie")).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie")).commit();
                 Log.d(TAG, "onClick: fragment zmieniony na readCategoryFragment");
 
 
