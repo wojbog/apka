@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.stefan,new HomeFragment("Wybierz")).commit();
+            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz")).commit();
             Log.d(TAG, "onCreate: zmiana na home fragment");
         }
 
