@@ -34,7 +34,7 @@ public class KoniecKartkowkiFragment extends Fragment {
         zakoncz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).disallowAddToBackStack().commit();
             }
         });
 

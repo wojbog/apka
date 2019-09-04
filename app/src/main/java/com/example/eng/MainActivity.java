@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-    @Override
-    public void onBackPressed() {
-        long t = System.currentTimeMillis();
-        if (t - backPressedTime > 2000) {
-            backPressedTime = t;
-            Toast.makeText(this, "Naciśnij jeszcze raz aby wyjść",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            super.onBackPressed();
-        }
-    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        long t = System.currentTimeMillis();
+//        if (t - backPressedTime > 2000) {
+//            backPressedTime = t;
+//            Toast.makeText(this, "Naciśnij jeszcze raz aby wyjść",
+//                    Toast.LENGTH_SHORT).show();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 }

@@ -280,6 +280,7 @@ public class KartkowkaFragment extends Fragment {
                             kateg
                         )
                     )
+                    .addToBackStack(null)
                     .commit();
                 break;
             }
