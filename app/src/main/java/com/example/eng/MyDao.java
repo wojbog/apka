@@ -22,6 +22,9 @@ public interface MyDao {
     @Query("select * from users where kategoria = :cat")
     List<User> loadUserByKategoria(String cat);
 
+    @Query("select * from users ORDER BY RANDOM() LIMIT 1")
+    List<User> loadLos();
+
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
     List<User> loadAllCategory();
 

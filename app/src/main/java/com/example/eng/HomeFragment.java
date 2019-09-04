@@ -18,10 +18,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //    TODO:
 //        -usuwanie kategorii to od razu z wszystkimi slowkami
 //        -floating Action btn w kategoriach (Próbowałem i się nie udało)
-//        -dogadać się co do designu
-//        -usunąć zbędne komentarze w kodzie
-//        -zrobić porządek w kodzie
 //        -zrobić logo
+//        -zrobić widget
 //        -dogadać się co do nazwy apki
 //        -w miarę możliwości animacje i gesty
 

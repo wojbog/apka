@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryDarkColor"
+    android:padding="@dimen/widget_margin">
+
+    <TextView
+        android:id="@+id/kartaWTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/fiszkishape"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/jakie_slowko"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="60sp" />
+
+</RelativeLayout>
