@@ -73,10 +73,10 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         klucz=nazwa[position];
 
         if (skont.equals("kategoria")) {
-            DodajActivity.fragmentManager.beginTransaction().replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
+            DodajActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
         }
         if (skont.equals("wybierzKategorie")) {
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(klucz)).addToBackStack(null).commit();
+            MainActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.stefan, new HomeFragment(klucz)).addToBackStack(null).commit();
         }
     }
 
