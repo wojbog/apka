@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +55,8 @@ public class FiszkiFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 losujSlowko();
+                kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
+                        R.anim.rotate));
                 if (!odwrocone) kartaTV.setText(imie); else kartaTV.setText(nazwisko);
             }
         });
@@ -64,10 +68,14 @@ public class FiszkiFragment extends Fragment {
                 if (!odwrocone) {
                     kartaTV.setText(nazwisko);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishapereversed));
+                    kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
+                            R.anim.rotate));
                     odwrocone=true;
                 }else {
                     kartaTV.setText(imie);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishape));
+                    kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
+                            R.anim.rotate2));
                     odwrocone=false;
                 }
             }
