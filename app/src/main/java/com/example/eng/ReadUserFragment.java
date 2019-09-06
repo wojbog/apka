@@ -46,7 +46,7 @@ String TAG="ReadUserFragment";
         view =  inflater.inflate(R.layout.fragment_read_user, container, false);
 
 
-        final List<User> users =MainActivity.baza.myDao().getUsers();
+        final List<User> users =MainActivity.baza.myDao().loadUserOrderByKategoria();
         andrzej=users;
 
 

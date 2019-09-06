@@ -1,8 +1,6 @@
 <resources>
-    <string name="app_name">eng</string>
+    <string name="app_name">TEA</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_kartkowka">Kartkówka z słówek</string>
     <string name="przykladowe_slowko">Przykładowe słówko</string>
     <string name="przykladowe_tlumaczenie">Przykładowe tłumaczenie</string>
     <string name="jakie_slowko">jakieś słówko</string>
@@ -15,11 +13,9 @@
     <string name="dobrze">Dobrze :)</string>
     <string name="zatwierdz">Zatwierdź</string>
     <string name="koniec">KONIEC!!</string>
-    <string name="title_activity_fiszki">FiszkiActivity</string>
-    <string name="title_activity_elomordocp">elomordocp</string>
     <string name="odwroc">odwróć</string>
     <string name="jakies_tlumaczenie">Jakieś Tłumaczenie</string>
     <string name="kolejne"><![CDATA[Kolejne --->]]></string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
+    <string name="appwidget_text">TEA widget</string>
+    <string name="add_widget">Dodaj widżet</string>
 </resources>

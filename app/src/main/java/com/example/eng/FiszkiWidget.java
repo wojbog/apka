@@ -16,7 +16,7 @@ public class FiszkiWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, int[] appWidgetIds) {
 
-        List<User> users = MainActivity.baza.myDao().loadLos();
+        List<User> users = MainActivity.baza.myDao().getUsers();
 
         String[]
                 imiona = new String[users.size()],

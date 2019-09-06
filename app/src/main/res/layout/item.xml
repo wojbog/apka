@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#1d3741">
+        android:background="@color/buttonBackground">
 
         <TextView
             android:id="@+id/nad"
@@ -43,9 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="30dp"
-            android:text="20"
+            android:layout_marginStart="298dp"
+            android:layout_marginTop="32dp"
+            android:text="Kategoria"
             android:textColor="@color/primaryTextColor" />
 
     </RelativeLayout>

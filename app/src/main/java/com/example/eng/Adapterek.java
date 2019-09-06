@@ -39,7 +39,8 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
     User currentItem = mlist.get(position);
     holder.jedynka.setText(currentItem.getName());
     holder.dwojka.setText(currentItem.getSurname());
-    holder.kolejny.setText(String.format(Locale.getDefault(),"%d",currentItem.id));
+//    holder.kolejny.setText(String.format(Locale.getDefault(),"%d",currentItem.id));
+    holder.kolejny.setText(currentItem.getCategory());
     }
 public void setMlist(List<User> notes)
 {

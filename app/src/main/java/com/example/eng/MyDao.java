@@ -16,8 +16,8 @@ public interface MyDao {
     @Query("select *from users")
     List<User> getUsers();
 
-    @Query("select * from users where id = :td LIMIT 1 ")
-    User loadUserById(int td);
+    @Query("select * from users order by kategoria ASC")
+    List<User> loadUserOrderByKategoria();
 
     @Query("select * from users where kategoria = :cat")
     List<User> loadUserByKategoria(String cat);
