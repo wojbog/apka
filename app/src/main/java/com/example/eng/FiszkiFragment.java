@@ -49,14 +49,18 @@ public class FiszkiFragment extends Fragment {
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
 
         losujSlowko();
+        final Animation animation;
+        animation = AnimationUtils.loadAnimation(getContext(),
+                R.anim.rotate);
+        final Animation animation2;
+        animation2 = AnimationUtils.loadAnimation(getContext(),
+                R.anim.rotate2);
         kartaTV.setText(imie);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 losujSlowko();
-                kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
-                        R.anim.rotate));
                 if (!odwrocone) kartaTV.setText(imie); else kartaTV.setText(nazwisko);
             }
         });
@@ -66,16 +70,14 @@ public class FiszkiFragment extends Fragment {
             public void onClick(View view) {
                 Log.d(TAG, "onClick: called.");
                 if (!odwrocone) {
+                    kartaTV.startAnimation(animation);
                     kartaTV.setText(nazwisko);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishapereversed));
-                    kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
-                            R.anim.rotate));
                     odwrocone=true;
                 }else {
+                    kartaTV.startAnimation(animation2);
                     kartaTV.setText(imie);
                     kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishape));
-                    kartaTV.setAnimation(AnimationUtils.loadAnimation(getContext(),
-                            R.anim.rotate2));
                     odwrocone=false;
                 }
             }
