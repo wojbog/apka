@@ -32,7 +32,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="244dp"
         android:layout_marginEnd="8dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/podaj_tlumaczenie"
         android:inputType="textPersonName"
@@ -41,7 +40,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/bn_sprawdz"
@@ -119,7 +119,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/buttonshapepusty"
         android:textColor="@color/primaryTextColor"
-        android:text="Zmień języki"
+        android:text="@string/zmie_j_zyki"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

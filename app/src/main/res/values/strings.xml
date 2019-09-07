@@ -13,10 +13,22 @@
     <string name="dobrze">Dobrze :)</string>
     <string name="zatwierdz">Zatwierdź</string>
     <string name="koniec">KONIEC!!</string>
-    <string name="odwroc">odwróć</string>
+    <string name="odwroc">Odwróć</string>
     <string name="jakies_tlumaczenie">Jakieś Tłumaczenie</string>
-    <string name="jakias_kategoria">Jakiaś kategoria</string>
+    <string name="jakias_kategoria">Jakaś kategoria</string>
     <string name="kolejne"><![CDATA[Kolejne --->]]></string>
     <string name="appwidget_text">TEA widget</string>
     <string name="add_widget">Dodaj widżet</string>
+    <string name="tea_tests_exams_answers">TEA - Tests Exams Answers</string>
+    <string name="przejrzyj_s_wka">Przejrzyj słówka</string>
+    <string name="kartk_wka">Kartkówka</string>
+    <string name="fiszki">Fiszki</string>
+    <string name="dodaj_s_wka">Dodaj słówka</string>
+    <string name="wybrano_kategori">Wybrano kategorię:</string>
+    <string name="wybierz">Wybierz</string>
+    <string name="zmie_j_zyki">Zmień języki</string>
+    <string name="gratulacje">Gratulacje!</string>
+    <string name="dobrych_n11">dobrych: \n11</string>
+    <string name="z_ych_n34">złych: \n34</string>
+    <string name="zako_cz">Zakończ</string>
 </resources>
