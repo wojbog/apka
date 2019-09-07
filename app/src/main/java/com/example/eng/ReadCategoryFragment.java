@@ -75,8 +75,9 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
             @Override
             public void onClick(View view) {
                 MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new AddCategoryFragment())
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new AddCategoryFragment(skont))
                         .addToBackStack(null)
                         .commit();
             }
@@ -145,11 +146,21 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     public void onClickKlikniecie(int position) {
         klucz=nazwa[position];
 
-        if (skont.equals("kategoria")) {
-            DodajActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.kontener, new AddUserFragment(klucz)).addToBackStack(null).commit();
+        if (skont.equals("dodajKategorie")) {
+            MainActivity.fragmentManager.beginTransaction()
+                    .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                            android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                    .replace(R.id.stefan, new AddUserFragment(klucz))
+                    .addToBackStack(null)
+                    .commit();
         }
         if (skont.equals("wybierzKategorie")) {
-            MainActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.stefan, new HomeFragment(klucz)).addToBackStack(null).commit();
+            MainActivity.fragmentManager.beginTransaction()
+                    .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                            android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                    .replace(R.id.stefan, new HomeFragment(klucz))
+                    .addToBackStack(null)
+                    .commit();
         }
     }
 

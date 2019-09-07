@@ -15,13 +15,13 @@ public class AddCategoryFragment extends Fragment {
 
 
     private EditText napiszKategorieET;
-    private String kategoria, TAG = "LOGAddCategoryFragment";
+    private String kategoria, TAG = "LOGAddCategoryFragment", skont;
     private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
     private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
     View layout;
 
-    public AddCategoryFragment() {
-
+    public AddCategoryFragment(String s) {
+        skont=s;
     }
 
 
@@ -90,6 +90,13 @@ public class AddCategoryFragment extends Fragment {
 
                     napiszKategorieET.setText("");
                     Log.d(TAG, "onClick: Dodano");
+
+                    MainActivity.fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                    android.R.anim.slide_out_right, android.R.anim.slide_in_left)
+                            .replace(R.id.stefan, new ReadCategoryFragment(skont))
+                            .addToBackStack(null)
+                            .commit();
                 }
                 else {
                     zrobToast("Najpierw wpisz słówko");

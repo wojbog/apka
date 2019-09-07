@@ -84,7 +84,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 //                MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new FiszkiFragment(kategoria)).addToBackStack(null).commit();
                 MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         .replace(R.id.stefan, new FiszkiFragment(kategoria))
                         .addToBackStack(null)
                         .commit();
@@ -94,15 +95,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.add:
                 Log.d(TAG, "onClick: bn_add clicked.");
-                Intent xam = new Intent(getActivity().getApplication(), DodajActivity.class);
-                view.getContext().startActivity(xam);
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie"))
+                        .addToBackStack(null)
+                        .commit();
                 Log.d(TAG, "onClick: fragment zmieniony na dodaj activity");
                 break;
 
             case R.id.wybierzKategorieBtn:
                 Log.d(TAG, "onClick: wybierzKategorieBtn clicked.");
                 MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie"))
                         .addToBackStack(null)
                         .commit();
