@@ -29,13 +29,13 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
    }
 
     @Override
-    public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
         return new ExampleViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
+    public void onBindViewHolder(ExampleViewHolder holder, int position) {
     User currentItem = mlist.get(position);
     holder.jedynka.setText(currentItem.getName());
     holder.dwojka.setText(currentItem.getSurname());
