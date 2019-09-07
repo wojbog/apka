@@ -118,7 +118,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                     elo.remove(id);
                     mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);
-                    MainActivity.baza.myDao().deleteUsers(user);
+                    MainActivity.bazaKategorii.myDao().deleteUsers(user);
 
 //                    Toast.makeText(getContext() ,"Usunięto",Toast.LENGTH_LONG).show();
                     LayoutInflater inflater = getLayoutInflater();
