@@ -1,6 +1,7 @@
 package com.example.eng;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +44,12 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     public ReadCategoryFragment(String skond) {
         skont = skond;
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate: called.");
-    }
+//
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        Log.d(TAG, "onCreate: called.");
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,6 +68,19 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
               felix.add(new Listakategorii(cos));
               i++;
           }
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new AddCategoryFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
 //        // Set the adapter
 //        if (view instanceof RecyclerView) {
