@@ -23,8 +23,8 @@
     <color name="buttonBackgroundPom">#946809</color>
 
 
-    <color name="kartkowkaGreen">#05b06f</color>
-    <color name="kartkowkaRed">#a90220</color>
+    <color name="kartkowkaGreen">#059700</color>
+    <color name="kartkowkaRed">#96000d</color>
     <color name="kartkowkaKoniec">#384596</color>
     <color name="splashColor">#D9B77A</color>
 </resources>

@@ -32,24 +32,17 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     private RecyclerView.LayoutManager layoutManager;
 
     String TAG = "LOGReadCategoryFragment";
+    boolean vi;
     private int mColumnCount = 1;
     View layout, view;
 
 
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
-    public ReadCategoryFragment(String skond) {
+
+    public ReadCategoryFragment(String skond, boolean visibility) {
         skont = skond;
+        vi = visibility;
     }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        Log.d(TAG, "onCreate: called.");
-//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,7 +70,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                 android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new AddCategoryFragment(skont))
+                        .replace(R.id.stefan, new AddCategoryFragment(skont, vi))
                         .addToBackStack(null)
                         .commit();
             }
@@ -158,7 +151,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
             MainActivity.fragmentManager.beginTransaction()
                     .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                             android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                    .replace(R.id.stefan, new HomeFragment(klucz))
+                    .replace(R.id.stefan, new HomeFragment(klucz, vi))
                     .addToBackStack(null)
                     .commit();
         }

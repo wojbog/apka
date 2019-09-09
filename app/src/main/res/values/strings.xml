@@ -31,4 +31,9 @@
     <string name="dobrych_n11">dobrych: \n11</string>
     <string name="z_ych_n34">złych: \n34</string>
     <string name="zako_cz">Zakończ</string>
+    <string name="tlumaczenie">Tłumaczenie</string>
+    <string name="slowko">Słówko</string>
+    <string name="dodaj_slowko">Dodaj słówko</string>
+    <string name="zapisz">Zapisz</string>
+    <string name="przesu_aby_usun">Przesuń aby usunąć</string>
 </resources>

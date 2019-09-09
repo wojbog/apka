@@ -19,9 +19,11 @@ public class AddCategoryFragment extends Fragment {
     private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
     private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
     View layout;
+    boolean vi;
 
-    public AddCategoryFragment(String s) {
+    public AddCategoryFragment(String s, boolean visibility) {
         skont=s;
+        vi=visibility;
     }
 
 
@@ -94,7 +96,7 @@ public class AddCategoryFragment extends Fragment {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new ReadCategoryFragment(skont))
+                            .replace(R.id.stefan, new ReadCategoryFragment(skont, vi))
                             .addToBackStack(null)
                             .commit();
                 }

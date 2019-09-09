@@ -7,6 +7,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,12 +33,14 @@ public class KartkowkaFragment extends Fragment {
     private int[] ostatnieLosy;
     private int test=0, t;
     private boolean
-            odwrotnie=false;
+            odwrotnie=false,
+            vi;
     View view;
 
 
-    public KartkowkaFragment(String k) {
+    public KartkowkaFragment(String k, boolean visibility) {
         kateg = k;
+        vi=visibility;
     }
 
 
@@ -121,7 +125,14 @@ public class KartkowkaFragment extends Fragment {
         {
             Log.d(TAG, "sprawdz: dobre");
             dobrych++;
-            pokazToast("green");
+
+            TextView dobrychTV = view.findViewById(R.id.dobrychTV);
+            final Animation animationScale;
+            animationScale = AnimationUtils.loadAnimation(getContext(),
+                    R.anim.scale2);
+            dobrychTV.startAnimation(animationScale);
+
+//            pokazToast("green");
 
             Log.d(TAG, "sprawdz: pokazano toast");
             restart();
@@ -129,7 +140,13 @@ public class KartkowkaFragment extends Fragment {
         {
             Log.d(TAG, "sprawdz: zle");
             zlych++;
-            pokazToast("red");
+
+            TextView zlychTV = view.findViewById(R.id.zlychTV);
+            final Animation animationScale;
+            animationScale = AnimationUtils.loadAnimation(getContext(),
+                    R.anim.scale);
+            zlychTV.startAnimation(animationScale);
+//            pokazToast("red");
 
             Log.d(TAG, "sprawdz: pokazano toast");
             restart();
@@ -226,13 +243,13 @@ public class KartkowkaFragment extends Fragment {
         }else if (!kateg.equals("Wybierz"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg, vi)).commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg)).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg, vi)).commit();
             Log.d(TAG, "losujSlowko: nie wybrano kategorii");
         }
     }
@@ -277,7 +294,7 @@ public class KartkowkaFragment extends Fragment {
                         R.id.stefan, new KoniecKartkowkiFragment(
                             String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych),
                             String.format(Locale.getDefault(), "złych:\n%d", zlych),
-                            kateg
+                            kateg, vi
                         )
                     )
                     .addToBackStack(null)

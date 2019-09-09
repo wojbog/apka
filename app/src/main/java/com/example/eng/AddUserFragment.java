@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class AddUserFragment extends Fragment {
 
@@ -32,7 +34,7 @@ public class AddUserFragment extends Fragment {
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         TextView categoryname = view.findViewById(R.id.zobacz_category);
-        Button BNsave = view.findViewById(R.id.zapisz);
+        FloatingActionButton BNsave = view.findViewById(R.id.zapisz);
 
         categoryname.setText(kategoria);
         Username.setText("");

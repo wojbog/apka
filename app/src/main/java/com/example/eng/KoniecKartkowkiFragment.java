@@ -11,11 +11,13 @@ import android.widget.TextView;
 public class KoniecKartkowkiFragment extends Fragment {
 
     private String dobrych, zlych, kategoria;
+    boolean vi;
 
-    public KoniecKartkowkiFragment(String dobryh, String zlyh, String kateg) {
+    public KoniecKartkowkiFragment(String dobryh, String zlyh, String kateg, boolean visibility) {
         dobrych = dobryh;
         zlych = zlyh;
         kategoria = kateg;
+        vi=visibility;
     }
 
 
@@ -34,7 +36,7 @@ public class KoniecKartkowkiFragment extends Fragment {
         zakoncz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.stefan, new HomeFragment(kategoria)).disallowAddToBackStack().commit();
+                MainActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.stefan, new HomeFragment(kategoria, vi)).disallowAddToBackStack().commit();
             }
         });
 

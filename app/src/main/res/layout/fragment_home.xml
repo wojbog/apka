@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeFragment">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,33 +15,67 @@
 
         <TextView
             android:id="@+id/tytulApkiTV"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="@string/tea_tests_exams_answers"
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toTopOf="@+id/bn_view_users"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/buttonshape"
+            android:text="@string/dodaj_s_wka"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/bn_view_users"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="336dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
+            android:visibility="gone"
             android:background="@drawable/buttonshape"
-            android:textColor="@color/primaryTextColor"
             android:text="@string/przejrzyj_s_wka"
+            android:textColor="@color/primaryTextColor"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/bn_kartkowka"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bn_fiszki"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="436dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:background="@drawable/buttonshape"
+            android:text="@string/fiszki"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,78 +84,46 @@
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="536dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
+            android:visibility="gone"
             android:background="@drawable/buttonshape"
-            android:textColor="@color/primaryTextColor"
             android:text="@string/kartk_wka"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/bn_fiszki"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bn_view_users" />
-
-        <Button
-            android:id="@+id/bn_fiszki"
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/buttonshape"
             android:textColor="@color/primaryTextColor"
-            android:text="@string/fiszki"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/add"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bn_kartkowka" />
-
-        <Button
-            android:id="@+id/add"
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/buttonshape"
-            android:textColor="@color/primaryTextColor"
-            android:text="@string/dodaj_s_wka"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/wybranoKategorieTV"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bn_fiszki" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/wybranoKategorieTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="244dp"
             android:text="@string/wybrano_kategori"
             android:textAlignment="center"
             android:textColor="@color/primaryTextColor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/wybierzKategorieBtn"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="284dp"
             android:background="@drawable/buttonshapepusty"
-            android:textColor="@color/primaryTextColor"
             android:text="@string/wybierz"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wybranoKategorieTV" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+
+</ScrollView>

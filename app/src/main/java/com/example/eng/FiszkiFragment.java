@@ -23,7 +23,7 @@ public class FiszkiFragment extends Fragment {
             imie,
             nazwisko;
     private View view;
-    private boolean odwrocone=false;
+    private boolean odwrocone=false, vi;
     private List<User> users;
     private TextView kartaTV;
     private int[] ostatnieLosy;
@@ -31,8 +31,9 @@ public class FiszkiFragment extends Fragment {
     private Random random = new Random();
 
 
-    public FiszkiFragment(String kate) {
+    public FiszkiFragment(String kate, boolean visibility) {
         kategoria = kate;
+        vi=visibility;
     }
 
 
@@ -55,11 +56,15 @@ public class FiszkiFragment extends Fragment {
         final Animation animation2;
         animation2 = AnimationUtils.loadAnimation(getContext(),
                 R.anim.rotate2);
+        final Animation animationMove;
+        animationMove = AnimationUtils.loadAnimation(getContext(),
+                R.anim.move);
         kartaTV.setText(imie);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                kartaTV.startAnimation(animationMove);
                 losujSlowko();
                 if (!odwrocone) kartaTV.setText(imie); else kartaTV.setText(nazwisko);
             }
@@ -151,13 +156,13 @@ public class FiszkiFragment extends Fragment {
         }else if (!kategoria.equals("Wybierz"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria, vi)).commit();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria)).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria, vi)).commit();
         }
     }
 

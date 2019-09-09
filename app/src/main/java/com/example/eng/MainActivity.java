@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //TODO: Ustawienia, oceń nas, motywy
+
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: called.");
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz")).commit();
+            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz", false)).commit();
             Log.d(TAG, "onCreate: zmiana na home fragment");
         }
 

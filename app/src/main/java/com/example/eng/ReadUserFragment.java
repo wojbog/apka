@@ -25,8 +25,9 @@ public class ReadUserFragment extends Fragment {
 
     List<User> andrzej;
 
-    String kate;
+    String kategoria;
     View view;
+    boolean vi;
 
 
 
@@ -34,9 +35,10 @@ public class ReadUserFragment extends Fragment {
 String TAG="ReadUserFragment";
 
 
-//    public ReadUserFragment(String k) {
-//        kate = k;
-//    }
+    public ReadUserFragment(String k, boolean visibility) {
+        kategoria = k;
+        vi = visibility;
+    }
 
 
     @Override
@@ -44,9 +46,12 @@ String TAG="ReadUserFragment";
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: called.");
         view =  inflater.inflate(R.layout.fragment_read_user, container, false);
+        final List<User> users;
 
+        if (!kategoria.equals("Wybierz")) {
+            users = MainActivity.baza.myDao().loadUserByKategoria(kategoria);
+        }else users = MainActivity.baza.myDao().loadUserOrderByKategoria();
 
-        final List<User> users =MainActivity.baza.myDao().loadUserOrderByKategoria();
         andrzej=users;
 
 

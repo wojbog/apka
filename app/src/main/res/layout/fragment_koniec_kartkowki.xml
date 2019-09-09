@@ -8,7 +8,7 @@
     tools:context=".KoniecKartkowkiFragment">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/gratulacje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
@@ -24,7 +24,7 @@
         android:id="@+id/dobrychTVkoniec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="276dp"
         android:text="@string/dobrych_n11"
         android:textAlignment="center"
@@ -50,13 +50,13 @@
         android:id="@+id/zakonczBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="460dp"
         android:background="@drawable/buttonshapepusty"
         android:text="@string/zako_cz"
         android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
