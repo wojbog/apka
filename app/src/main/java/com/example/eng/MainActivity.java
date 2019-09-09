@@ -27,11 +27,6 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         Log.d(TAG, "onCreate: zbudowano bazy");
 
-        if (Build.VERSION.SDK_INT>Build.VERSION_CODES.LOLLIPOP){
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.secondaryDarkColor));
-            getWindow().setStatusBarColor(getResources().getColor(R.color.secondaryDarkColor));
-        }
-
         if (Build.VERSION.SDK_INT>28)
         {
             getWindow().setNavigationBarDividerColor(getResources().getColor(R.color.secondaryDarkColor));

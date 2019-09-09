@@ -57,7 +57,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
-        ArrayList<Listakategorii> felix = new ArrayList<>();
+        final ArrayList<Listakategorii> felix = new ArrayList<>();
         final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
         nazwa=new String[elo.size()];
         int i=0;
@@ -106,7 +106,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
             }
 
@@ -116,7 +116,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 {
                     int id= viewHolder.getAdapterPosition();
                     User user= elo.get(id);
-                    elo.remove(id);
+                    felix.remove(id);
                     mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);
                     MainActivity.bazaKategorii.myDao().deleteUsers(user);

@@ -10,6 +10,8 @@
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="colorButtonNormal">@color/buttonBackground</item>
         <item name="android:windowBackground">@color/secondaryDarkColor</item>
+        <item name="android:navigationBarColor">@color/secondaryDarkColor</item>
+        <item name="android:statusBarColor">@color/secondaryDarkColor</item>
     </style>
 
     <style name="AppTheme.pomaranczowy">
@@ -19,6 +21,8 @@
         <item name="android:textColor">@color/primaryTextColorPom</item>
         <item name="colorButtonNormal">@color/buttonBackgroundPom</item>
         <item name="android:windowBackground">@color/secondaryDarkColorPom</item>
+        <item name="android:navigationBarColor">@color/secondaryDarkColor</item>
+        <item name="android:statusBarColor">@color/secondaryDarkColor</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

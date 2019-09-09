@@ -60,10 +60,9 @@
 
     <TextView
         android:id="@+id/dobrychNapis"
-        android:layout_width="199dp"
+        android:layout_width="205dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/kartkowkaGreen"
         android:text="@string/dobrych_odpowiedzi"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -74,10 +73,9 @@
 
     <TextView
         android:id="@+id/zlychNapis"
-        android:layout_width="212dp"
+        android:layout_width="206dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/kartkowkaRed"
         android:text="@string/zlych_odpowiedzi"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -88,10 +86,9 @@
 
     <TextView
         android:id="@+id/zlychTV"
-        android:layout_width="212dp"
+        android:layout_width="206dp"
         android:layout_height="50dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/kartkowkaRed"
         android:text="@string/_11"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -100,10 +97,9 @@
 
     <TextView
         android:id="@+id/dobrychTV"
-        android:layout_width="199dp"
+        android:layout_width="205dp"
         android:layout_height="50dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/kartkowkaGreen"
         android:text="@string/_34"
         android:textAlignment="center"
         android:textSize="30sp"
