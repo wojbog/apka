@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class AddCategoryFragment extends Fragment {
 
@@ -22,6 +24,8 @@ public class AddCategoryFragment extends Fragment {
     private static String su = "meldojthgsbxgslwojrfidyvsnrownxossaa";
     private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
     View layout;
+
+    InterstitialAd mInterstitialAd;
     boolean vi;
 
     public AddCategoryFragment(String s, boolean visibility) {
@@ -36,6 +40,17 @@ public class AddCategoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add_category, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
 
+        mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
 
         AdView mAdView;
         mAdView = view.findViewById(R.id.adViewAddCategory);
@@ -91,6 +106,9 @@ public class AddCategoryFragment extends Fragment {
                 }
                 else if (!kategoria.equals(""))
                 {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
+                    }
                     User user = new User();
                     user.setName(kategoria);
                     user.setSurname(su);
