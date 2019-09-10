@@ -16,26 +16,12 @@ public class FiszkiWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, int[] appWidgetIds) {
 
-        List<User> users = MainActivity.baza.myDao().getUsers();
-
-        String[]
-                imiona = new String[users.size()],
-                nazwiska = new String[users.size()];
-        int g =0;
-
-        for(User s:users)
-        {
-            String imie =s.getName();
-            String nazwisko = s.getSurname();
-            imiona[g] = imie;
-            nazwiska[g] = nazwisko;
-            g++;
-        }
-        Random random = new Random();
-        int los = random.nextInt(users.size());
-
+        User user = MainActivity.baza.myDao().loadLos();
+        String imie = user.getName();
+        String nazwisko = user.getSurname();
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fiszki_widget);
-        views.setTextViewText(R.id.kartaWTV, imiona[los]+"\n------\n"+nazwiska[los]);
+
+        views.setTextViewText(R.id.kartaWTV, imie+"\n------\n"+nazwisko);
 
         Intent intent = new Intent(context, FiszkiWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);

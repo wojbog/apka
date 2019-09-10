@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/secondaryDarkColor"
+    android:background="@color/secondaryDarkColor"
     android:padding="@dimen/widget_margin">
 
     <TextView
@@ -14,7 +14,7 @@
         android:gravity="center"
         android:padding="20dp"
         android:text="@string/jakie_slowko"
-        android:textColor="?attr/primaryTextColor"
+        android:textColor="@color/primaryTextColor"
         android:textSize="60sp" />
 
 </RelativeLayout>
