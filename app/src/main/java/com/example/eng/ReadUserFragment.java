@@ -58,10 +58,10 @@ String TAG="ReadUserFragment";
 
         andrzej=users;
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewReadUser);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewReadUser);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         recyclerView = view.findViewById(R.id.rower);
         recyclerView.setHasFixedSize(true);

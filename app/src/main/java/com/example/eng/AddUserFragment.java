@@ -38,10 +38,10 @@ public class AddUserFragment extends Fragment {
         TextView categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewAddUser);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewAddUser);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         categoryname.setText(kategoria);
         Username.setText("");

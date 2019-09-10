@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".KartkowkaFragment"
-    tools:showIn="@layout/fragment_kartkowka">
+    tools:context=".KartkowkaFragment">
 
     <TextView
         android:id="@+id/slowkoTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
         android:text="@string/jakie_slowko"
         android:textAlignment="center"
-        android:textSize="55sp"
         android:textColor="?attr/primaryTextColor"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,32 +27,32 @@
         android:id="@+id/tlumaczenieET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?attr/primaryTextColor"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/podaj_tlumaczenie"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bn_sprawdz"
         android:layout_width="207dp"
         android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/buttonshape"
+        android:text="@string/zatwierdz"
         android:textColor="?attr/primaryTextColor"
         android:textSize="30sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zatwierdz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,12 +64,12 @@
         android:layout_marginBottom="8dp"
         android:text="@string/dobrych_odpowiedzi"
         android:textAlignment="center"
-        android:textSize="15sp"
         android:textColor="?attr/primaryTextColor"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.159" />
 
     <TextView
         android:id="@+id/zlychNapis"
@@ -84,7 +83,7 @@
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.159" />
 
     <TextView
         android:id="@+id/zlychTV"
@@ -115,7 +114,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="428dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/buttonshapepusty"
         android:text="@string/zmie_j_zyki"
@@ -136,6 +135,7 @@
         app:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/odw"></com.google.android.gms.ads.AdView>
+        app:layout_constraintTop_toBottomOf="@+id/odw">
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

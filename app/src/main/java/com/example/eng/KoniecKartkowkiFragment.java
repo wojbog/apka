@@ -30,10 +30,10 @@ public class KoniecKartkowkiFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_koniec_kartkowki, container, false);
 
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewKoniecKArtkowki);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewKoniecKArtkowki);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         TextView dobrychTVkoniec = view.findViewById(R.id.dobrychTVkoniec);
         TextView zlychTVkoniec = view.findViewById(R.id.zlychTVkoniec);

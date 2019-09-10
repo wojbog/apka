@@ -36,10 +36,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewHome);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewHome);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);

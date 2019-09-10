@@ -52,10 +52,10 @@ public class AddCategoryFragment extends Fragment {
 
         });
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewAddCategory);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewAddCategory);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         napiszKategorieET =view.findViewById(R.id.napisz_kategorieET);
         Button przycisk = view.findViewById(R.id.button_add_category);

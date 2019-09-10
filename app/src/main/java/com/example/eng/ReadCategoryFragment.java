@@ -55,10 +55,10 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         final List<User> userList = MainActivity.bazaKategorii.myDao().loadAllCategory();
 
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewReadCategory);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewReadCategory);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         nazwa=new String[userList.size()];
         int i=0;

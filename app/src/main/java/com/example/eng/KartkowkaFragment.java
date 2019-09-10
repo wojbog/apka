@@ -40,6 +40,7 @@ public class KartkowkaFragment extends Fragment {
             odwrotnie=false,
             vi;
     View view;
+    Button odw;
 
 
     public KartkowkaFragment(String k, boolean visibility) {
@@ -57,10 +58,10 @@ public class KartkowkaFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_kartkowka, container, false);
 
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewKartkowka);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewKartkowka);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         ostatnieLosy = new int[users.size()];
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
@@ -76,7 +77,7 @@ public class KartkowkaFragment extends Fragment {
             }
         });
 
-        final Button odw = view.findViewById(R.id.odw);
+        odw = view.findViewById(R.id.odw);
         odw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +97,7 @@ public class KartkowkaFragment extends Fragment {
         EditText tlumaczenieET = view.findViewById(R.id.tlumaczenieET);
         String nazwiskoWpisane = tlumaczenieET.getText().toString().trim();
         boolean ok=false;
+
         if (odwrotnie) ok = nazwiskoWpisane.matches(imie);
         else if (!odwrotnie) ok = nazwiskoWpisane.matches(nazwisko);
 
@@ -133,6 +135,7 @@ public class KartkowkaFragment extends Fragment {
         else if (nazwiskoWpisane.matches("")) zrobToast("Wpisz tłumaczenie");
         else if(ok)
         {
+            if (!odwrotnie) odw.setVisibility(View.INVISIBLE);
             Log.d(TAG, "sprawdz: dobre");
             dobrych++;
 
@@ -142,12 +145,11 @@ public class KartkowkaFragment extends Fragment {
                     R.anim.scale2);
             dobrychTV.startAnimation(animationScale);
 
-//            pokazToast("green");
-
             Log.d(TAG, "sprawdz: pokazano toast");
             restart();
         }else
         {
+            if (!odwrotnie) odw.setVisibility(View.INVISIBLE);
             Log.d(TAG, "sprawdz: zle");
             zlych++;
 

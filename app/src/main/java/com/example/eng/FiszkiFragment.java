@@ -51,10 +51,10 @@ public class FiszkiFragment extends Fragment {
         Button button = view.findViewById(R.id.kolejneBtn);
 
 
-        AdView mAdView;
-        mAdView = view.findViewById(R.id.adViewFiszki);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        AdView mAdView;
+//        mAdView = view.findViewById(R.id.adViewFiszki);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         ostatnieLosy = new int[users.size()];
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
