@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -24,14 +26,13 @@ import java.util.List;
 
 public class ReadCategoryFragment extends Fragment implements AdapterReadCategoryFragment.Click {
         public String nazwa[];
-        public String klucz, skont;
 
 
     private RecyclerView recyclerView;
     public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    String TAG = "LOGReadCategoryFragment";
+    private String TAG = "LOGReadCategoryFragment", klucz, skont;
     boolean vi;
     private int mColumnCount = 1;
     View layout, view;
@@ -50,15 +51,22 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
-        final ArrayList<Listakategorii> felix = new ArrayList<>();
-        final List<User> elo = MainActivity.bazaKategorii.myDao().loadAllCategory();
-        nazwa=new String[elo.size()];
+        final ArrayList<Listakategorii> listaUserZLayatu = new ArrayList<>();
+        final List<User> userList = MainActivity.bazaKategorii.myDao().loadAllCategory();
+
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewReadCategory);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        nazwa=new String[userList.size()];
         int i=0;
-          for (User s:elo)
+          for (User s:userList)
           {
               String cos = s.getName();
               nazwa[i]=cos;
-              felix.add(new Listakategorii(cos));
+              listaUserZLayatu.add(new Listakategorii(cos));
               i++;
           }
 
@@ -92,7 +100,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         recyclerView = view.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
-        mAdapter = new AdapterReadCategoryFragment(felix, this);
+        mAdapter = new AdapterReadCategoryFragment(listaUserZLayatu, this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
 
@@ -108,10 +116,10 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 try
                 {
                     int id= viewHolder.getAdapterPosition();
-                    User user= elo.get(id);
-                    List<User> adam =MainActivity.baza.myDao().loadUserByKategoria(user.getName());
-                    MainActivity.baza.myDao().deleteAllUsers(adam);
-                    felix.remove(id);
+                    User user= userList.get(id);
+                    List<User> listaUsersZKategorii =MainActivity.baza.myDao().loadUserByKategoria(user.getName());
+                    MainActivity.baza.myDao().deleteAllUsers(listaUsersZKategorii);
+                    listaUserZLayatu.remove(id);
                     mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);
                     MainActivity.bazaKategorii.myDao().deleteUsers(user);

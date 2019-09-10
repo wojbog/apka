@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -51,6 +55,12 @@ public class KartkowkaFragment extends Fragment {
         users = MainActivity.baza.myDao().loadUserByKategoria(kateg);
 
         view = inflater.inflate(R.layout.fragment_kartkowka, container, false);
+
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewKartkowka);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ostatnieLosy = new int[users.size()];
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
@@ -240,16 +250,16 @@ public class KartkowkaFragment extends Fragment {
                 nazwisko = nazwiska[los];
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
-        }else if (!kateg.equals("Wybierz"))
+        }else if (!kateg.equals("Wybierz Kategorię"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg, vi)).commit();
+            MainActivity.fragmentManager.popBackStack();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kateg, vi)).commit();
+            MainActivity.fragmentManager.popBackStack();
             Log.d(TAG, "losujSlowko: nie wybrano kategorii");
         }
     }

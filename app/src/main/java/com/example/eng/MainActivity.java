@@ -7,6 +7,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class MainActivity extends AppCompatActivity {
   public static FragmentManager fragmentManager;
   public static MyappDatabase baza,bazaKategorii;
@@ -28,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         Log.d(TAG, "onCreate: zbudowano bazy");
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+//        AdView mAdView;
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+
+
         if (Build.VERSION.SDK_INT>28)
         {
             getWindow().setNavigationBarDividerColor(getResources().getColor(R.color.secondaryDarkColor));
@@ -39,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz", false)).commit();
+            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz Kategorię", false)).commit();
             Log.d(TAG, "onCreate: zmiana na home fragment");
         }
 

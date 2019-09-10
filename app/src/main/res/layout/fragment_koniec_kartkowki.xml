@@ -24,39 +24,54 @@
         android:id="@+id/dobrychTVkoniec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginEnd="96dp"
+        android:gravity="center"
         android:text="@string/dobrych_n11"
         android:textAlignment="center"
         android:textColor="@color/kartkowkaGreen"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/zlychTVkoniec"
+        app:layout_constraintEnd_toStartOf="@+id/zlychTVkoniec" />
 
     <TextView
         android:id="@+id/zlychTVkoniec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="52dp"
+        android:gravity="center"
         android:text="@string/z_ych_n34"
         android:textAlignment="center"
         android:textColor="@color/kartkowkaRed"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/gratulacje" />
 
     <Button
         android:id="@+id/zakonczBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/buttonshapepusty"
         android:text="@string/zako_cz"
         android:textColor="?attr/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dobrychTVkoniec" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewKoniecKArtkowki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.google.android.gms.ads.AdView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

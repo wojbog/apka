@@ -28,12 +28,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/buttonshape"
             android:text="@string/dodaj_s_wka"
@@ -42,86 +43,100 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/wybierzKategorieBtn" />
 
         <Button
             android:id="@+id/bn_view_users"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="336dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
-            android:visibility="gone"
             android:background="@drawable/buttonshape"
             android:text="@string/przejrzyj_s_wka"
             android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/add" />
 
         <Button
             android:id="@+id/bn_fiszki"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="436dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
-            android:visibility="gone"
             android:background="@drawable/buttonshape"
             android:text="@string/fiszki"
             android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/bn_view_users" />
 
         <Button
             android:id="@+id/bn_kartkowka"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="536dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
-            android:visibility="gone"
             android:background="@drawable/buttonshape"
             android:text="@string/kartk_wka"
             android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/bn_fiszki" />
 
-        <TextView
-            android:id="@+id/wybranoKategorieTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="244dp"
-            android:text="@string/wybrano_kategori"
-            android:textAlignment="center"
-            android:textColor="?attr/primaryTextColor"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <TextView-->
+<!--            android:id="@+id/wybranoKategorieTV"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="244dp"-->
+<!--            android:text="@string/wybrano_kategori"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="?attr/primaryTextColor"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <Button
             android:id="@+id/wybierzKategorieBtn"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="284dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/buttonshapepusty"
+            android:gravity="center"
+            android:padding="10dp"
             android:text="@string/wybierz"
             android:textColor="?attr/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tytulApkiTV" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bn_kartkowka">
+        </com.google.android.gms.ads.AdView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

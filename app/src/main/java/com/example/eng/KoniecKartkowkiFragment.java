@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class KoniecKartkowkiFragment extends Fragment {
 
     private String dobrych, zlych, kategoria;
@@ -26,6 +29,12 @@ public class KoniecKartkowkiFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_koniec_kartkowki, container, false);
 
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewKoniecKArtkowki);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         TextView dobrychTVkoniec = view.findViewById(R.id.dobrychTVkoniec);
         TextView zlychTVkoniec = view.findViewById(R.id.zlychTVkoniec);
         Button zakoncz = view.findViewById(R.id.zakonczBtn);
@@ -35,12 +44,10 @@ public class KoniecKartkowkiFragment extends Fragment {
         zakoncz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new HomeFragment(kategoria, vi))
-                        .disallowAddToBackStack()
-                        .commit();
+                MainActivity.fragmentManager.popBackStack();
+                MainActivity.fragmentManager.popBackStack();
+                MainActivity.fragmentManager.popBackStack();
+                MainActivity.fragmentManager.popBackStack();
             }
         });
 

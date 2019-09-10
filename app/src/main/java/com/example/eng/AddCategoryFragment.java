@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class AddCategoryFragment extends Fragment {
 
 
@@ -32,6 +35,12 @@ public class AddCategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_category, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
+
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewAddCategory);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         napiszKategorieET =view.findViewById(R.id.napisz_kategorieET);
         Button przycisk = view.findViewById(R.id.button_add_category);

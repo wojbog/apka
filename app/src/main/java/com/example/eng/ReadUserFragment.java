@@ -14,6 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.List;
 
 
@@ -48,12 +52,16 @@ String TAG="ReadUserFragment";
         view =  inflater.inflate(R.layout.fragment_read_user, container, false);
         final List<User> users;
 
-        if (!kategoria.equals("Wybierz")) {
+        if (!kategoria.equals("Wybierz Kategorię")) {
             users = MainActivity.baza.myDao().loadUserByKategoria(kategoria);
         }else users = MainActivity.baza.myDao().loadUserOrderByKategoria();
 
         andrzej=users;
 
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewReadUser);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         recyclerView = view.findViewById(R.id.rower);
         recyclerView.setHasFixedSize(true);

@@ -12,6 +12,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.List;
 import java.util.Random;
 
@@ -45,6 +49,12 @@ public class FiszkiFragment extends Fragment {
         users = MainActivity.baza.myDao().loadUserByKategoria(kategoria);
         kartaTV = view.findViewById(R.id.kartaTV);
         Button button = view.findViewById(R.id.kolejneBtn);
+
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewFiszki);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ostatnieLosy = new int[users.size()];
         for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
@@ -153,16 +163,16 @@ public class FiszkiFragment extends Fragment {
                 nazwisko = nazwiska[los];
                 Log.d(TAG, "losujSlowko: wylosowano");
             }
-        }else if (!kategoria.equals("Wybierz"))
+        }else if (!kategoria.equals("Wybierz Kategorię"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria, vi)).commit();
+            MainActivity.fragmentManager.popBackStack();
             Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {
             zrobToast("Najpierw wybierz kategorię!");
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.stefan, new HomeFragment(kategoria, vi)).commit();
+            MainActivity.fragmentManager.popBackStack();
         }
     }
 

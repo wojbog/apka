@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private String
@@ -33,6 +36,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewHome);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);
@@ -77,7 +84,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_kartkowka:
                 Log.d(TAG, "onClick: bn_kartkowka klikniety");
-                if (!kategoria.equals("Wybierz")) {
+                if (!kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(R.id.stefan, new KartkowkaFragment(kategoria, vi))
@@ -89,7 +96,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.bn_fiszki:
                 Log.d(TAG, "onClick: bn_fiszki clicked.");
-                if (!kategoria.equals("Wybierz")) {
+                if (!kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)

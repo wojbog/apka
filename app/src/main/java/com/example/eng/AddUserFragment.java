@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -35,6 +37,11 @@ public class AddUserFragment extends Fragment {
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         TextView categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
+
+        AdView mAdView;
+        mAdView = view.findViewById(R.id.adViewAddUser);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         categoryname.setText(kategoria);
         Username.setText("");

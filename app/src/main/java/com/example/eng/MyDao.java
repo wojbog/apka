@@ -13,6 +13,9 @@ public interface MyDao {
     @Insert
     void addUser(User user);
 
+    @Insert
+    void addUsers(List<User> users);
+
     @Query("select *from users")
     List<User> getUsers();
 
