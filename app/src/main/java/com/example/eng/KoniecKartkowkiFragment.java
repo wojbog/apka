@@ -24,7 +24,6 @@ public class KoniecKartkowkiFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_koniec_kartkowki, container, false);
 
         TextView dobrychTVkoniec = view.findViewById(R.id.dobrychTVkoniec);
@@ -36,7 +35,12 @@ public class KoniecKartkowkiFragment extends Fragment {
         zakoncz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_out_right, android.R.anim.slide_in_left).replace(R.id.stefan, new HomeFragment(kategoria, vi)).disallowAddToBackStack().commit();
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new HomeFragment(kategoria, vi))
+                        .disallowAddToBackStack()
+                        .commit();
             }
         });
 

@@ -6,7 +6,6 @@ import androidx.room.Room;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
   public static FragmentManager fragmentManager;

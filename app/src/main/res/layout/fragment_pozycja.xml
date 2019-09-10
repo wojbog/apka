@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/buttonBackground">
+        android:background="?attr/buttonNormalColor">
 
     <TextView
         android:id="@+id/item_number"
@@ -36,6 +36,6 @@
             android:gravity="center"
             android:textSize="35sp"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:textColor="@color/primaryTextColor" />
+            android:textColor="?attr/primaryTextColor" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

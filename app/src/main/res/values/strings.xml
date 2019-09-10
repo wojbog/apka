@@ -36,4 +36,6 @@
     <string name="dodaj_slowko">Dodaj słówko</string>
     <string name="zapisz">Zapisz</string>
     <string name="przesu_aby_usun">Przesuń aby usunąć</string>
+    <string name="wpisz_kategori">Wpisz kategorię</string>
+    <string name="dodaj">Dodaj</string>
 </resources>

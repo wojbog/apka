@@ -7,8 +7,8 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/buttonBackground</item>
-        <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="colorButtonNormal">@color/buttonBackground</item>
+        <item name="primaryTextColor">@color/primaryTextColor</item>
+        <item name="buttonNormalColor">@color/buttonBackground</item>
         <item name="android:windowBackground">@color/secondaryDarkColor</item>
         <item name="android:navigationBarColor">@color/secondaryDarkColor</item>
         <item name="android:statusBarColor">@color/secondaryDarkColor</item>
@@ -18,11 +18,11 @@
         <item name="colorPrimary">@color/primaryColorPom</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorPom</item>
         <item name="colorAccent">@color/buttonBackgroundPom</item>
-        <item name="android:textColor">@color/primaryTextColorPom</item>
-        <item name="colorButtonNormal">@color/buttonBackgroundPom</item>
+        <item name="primaryTextColor">@color/primaryTextColorPom</item>
+        <item name="buttonNormalColor">@color/buttonBackgroundPom</item>
         <item name="android:windowBackground">@color/secondaryDarkColorPom</item>
-        <item name="android:navigationBarColor">@color/secondaryDarkColor</item>
-        <item name="android:statusBarColor">@color/secondaryDarkColor</item>
+        <item name="android:navigationBarColor">@color/secondaryDarkColorPom</item>
+        <item name="android:statusBarColor">@color/secondaryDarkColorPom</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

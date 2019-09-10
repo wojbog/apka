@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/buttonBackground">
+        android:background="?attr/buttonNormalColor">
 
         <TextView
             android:id="@+id/nad"
@@ -21,7 +21,7 @@
             android:layout_marginStart="49dp"
             android:layout_marginTop="18dp"
             android:text="@string/przykladowe_slowko"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
             android:layout_marginStart="55dp"
             android:layout_marginTop="52dp"
             android:text="@string/przykladowe_tlumaczenie"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="?attr/primaryTextColor"
             android:textSize="15sp" />
 
         <TextView
@@ -45,8 +45,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="298dp"
             android:layout_marginTop="32dp"
-            android:text="Kategoria"
-            android:textColor="@color/primaryTextColor" />
+            android:text="@string/jakias_kategoria"
+            android:textColor="?attr/primaryTextColor" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

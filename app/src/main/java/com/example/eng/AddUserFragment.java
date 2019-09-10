@@ -34,7 +34,7 @@ public class AddUserFragment extends Fragment {
         Username = view.findViewById(R.id.nameofimie);
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         TextView categoryname = view.findViewById(R.id.zobacz_category);
-        FloatingActionButton BNsave = view.findViewById(R.id.zapisz);
+        Button BNsave = view.findViewById(R.id.zapisz);
 
         categoryname.setText(kategoria);
         Username.setText("");
