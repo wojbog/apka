@@ -109,6 +109,8 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 {
                     int id= viewHolder.getAdapterPosition();
                     User user= elo.get(id);
+                    List<User> adam =MainActivity.baza.myDao().loadUserByKategoria(user.getName());
+                    MainActivity.baza.myDao().deleteAllUsers(adam);
                     felix.remove(id);
                     mAdapter.notifyItemRemoved(id);
                     //user = MainActivity.baza.myDao().loadUserById(id);

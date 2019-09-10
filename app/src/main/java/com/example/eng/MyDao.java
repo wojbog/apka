@@ -33,6 +33,9 @@ public interface MyDao {
     @Delete
     void deleteUsers(User user);
 
+    @Delete
+    void deleteAllUsers(List<User> users);
+
 
 
 }
