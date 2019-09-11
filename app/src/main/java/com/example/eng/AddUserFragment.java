@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.gms.ads.InterstitialAd;
 
 
 public class AddUserFragment extends Fragment {
@@ -21,6 +21,8 @@ public class AddUserFragment extends Fragment {
     private EditText Username, Usersurname;
     private String imie, nazwisko, kategoria, TAG="LOGAddUserFragment";
     private View layout;
+    InterstitialAd mInterstitialAd;
+    int ileDoReklam =1;
 
     public AddUserFragment(String katego) {
         kategoria = katego;
@@ -37,6 +39,18 @@ public class AddUserFragment extends Fragment {
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         TextView categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
+
+        mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.intersistial_ad_unit_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
 
 //        AdView mAdView;
 //        mAdView = view.findViewById(R.id.adViewAddUser);
@@ -117,6 +131,12 @@ public class AddUserFragment extends Fragment {
                     ) zrobToast("Nieodpowiedni znak!");
                     else if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {
+                        if (mInterstitialAd.isLoaded()) {
+                            if (ileDoReklam % 2 == 0) {
+                                mInterstitialAd.show();
+                            }
+                        }
+                        ileDoReklam++;
                         User user = new User();
                         user.setName(imie);
                         user.setSurname(nazwisko);
