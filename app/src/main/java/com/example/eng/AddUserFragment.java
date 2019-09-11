@@ -79,7 +79,6 @@ public class AddUserFragment extends Fragment {
                             nazwisko.contains("$")||
                             nazwisko.contains("%")||
                             nazwisko.contains("^")||
-                            nazwisko.contains("&")||
                             nazwisko.contains("*")||
                             nazwisko.contains("(")||
                             nazwisko.contains(")")||
@@ -107,7 +106,6 @@ public class AddUserFragment extends Fragment {
                             imie.contains("$")||
                             imie.contains("%")||
                             imie.contains("^")||
-                            imie.contains("&")||
                             imie.contains("*")||
                             imie.contains("(")||
                             imie.contains(")")||

@@ -42,7 +42,7 @@ public class AddCategoryFragment extends Fragment {
 
         mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.intersistial_ad_unit_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
 
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
@@ -91,13 +91,10 @@ public class AddCategoryFragment extends Fragment {
                         kc("[")||
                         kc("}")||
                         kc("]")||
-                        kc(":")||
                         kc(";")||
                         kc("'")||
                         kc("\"")||
                         kc("<")||
-                        kc(",")||
-                        kc(".")||
                         kc(">")||
                         kc("?")||
                         kc("/")
