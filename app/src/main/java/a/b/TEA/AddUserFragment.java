@@ -1,8 +1,8 @@
-package com.example.eng;
+package a.b.TEA;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eng.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -31,7 +32,6 @@ public class AddUserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: called.");
         View view = inflater.inflate(R.layout.fragment_add_user, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
 
@@ -67,7 +67,6 @@ public class AddUserFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Log.d(TAG, "onClick: called.");
 
                     imie = Username.getText().toString().trim();
                     nazwisko = Usersurname.getText().toString().trim();
@@ -142,14 +141,12 @@ public class AddUserFragment extends Fragment {
 
                         MainActivity.baza.myDao().addUser(user);
                         zrobToast("Dodano!");
-                        Log.d(TAG, "onClick: Dodano");
 
                         Username.setText("");
                         Usersurname.setText("");
                     }
                     else {
                         zrobToast("Najpierw wpisz słówko!");
-                        Log.d(TAG, "onClick: najpierw slowko");
                     }
             }
         });

@@ -1,11 +1,8 @@
-package com.example.eng;
+package a.b.TEA;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import com.example.eng.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -33,7 +29,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
 //        AdView mAdView;
@@ -73,29 +68,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         {
 
             case R.id.bn_view_users:
-                Log.d(TAG, "onClick: bn_view_users clicked.");
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         .replace(R.id.stefan,new ReadUserFragment(kategoria, vi))
                         .addToBackStack(null)
                         .commit();
-                Log.d(TAG, "onClick: fragment zmieniony na odczytanie slowek");
                 break;
 
             case R.id.bn_kartkowka:
-                Log.d(TAG, "onClick: bn_kartkowka klikniety");
                 if (!kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(R.id.stefan, new KartkowkaFragment(kategoria, vi))
                             .addToBackStack(null)
                             .commit();
-                    Log.d(TAG, "onClick: fragment zmieniony na kategorie z kartkowki");
                 }else zrobToast("Najpierw Wybierz kategorię");
                 break;
 
             case R.id.bn_fiszki:
-                Log.d(TAG, "onClick: bn_fiszki clicked.");
                 if (!kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
@@ -103,23 +93,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             .replace(R.id.stefan, new FiszkiFragment(kategoria, vi))
                             .addToBackStack(null)
                             .commit();
-                    Log.d(TAG, "onClick: fragment zmieniony na fiszki");
                 }else zrobToast("Najpierw Wybierz kategorię");
                 break;
 
             case R.id.add:
-                Log.d(TAG, "onClick: bn_add clicked.");
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                 android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie", vi))
                         .addToBackStack(null)
                         .commit();
-                Log.d(TAG, "onClick: fragment zmieniony na dodaj activity");
                 break;
 
             case R.id.wybierzKategorieBtn:
-                Log.d(TAG, "onClick: wybierzKategorieBtn clicked.");
                 vi=true;
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
@@ -128,7 +114,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         .addToBackStack(null)
                         .commit();
 
-                Log.d(TAG, "onClick: fragment zmieniony na readCategoryFragment");
 
         }
 

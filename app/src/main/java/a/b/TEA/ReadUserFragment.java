@@ -1,4 +1,4 @@
-package com.example.eng;
+package a.b.TEA;
 
 
 import android.os.Bundle;
@@ -8,15 +8,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import com.example.eng.R;
 
 import java.util.List;
 
@@ -48,7 +47,6 @@ String TAG="ReadUserFragment";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: called.");
         view =  inflater.inflate(R.layout.fragment_read_user, container, false);
         final List<User> users;
 
@@ -103,7 +101,7 @@ String TAG="ReadUserFragment";
                 catch(Exception e)
                 {
                     Toast.makeText(getContext() ,"Nie ma takiego id!",Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "onClick: Exception Delete");
+
                 }
             }
         }).attachToRecyclerView(recyclerView);

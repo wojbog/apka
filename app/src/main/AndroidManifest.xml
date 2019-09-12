@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eng">
+    package="a.b.TEA">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name="a.b.TEA.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".FiszkiWidget">
+        <receiver android:name="a.b.TEA.FiszkiWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -32,8 +32,8 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
-<!--            android:value="ca-app-pub-7457190986528845~5066555891"/>prawdziwe-->
+            android:value="ca-app-pub-7457190986528845~5066555891"/>
+<!--        android:value="ca-app-pub-3940256099942544~3347511713"/>testowe-->
     </application>
 
 </manifest>

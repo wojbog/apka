@@ -1,8 +1,8 @@
-package com.example.eng;
+package a.b.TEA;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eng.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
 public class AddCategoryFragment extends Fragment {
@@ -65,7 +65,6 @@ public class AddCategoryFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: called.");
 
                 kategoria = napiszKategorieET.getText().toString().trim();
 
@@ -115,7 +114,6 @@ public class AddCategoryFragment extends Fragment {
                     zrobToast("Dodano!");
 
                     napiszKategorieET.setText("");
-                    Log.d(TAG, "onClick: Dodano");
 
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
@@ -126,7 +124,6 @@ public class AddCategoryFragment extends Fragment {
                 }
                 else {
                     zrobToast("Najpierw wpisz słówko");
-                    Log.d(TAG, "onClick: najpierw slowko");
                 }
             }
         });

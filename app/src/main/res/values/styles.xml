@@ -1,8 +1,8 @@
 <resources>
     <style name="AppTheme.Launcher" parent="AppTheme">
         <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="android:navigationBarColor">@color/secondaryDarkColorPom</item>
-        <item name="android:statusBarColor">@color/secondaryDarkColorPom</item>
+        <item name="android:navigationBarColor">@color/primaryColorPom</item>
+        <item name="android:statusBarColor">@color/primaryColorPom</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">

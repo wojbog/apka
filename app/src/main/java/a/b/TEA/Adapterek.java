@@ -1,16 +1,15 @@
-package com.example.eng;
+package a.b.TEA;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.eng.R;
+
 import java.util.List;
-import java.util.Locale;
 
 public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder> {
   private List<User> mlist;

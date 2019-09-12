@@ -1,4 +1,4 @@
-package com.example.eng;
+package a.b.TEA;
 
 public class Listakategorii {
     private String nazwa;

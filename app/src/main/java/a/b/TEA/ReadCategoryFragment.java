@@ -1,24 +1,19 @@
-package com.example.eng;
+package a.b.TEA;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -32,7 +27,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private String TAG = "LOGReadCategoryFragment", klucz, skont;
+    private String klucz, skont;
     boolean vi;
     private int mColumnCount = 1;
     View layout, view;
@@ -48,7 +43,6 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: called.");
         view = inflater.inflate(R.layout.fragment_pozycja_list, container, false);
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
         final ArrayList<Listakategorii> listaUserZLayatu = new ArrayList<>();
@@ -139,7 +133,7 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 catch(Exception e)
                 {
                     Toast.makeText(getContext() ,"Nie ma takiego id!",Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "onClick: Exception Delete");
+
                 }
             }
         }).attachToRecyclerView(recyclerView);

@@ -1,9 +1,9 @@
-package com.example.eng;
+package a.b.TEA;
 
 import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import com.example.eng.R;
 
 import java.util.List;
 import java.util.Random;
@@ -83,7 +82,6 @@ public class FiszkiFragment extends Fragment {
         kartaTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: called.");
                 if (!odwrocone) {
                     kartaTV.startAnimation(animation);
                     kartaTV.setText(nazwisko);
@@ -108,8 +106,6 @@ public class FiszkiFragment extends Fragment {
                 imiona = new String[users.size()],
                 nazwiska = new String[users.size()];
 
-
-        Log.d(TAG, "napelnijTabele: called.");
         int g =0;
 
 
@@ -123,14 +119,12 @@ public class FiszkiFragment extends Fragment {
                 nazwiska[g] = nazwisko;
                 g++;
             }
-            Log.d(TAG, "napelnijTabele: napelniono.");
         }else
         {
             zrobToast("Dodaj przynajmniej dwa słówka aby rozpocząć");
         }
 
         int los;
-        Log.d(TAG, "losujSlowko: called. "+users.size());
 
         if (users.size()>1) {
             for (int i=0; i<users.size(); i++)
@@ -138,13 +132,12 @@ public class FiszkiFragment extends Fragment {
                 if (ostatnieLosy[i] == 1)
                 {
                     test++;
-                    Log.d(TAG, "losujSlowko: wylosowanych: "+test+" wielkość: "+users.size());
+
                 }
             }
 
             if (test == users.size())
             {
-                Log.d(TAG, "losujSlowko: finish");
                 test=0;
                 ostatnieLosy = new int[users.size()];
                 for (int i=0; i<users.size(); i++) {ostatnieLosy[i]=0;}
@@ -161,13 +154,11 @@ public class FiszkiFragment extends Fragment {
                 ostatnieLosy[los] = 1;
                 imie = imiona[los];
                 nazwisko = nazwiska[los];
-                Log.d(TAG, "losujSlowko: wylosowano");
             }
         }else if (!kategoria.equals("Wybierz Kategorię"))
         {
             zrobToast("dodaj przynajmniej dwa słówka aby rozpocząć");
             MainActivity.fragmentManager.popBackStack();
-            Log.d(TAG, "losujSlowko: za malo slowek");
         }
         else
         {

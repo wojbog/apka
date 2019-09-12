@@ -38,8 +38,8 @@
     <string name="przesu_aby_usun">Przesuń aby usunąć</string>
     <string name="wpisz_kategori">Wpisz kategorię</string>
     <string name="dodaj">Dodaj</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="intersistial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="banner_ad_unit_id_prawdziwe">ca-app-pub-7457190986528845/3917125752</string>
-    <string name="intersistial_ad_unit_id_prawdziwe">ca-app-pub-7457190986528845/3292463310</string>
+    <string name="banner_ad_unit_idi">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="intersistial_ad_unit_idi">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ad_unit_id">ca-app-pub-7457190986528845/3917125752</string>
+    <string name="intersistial_ad_unit_id">ca-app-pub-7457190986528845/3292463310</string>
 </resources>

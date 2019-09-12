@@ -1,14 +1,13 @@
-package com.example.eng;
+package a.b.TEA;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.room.Room;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 
+import com.example.eng.R;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -28,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate: called.");
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         baza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanych").allowMainThreadQueries().build();
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
-        Log.d(TAG, "onCreate: zbudowano bazy");
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -59,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz Kategorię", false)).commit();
-            Log.d(TAG, "onCreate: zmiana na home fragment");
         }
 
     }
