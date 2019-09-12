@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import com.example.eng.R;
 
 public class FiszkiWidget extends AppWidgetProvider {
 

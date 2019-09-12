@@ -6,7 +6,6 @@ import androidx.room.Room;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.example.eng.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
