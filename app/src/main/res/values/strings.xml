@@ -42,4 +42,8 @@
     <string name="intersistial_ad_unit_idi" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-7457190986528845/3917125752</string>
     <string name="intersistial_ad_unit_id" translatable="false">ca-app-pub-7457190986528845/3292463310</string>
+    <string name="tea_test_exam_answer">TEA - TEST EXAM ANSWER</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

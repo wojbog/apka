@@ -18,7 +18,7 @@ public class FiszkiWidget extends AppWidgetProvider {
         String nazwisko = user.getSurname();
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fiszki_widget);
 
-        views.setTextViewText(R.id.kartaWTV, imie+"\n------\n"+nazwisko);
+        views.setTextViewText(R.id.kartaWTV, imie+"\n-=-=-=-=-=-=-=-\n"+nazwisko);
 
         Intent intent = new Intent(context, FiszkiWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);

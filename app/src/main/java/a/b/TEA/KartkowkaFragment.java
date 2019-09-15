@@ -151,7 +151,7 @@ public class KartkowkaFragment extends Fragment {
             animationScale = AnimationUtils.loadAnimation(getContext(),
                     R.anim.scale);
             zlychTV.startAnimation(animationScale);
-//            pokazToast("red");
+            zrobToast(imie+" - "+nazwisko);
 
             restart();
         }

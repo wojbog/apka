@@ -49,6 +49,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             bnfiszki.setVisibility(View.VISIBLE);
             bnviewusers.setVisibility(View.VISIBLE);
             BNkartkowka.setVisibility(View.VISIBLE);
+        }else
+        {
+            bnfiszki.setVisibility(View.INVISIBLE);
+            bnviewusers.setVisibility(View.INVISIBLE);
+            BNkartkowka.setVisibility(View.INVISIBLE);
         }
 
         Button bnDodaj = view.findViewById(R.id.add);
@@ -96,12 +101,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.add:
-                MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie", vi))
-                        .addToBackStack(null)
-                        .commit();
+                if (kategoria.equals("Wybierz Kategorię")) {
+                    MainActivity.fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                            .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie", vi))
+                            .addToBackStack(null)
+                            .commit();
+                } else {
+                    MainActivity.fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                            .replace(R.id.stefan, new AddUserFragment(kategoria))
+                            .addToBackStack(null)
+                            .commit();
+                }
+
                 break;
 
             case R.id.wybierzKategorieBtn:

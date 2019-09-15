@@ -41,12 +41,12 @@ public class AddUserFragment extends Fragment {
 
         mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.intersistial_ad_unit_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("ED43A8DEDBA2148151ACA37D39F3416F").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
 
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("ED43A8DEDBA2148151ACA37D39F3416F").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
             }
 
         });
@@ -93,7 +93,6 @@ public class AddUserFragment extends Fragment {
                             nazwisko.contains(">")||
                             nazwisko.contains(",")||
                             nazwisko.contains(".")||
-                            nazwisko.contains("/")||
                             nazwisko.contains("|")||
                             nazwisko.contains("\"")||
                             nazwisko.contains("+")||
@@ -120,7 +119,6 @@ public class AddUserFragment extends Fragment {
                             imie.contains(">")||
                             imie.contains(",")||
                             imie.contains(".")||
-                            imie.contains("/")||
                             imie.contains("|")||
                             imie.contains("\"")||
                             imie.contains("+")

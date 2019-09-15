@@ -41,7 +41,7 @@ public class AddCategoryFragment extends Fragment {
 
         mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.intersistial_ad_unit_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("ED43A8DEDBA2148151ACA37D39F3416F").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build());
 
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
@@ -82,7 +82,6 @@ public class AddCategoryFragment extends Fragment {
                         kc("(")||
                         kc(")")||
                         kc("_")||
-                        kc("-")||
                         kc("=")||
                         kc("+")||
                         kc("{")||
@@ -94,8 +93,7 @@ public class AddCategoryFragment extends Fragment {
                         kc("\"")||
                         kc("<")||
                         kc(">")||
-                        kc("?")||
-                        kc("/")
+                        kc("?")
                 ) {
                     zrobToast("Nieodpowiedni znak!");
                 }
@@ -114,12 +112,12 @@ public class AddCategoryFragment extends Fragment {
 
                     napiszKategorieET.setText("");
 
-                    MainActivity.fragmentManager.beginTransaction()
+                    MainActivity.fragmentManager.popBackStack();/*beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(R.id.stefan, new ReadCategoryFragment(skont, vi))
                             .addToBackStack(null)
-                            .commit();
+                            .commit();*/
                 }
                 else {
                     zrobToast("Najpierw wpisz słówko");
