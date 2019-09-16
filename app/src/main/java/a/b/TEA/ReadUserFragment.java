@@ -54,6 +54,14 @@ String TAG="ReadUserFragment";
         }else users = MainActivity.baza.myDao().loadUserOrderByKategoria();
 
         andrzej=users;
+        if (users.size() == 0) {
+            User e = new User();
+            e.setName("Tu będzie słówko");
+            e.setSurname("Tu będzie tłumaczenie");
+            e.setZolodek("2");
+            e.setCategory("Tu będzie kategoria");
+            andrzej.add(e);
+        }
 
 //        AdView mAdView;
 //        mAdView = view.findViewById(R.id.adViewReadUser);

@@ -18,9 +18,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             kategoria;
     View view;
     boolean vi=false;
-    Button bnfiszki, BNkartkowka, bnviewusers;
-
-    //TODO: profil z osiągnięciami / statystykami
+    Button bnfiszki, BNkartkowka, bnviewusers, bnZolodek;
 
     public HomeFragment(String kat, boolean visibility) { kategoria = kat; vi=visibility;}
 
@@ -44,16 +42,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         bnfiszki = view.findViewById(R.id.bn_fiszki);
         bnfiszki.setOnClickListener(this);
 
+        bnZolodek = view.findViewById(R.id.bn_zolodek);
+        bnZolodek.setOnClickListener(this);
+
         if (vi)
         {
             bnfiszki.setVisibility(View.VISIBLE);
-            bnviewusers.setVisibility(View.VISIBLE);
             BNkartkowka.setVisibility(View.VISIBLE);
         }else
         {
-            bnfiszki.setVisibility(View.INVISIBLE);
-            bnviewusers.setVisibility(View.INVISIBLE);
-            BNkartkowka.setVisibility(View.INVISIBLE);
+            bnfiszki.setVisibility(View.GONE);
+            BNkartkowka.setVisibility(View.GONE);
         }
 
         Button bnDodaj = view.findViewById(R.id.add);
@@ -100,6 +99,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }else zrobToast("Najpierw Wybierz kategorię");
                 break;
 
+
+            case R.id.bn_zolodek:
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new ZolodkiFragment())
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
             case R.id.add:
                 if (kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
@@ -127,7 +136,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie", true))
                         .addToBackStack(null)
                         .commit();
-
+                break;
 
         }
 

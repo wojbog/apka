@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -16,6 +17,9 @@ public interface MyDao {
     @Insert
     void addUsers(List<User> users);
 
+    @Update
+    void updateUser(User user);
+
     @Query("select *from users")
     List<User> getUsers();
 
@@ -27,6 +31,9 @@ public interface MyDao {
 
     @Query("select * from users ORDER BY RANDOM() LIMIT 1")
     User loadLos();
+
+    @Query("select * from users where zoladki = :zol")
+    List<User> loadUsersByZolodek(int zol);
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
     List<User> loadAllCategory();

@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         //TODO: Ustawienia, oceń nas, motywy
+        //TODO: zrobić czy ma być słówko na tłumaczenie czy odwrotnie
+        //TODO: powiadomienia
+        //TODO: Żołądki poprawić
 
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);

@@ -18,6 +18,9 @@ public class User {
     @ColumnInfo(name = "kategoria")
     private String category;
 
+    @ColumnInfo(name = "zoladki")
+    private String zolodek;
+
     public User() {
     }
 
@@ -29,7 +32,7 @@ public class User {
         this.name = name;
     }
 
-    String getSurname() {
+    public String getSurname() {
         return surname;
     }
 
@@ -43,5 +46,13 @@ public class User {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getZolodek() {
+        return zolodek;
+    }
+
+    public void setZolodek(String zolodek) {
+        this.zolodek = zolodek;
     }
 }

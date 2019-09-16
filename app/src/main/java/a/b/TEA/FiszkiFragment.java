@@ -74,7 +74,11 @@ public class FiszkiFragment extends Fragment {
             public void onClick(View view) {
                 kartaTV.startAnimation(animationMove);
                 losujSlowko();
-                if (!odwrocone) kartaTV.setText(imie); else kartaTV.setText(nazwisko);
+                kartaTV.setText(imie);
+                if (odwrocone) {
+                    kartaTV.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.fiszkishape));
+                    odwrocone=false;
+                }
             }
         });
 

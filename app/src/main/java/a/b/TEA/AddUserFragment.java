@@ -135,6 +135,7 @@ public class AddUserFragment extends Fragment {
                         user.setName(imie);
                         user.setSurname(nazwisko);
                         user.setCategory(kategoria);
+                        user.setZolodek("1");
 
                         MainActivity.baza.myDao().addUser(user);
                         zrobToast("Dodano!");
