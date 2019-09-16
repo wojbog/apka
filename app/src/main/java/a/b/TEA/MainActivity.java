@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Ustawienia, oceń nas, motywy
         //TODO: zrobić czy ma być słówko na tłumaczenie czy odwrotnie
-        //TODO: powiadomienia
         //TODO: Żołądki poprawić
 
         setTheme(R.style.AppTheme);
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         baza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanych").allowMainThreadQueries().build();
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
 
+        //---------reklamy-----------
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
         final int PRIMARY_FOREGROUND_NOTIF_SERVICE_ID = 1001;
 
+        //---------powiadomienia-----------
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             String id = "_channel_01";
