@@ -1,5 +1,12 @@
 package a.b.TEA;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -38,6 +45,36 @@ public class AddUserFragment extends Fragment {
         Usersurname = view.findViewById(R.id.surnameofnazwisko);
         TextView categoryname = view.findViewById(R.id.zobacz_category);
         Button BNsave = view.findViewById(R.id.zapisz);
+
+
+        final int PRIMARY_FOREGROUND_NOTIF_SERVICE_ID = 1001;
+
+        //---------powiadomienia-----------
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            String id = "_channel_01";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel mChannel = new NotificationChannel(id, "notification", importance);
+            mChannel.enableLights(true);
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, 0);
+
+            Notification notification = new Notification.Builder(getContext(), id)
+                    .setSmallIcon(R.drawable.logopng)
+                    .setContentTitle("Hej ty! Nie zapomniałeś uczyć się słówek?")
+                    .setContentText("Zobacz nową metodę uczenia się słówek i przetraw ich więcej codziennie")
+                    .setAutoCancel(true)
+                    .setContentIntent(pendingIntent)
+                    .build();
+
+            NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+            if (mNotificationManager != null) {
+                mNotificationManager.createNotificationChannel(mChannel);
+                mNotificationManager.notify(PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, notification);
+            }
+        }
+
 
         mInterstitialAd = new InterstitialAd(getActivity().getApplicationContext());
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.intersistial_ad_unit_id));
