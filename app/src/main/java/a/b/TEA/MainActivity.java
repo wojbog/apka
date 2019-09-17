@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         final String PREFS_NAME = "MyPrefsFile";
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         if (settings.getBoolean("my_first_time", true)) {
-            Toast.makeText(getApplicationContext(), "Dziękujemy za pobranie aplikacji!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Dziękujemy za pobranie aplikacji!", Toast.LENGTH_LONG).show();
             settings.edit().putBoolean("my_first_time", false).commit();
         }
 
