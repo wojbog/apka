@@ -16,6 +16,7 @@
         android:textColor="?attr/primaryTextColor"
         app:layout_constraintBottom_toTopOf="@+id/rower"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +31,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <com.google.android.gms.ads.AdView-->
+    <Button
+        android:id="@+id/usunNauczoneBtn"
+        android:layout_width="138dp"
+        android:layout_height="26dp"
+        android:background="@drawable/buttonshapepusty"
+        android:text="Usuń nauczone"
+        android:textColor="?attr/primaryTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/rower"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <com.google.android.gms.ads.AdView-->
 <!--        android:id="@+id/adViewReadUser"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

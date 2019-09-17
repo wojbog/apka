@@ -13,13 +13,23 @@
         android:layout_height="wrap_content">
 
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="500dp"
+            android:layout_height="220dp"
+            android:contentDescription="@string/tea_test_exam_answer"
+            android:src="@drawable/logobc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/buttonshape"
             android:text="@string/dodaj_s_wka"
             android:textColor="?attr/primaryTextColor"
@@ -27,7 +37,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wybierzKategorieBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            tools:layout_editor_absoluteY="275dp" />
 
         <Button
             android:id="@+id/bn_view_users"
@@ -46,37 +57,20 @@
             app:layout_constraintTop_toBottomOf="@+id/add" />
 
         <Button
-            android:id="@+id/bn_zolodek"
+            android:id="@+id/fiszkiZolodkiBtn"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/buttonshape"
-            android:text="Nauka żołądkami"
+            android:text="Nauka fiszkami"
             android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bn_view_users" />
-
-        <Button
-            android:id="@+id/bn_fiszki"
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/buttonshape"
-            android:text="@string/fiszki"
-            android:textColor="?attr/primaryTextColor"
-            android:textSize="20sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bn_zolodek" />
 
         <Button
             android:id="@+id/bn_kartkowka"
@@ -90,34 +84,10 @@
             android:text="@string/kartk_wka"
             android:textColor="?attr/primaryTextColor"
             android:textSize="20sp"
-            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bn_fiszki" />
-
-        <Button
-            android:id="@+id/wybierzKategorieBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:background="@drawable/buttonshapepusty"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/wybierz"
-            android:textColor="?attr/primaryTextColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="500dp"
-            android:layout_height="220dp"
-            android:src="@drawable/logobc"
-            android:contentDescription="@string/tea_test_exam_answer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/fiszkiZolodkiBtn" />
 
         <!--        <com.google.android.gms.ads.AdView-->
 <!--            android:id="@+id/adViewHome"-->

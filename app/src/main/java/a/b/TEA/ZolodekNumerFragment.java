@@ -32,11 +32,11 @@ public class ZolodekNumerFragment extends Fragment {
     private List<User> users;
 
     private boolean odwrocone;
-    private String imie, nazwisko;
-    private int ktoryZoladek, ustawZolodek, los, t=0;
+    private String  ustawZolodek,ktoryZoladek, imie, nazwisko;
+    private int los, t=0;
     private int[] losy;
 
-    public ZolodekNumerFragment(int ktory) {
+    public ZolodekNumerFragment(String ktory) {
         ktoryZoladek = ktory;
     }
 
@@ -45,7 +45,6 @@ public class ZolodekNumerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_zolodek_numer, container, false);
-        Log.d("niewiem", "onCreateView: "+ktoryZoladek);
         users = MainActivity.baza.myDao().loadUsersByZolodek(ktoryZoladek);
 
         losy = new int[users.size()];
@@ -87,11 +86,15 @@ public class ZolodekNumerFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if (ktoryZoladek == 5) {
-                    MainActivity.baza.myDao().deleteUsers(users.get(los));
+                if (ktoryZoladek.equals("5")) {
+                    users.get(los).setZolodek("Nauczone");
+                    MainActivity.baza.myDao().updateUser(users.get(los));
                 } else {
-                    ustawZolodek = ktoryZoladek+1;
-                    users.get(los).setZolodek(String.format(Locale.getDefault(),"%d",ustawZolodek));
+                    if (ktoryZoladek.equals("1")) ustawZolodek="2";
+                    if (ktoryZoladek.equals("2")) ustawZolodek="3";
+                    if (ktoryZoladek.equals("3")) ustawZolodek="4";
+                    if (ktoryZoladek.equals("4")) ustawZolodek="5";
+                    users.get(los).setZolodek(ustawZolodek);
                     MainActivity.baza.myDao().updateUser(users.get(los));
                 }
 

@@ -33,7 +33,7 @@ public interface MyDao {
     User loadLos();
 
     @Query("select * from users where zoladki = :zol")
-    List<User> loadUsersByZolodek(int zol);
+    List<User> loadUsersByZolodek(String zol);
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
     List<User> loadAllCategory();

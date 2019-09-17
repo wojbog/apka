@@ -13,7 +13,7 @@
         android:background="@drawable/fiszkishape"
         android:gravity="center"
         android:padding="20dp"
-        android:text="@string/jakie_slowko"
+        android:text="@string/przykladowe_slowko"
         android:textColor="@color/primaryTextColor"
         android:textSize="60sp" />
 

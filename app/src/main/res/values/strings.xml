@@ -1,49 +1,50 @@
 <resources>
-    <string name="app_name" translatable="false">TEA</string>
+    <string name="app_name">TEA</string>
 
-    <string name="przykladowe_slowko" translatable="false">Przykładowe słówko</string>
-    <string name="przykladowe_tlumaczenie" translatable="false">Przykładowe tłumaczenie</string>
-    <string name="jakie_slowko" translatable="false">jakieś słówko</string>
-    <string name="podaj_tlumaczenie" translatable="false">Podaj tłumaczenie</string>
+    <string name="przykladowe_slowko">Przykładowe słówko</string>
+    <string name="przykladowe_tlumaczenie">Przykładowe tłumaczenie</string>
+    <string name="podaj_tlumaczenie">Podaj tłumaczenie</string>
     <string name="zlych_odpowiedzi">Złych odpowiedzi:</string>
-    <string name="dobrych_odpowiedzi" translatable="false">Dobrych odpowiedzi:</string>
-    <string name="_34" translatable="false">34</string>
-    <string name="_11" translatable="false">11</string>
+    <string name="dobrych_odpowiedzi">Dobrych odpowiedzi:</string>
+    <string name="_34">34</string>
+    <string name="_11">11</string>
     <string name="zle">ŹLE :(</string>
-    <string name="dobrze" translatable="false">Dobrze :)</string>
+    <string name="dobrze">Dobrze :)</string>
     <string name="zatwierdz">Zatwierdź</string>
-    <string name="koniec" translatable="false">KONIEC!!</string>
-    <string name="odwroc" translatable="false">Odwróć</string>
-    <string name="jakies_tlumaczenie" translatable="false">Jakieś Tłumaczenie</string>
-    <string name="jakias_kategoria" translatable="false">Jakaś kategoria</string>
-    <string name="kolejne" translatable="false"><![CDATA[Kolejne --->]]></string>
-    <string name="appwidget_text" translatable="false">TEA widget</string>
-    <string name="add_widget" translatable="false">Dodaj widżet</string>
-    <string name="tea_tests_exams_answers" translatable="false">TEA - Test Exam Answer</string>
-    <string name="przejrzyj_s_wka" translatable="false">Przejrzyj słówka</string>
-    <string name="kartk_wka" translatable="false">Kartkówka</string>
-    <string name="fiszki" translatable="false">Fiszki</string>
-    <string name="dodaj_s_wka" translatable="false">Dodaj słówka</string>
-    <string name="wybrano_kategori" translatable="false">Wybrano kategorię:</string>
-    <string name="wybierz" translatable="false">Wybierz Kategorię</string>
+    <string name="koniec">KONIEC!!</string>
+    <string name="odwroc">Odwróć</string>
+    <string name="jakies_tlumaczenie">Jakieś Tłumaczenie</string>
+    <string name="jakias_kategoria">Jakaś kategoria</string>
+    <string name="kolejne"><![CDATA[Kolejne --->]]></string>
+    <string name="appwidget_text">TEA widget</string>
+    <string name="add_widget">Dodaj widżet</string>
+    <string name="tea_tests_exams_answers">TEA - Test Exam Answer</string>
+    <string name="przejrzyj_s_wka">Przejrzyj słówka</string>
+    <string name="kartk_wka">Kartkówka</string>
+    <string name="dodaj_s_wka">Dodaj słówka</string>
     <string name="zmie_j_zyki">Zmień języki</string>
-    <string name="gratulacje" translatable="false">Gratulacje!</string>
-    <string name="z_ych_n34" translatable="false">złych: \n34</string>
-    <string name="dobrych_n11" translatable="false">złych: \n34</string>
+    <string name="gratulacje">Gratulacje!</string>
+    <string name="z_ych_n34">złych: \n34</string>
+    <string name="dobrych_n11">złych: \n34</string>
     <string name="zako_cz">Zakończ</string>
-    <string name="tlumaczenie" translatable="false">Tłumaczenie</string>
-    <string name="slowko" translatable="false">Słówko</string>
-    <string name="dodaj_slowko" translatable="false">Dodaj słówko</string>
+    <string name="tlumaczenie">Tłumaczenie</string>
+    <string name="slowko">Słówko</string>
+    <string name="dodaj_slowko">Dodaj słówko</string>
     <string name="zapisz">Zapisz</string>
-    <string name="przesu_aby_usun" translatable="false">Przesuń aby usunąć</string>
-    <string name="wpisz_kategori" translatable="false">Wpisz kategorię</string>
-    <string name="dodaj" translatable="false">Dodaj</string>
-    <string name="banner_ad_unit_idi" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="intersistial_ad_unit_idi" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-7457190986528845/3917125752</string>
-    <string name="intersistial_ad_unit_id" translatable="false">ca-app-pub-7457190986528845/3292463310</string>
+    <string name="przesu_aby_usun">Przesuń aby usunąć</string>
+    <string name="wpisz_kategori">Wpisz kategorię</string>
+    <string name="dodaj">Dodaj</string>
+    <string name="banner_ad_unit_idi">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="intersistial_ad_unit_idi">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ad_unit_id">ca-app-pub-7457190986528845/3917125752</string>
+    <string name="intersistial_ad_unit_id">ca-app-pub-7457190986528845/3292463310</string>
     <string name="tea_test_exam_answer">TEA - TEST EXAM ANSWER</string>
     <string name="nie_umiem">Nie Umiem :(</string>
     <string name="umiem">Umiem! :)</string>
-    <string name="stopie_nauczenia_2">Stopień nauczenia: 2</string>
+    <string name="stopie_nauczenia_nauczone">Stopień nauczenia: Nauczone</string>
+    <string name="_1_stopien_nauczania">1 stopień nauczania</string>
+    <string name="_2_stopien_nauczania">2 stopień nauczania</string>
+    <string name="_3_stopien_nauczania">3 stopień nauczania</string>
+    <string name="_4_stopien_nauczania">4 stopień nauczania</string>
+    <string name="_5_stopien_nauczania">5 stopień nauczania</string>
 </resources>

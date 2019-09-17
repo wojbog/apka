@@ -18,10 +18,10 @@
             android:layout_height="80dp"
             android:layout_margin="15dp"
             android:background="@drawable/buttonshape"
-            android:text="Żołądek 1"
+            android:text="@string/_1_stopien_nauczania"
             android:textAlignment="center"
             android:textColor="?attr/primaryTextColor"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/zolodek2"
@@ -29,10 +29,10 @@
             android:layout_height="80dp"
             android:layout_margin="15dp"
             android:background="@drawable/buttonshape"
-            android:text="Żołądek 2"
+            android:text="@string/_2_stopien_nauczania"
             android:textAlignment="center"
             android:textColor="?attr/primaryTextColor"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/zolodek3"
@@ -40,10 +40,10 @@
             android:layout_height="80dp"
             android:layout_margin="15dp"
             android:background="@drawable/buttonshape"
-            android:text="Żołądek 3"
+            android:text="@string/_3_stopien_nauczania"
             android:textAlignment="center"
             android:textColor="?attr/primaryTextColor"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/zolodek4"
@@ -51,10 +51,10 @@
             android:layout_height="80dp"
             android:layout_margin="15dp"
             android:background="@drawable/buttonshape"
-            android:text="Żołądek 4"
+            android:text="@string/_4_stopien_nauczania"
             android:textAlignment="center"
             android:textColor="?attr/primaryTextColor"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/zolodek5"
@@ -62,9 +62,9 @@
             android:layout_height="80dp"
             android:layout_margin="15dp"
             android:background="@drawable/buttonshape"
-            android:text="Żołądek 5"
+            android:text="@string/_5_stopien_nauczania"
             android:textAlignment="center"
             android:textColor="?attr/primaryTextColor"
-            android:textSize="40sp" />
+            android:textSize="25sp" />
     </LinearLayout>
 </ScrollView>

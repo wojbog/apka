@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/jakie_slowko"
+        android:text="@string/przykladowe_slowko"
         android:textAlignment="center"
         android:textColor="?attr/primaryTextColor"
         android:textSize="55sp"

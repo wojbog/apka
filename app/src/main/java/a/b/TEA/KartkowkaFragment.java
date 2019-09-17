@@ -31,9 +31,11 @@ public class KartkowkaFragment extends Fragment {
             kateg,
             imie="brak",
             nazwisko="brak",
+            ustawZolodek,
+            ktoryZoladek,
             TAG = "LOGKartkowkaFragment";
     private int[] ostatnieLosy;
-    private int test=0, t;
+    private int test=0, t, los;
     private boolean
             odwrotnie=false,
             vi;
@@ -134,6 +136,20 @@ public class KartkowkaFragment extends Fragment {
             if (!odwrotnie) odw.setVisibility(View.INVISIBLE);
             dobrych++;
 
+            ktoryZoladek = users.get(los).getZolodek();
+
+            if (ktoryZoladek.equals("5")) {
+                users.get(los).setZolodek("Nauczone");
+                MainActivity.baza.myDao().updateUser(users.get(los));
+            } else {
+                if (ktoryZoladek.equals("1")) ustawZolodek="2";
+                if (ktoryZoladek.equals("2")) ustawZolodek="3";
+                if (ktoryZoladek.equals("3")) ustawZolodek="4";
+                if (ktoryZoladek.equals("4")) ustawZolodek="5";
+                users.get(los).setZolodek(ustawZolodek);
+                MainActivity.baza.myDao().updateUser(users.get(los));
+            }
+
             TextView dobrychTV = view.findViewById(R.id.dobrychTV);
             final Animation animationScale;
             animationScale = AnimationUtils.loadAnimation(getContext(),
@@ -207,7 +223,6 @@ public class KartkowkaFragment extends Fragment {
             }
 
 //--------losuj slowko---------------
-        int los;
 
         if (users.size()>1) {
             for (int i=0; i<users.size(); i++)

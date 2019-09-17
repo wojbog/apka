@@ -151,11 +151,11 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                     .addToBackStack(null)
                     .commit();
         }
-        if (skont.equals("wybierzKategorie")) {
+        if (skont.equals("wybierzKategorieKartkowka")) {
             MainActivity.fragmentManager.beginTransaction()
                     .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                             android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                    .replace(R.id.stefan, new HomeFragment(klucz, vi))
+                    .replace(R.id.stefan, new KartkowkaFragment(klucz, vi))
                     .addToBackStack(null)
                     .commit();
         }

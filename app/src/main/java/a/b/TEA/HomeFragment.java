@@ -39,28 +39,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         BNkartkowka = view.findViewById(R.id.bn_kartkowka);
         BNkartkowka.setOnClickListener(this);
 
-        bnfiszki = view.findViewById(R.id.bn_fiszki);
-        bnfiszki.setOnClickListener(this);
-
-        bnZolodek = view.findViewById(R.id.bn_zolodek);
+        bnZolodek = view.findViewById(R.id.fiszkiZolodkiBtn);
         bnZolodek.setOnClickListener(this);
-
-        if (vi)
-        {
-            bnfiszki.setVisibility(View.VISIBLE);
-            BNkartkowka.setVisibility(View.VISIBLE);
-        }else
-        {
-            bnfiszki.setVisibility(View.GONE);
-            BNkartkowka.setVisibility(View.GONE);
-        }
 
         Button bnDodaj = view.findViewById(R.id.add);
         bnDodaj.setOnClickListener(this);
-
-        Button wybierzKategorieBtn = view.findViewById(R.id.wybierzKategorieBtn);
-        wybierzKategorieBtn.setOnClickListener(this);
-        wybierzKategorieBtn.setText(kategoria);
 
         return view;
     }
@@ -85,22 +68,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             .replace(R.id.stefan, new KartkowkaFragment(kategoria, vi))
                             .addToBackStack(null)
                             .commit();
-                }else zrobToast("Najpierw Wybierz kategorię");
-                break;
-
-            case R.id.bn_fiszki:
-                if (!kategoria.equals("Wybierz Kategorię")) {
+                }else {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new FiszkiFragment(kategoria, vi))
+                            .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieKartkowka", vi))
                             .addToBackStack(null)
                             .commit();
-                }else zrobToast("Najpierw Wybierz kategorię");
+                }
                 break;
 
-
-            case R.id.bn_zolodek:
+            case R.id.fiszkiZolodkiBtn:
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                 android.R.anim.slide_in_left, android.R.anim.slide_out_right)
@@ -126,16 +104,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             .commit();
                 }
 
-                break;
-
-            case R.id.wybierzKategorieBtn:
-                vi=true;
-                MainActivity.fragmentManager.beginTransaction()
-                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorie", true))
-                        .addToBackStack(null)
-                        .commit();
                 break;
 
         }

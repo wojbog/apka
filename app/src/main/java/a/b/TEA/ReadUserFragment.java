@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class ReadUserFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
 
     List<User> andrzej;
+    List<User> usna;
 
     String kategoria;
     View view;
@@ -62,6 +64,17 @@ String TAG="ReadUserFragment";
             e.setCategory("Tu będzie kategoria");
             andrzej.add(e);
         }
+
+        usna = MainActivity.baza.myDao().loadUsersByZolodek("Nauczone");
+
+        Button usunNauczoneBtn = view.findViewById(R.id.usunNauczoneBtn);
+        usunNauczoneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.baza.myDao().deleteAllUsers(usna);
+                MainActivity.fragmentManager.popBackStack();
+            }
+        });
 
 //        AdView mAdView;
 //        mAdView = view.findViewById(R.id.adViewReadUser);
