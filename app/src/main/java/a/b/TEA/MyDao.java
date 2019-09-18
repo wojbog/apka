@@ -20,7 +20,10 @@ public interface MyDao {
     @Update
     void updateUser(User user);
 
-    @Query("select *from users")
+    @Update
+    void updateUsers(List<User> users);
+
+    @Query("select * from users")
     List<User> getUsers();
 
     @Query("select * from users order by kategoria ASC")
@@ -37,6 +40,9 @@ public interface MyDao {
 
     @Query("select * from users where nazwisko = 'meldojthgsbxgslwojrfidyvsnrownxossaa' and kategoria = 'hdshjaiasaslokasjdjasadkjjdiayucxzpw'")
     List<User> loadAllCategory();
+
+    @Query("select * from users where kategoria = 'Data'")
+    User loadData();
 
     //meldojthgsbxgslwojrfidyvsnrownxossaa
     //hdshjaiasaslokasjdjasadkjjdiayucxzpw

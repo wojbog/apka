@@ -21,12 +21,17 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
   public static FragmentManager fragmentManager;
-  public static MyappDatabase baza,bazaKategorii;
+  public static MyappDatabase baza,bazaKategorii,bazaZolodkowa,bazaZolodkowaZastepcza;
 
   String TAG = "LOGMainActivity";
     private long backPressedTime = 0;
@@ -35,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //TODO: Ustawienia, oceń nas, motywy
-        //TODO: zrobić czy ma być słówko na tłumaczenie czy odwrotnie
+        //TODO: Ustawienia, oceń nas, motywy, czas oczekiwania na nowe słówka
+        //TODO: zaawansowane fiszki / szybkie fiszki
+        //TODO: ładniejsze animacje
+        //TODO: nowa baza zastępcza dla słówek które mają być usunięte i dodane następnego dnia
 
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
@@ -44,6 +51,32 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         baza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanych").allowMainThreadQueries().build();
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
+        bazaZolodkowa = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowa").allowMainThreadQueries().build();
+        bazaZolodkowaZastepcza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowaZastepcza").allowMainThreadQueries().build();
+
+        if (bazaKategorii.myDao().loadUserByKategoria("Data").size()==0) {
+            User user = new User();
+            Date date = Calendar.getInstance().getTime();
+            DateFormat dateFormat1 = new SimpleDateFormat("dd");
+            DateFormat dateFormat2 = new SimpleDateFormat("hh");
+            String dzien = dateFormat1.format(date);
+            String godzina = dateFormat2.format(date);
+            user.setName(godzina);
+            user.setSurname(dzien);
+            user.setCategory("Data");
+            MainActivity.bazaKategorii.myDao().addUser(user);
+        }
+
+//        User user = new User();
+//        Date date = Calendar.getInstance().getTime();
+//        DateFormat dateFormat1 = new SimpleDateFormat("dd");
+//        DateFormat dateFormat2 = new SimpleDateFormat("hh");
+//        String dzien = dateFormat1.format(date);
+//        String godzina = dateFormat2.format(date);
+//        user.setName(godzina);
+//        user.setSurname(dzien);
+//        user.setCategory("Data");
+//        MainActivity.bazaKategorii.myDao().updateUser(user);
 
         Reminder(3600);
 
@@ -63,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         final String PREFS_NAME = "MyPrefsFile";
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         if (settings.getBoolean("my_first_time", true)) {
+
             Toast.makeText(getApplicationContext(), "Dziękujemy za pobranie aplikacji!", Toast.LENGTH_LONG).show();
             settings.edit().putBoolean("my_first_time", false).commit();
         }

@@ -15,12 +15,14 @@
     <color name="primaryTextColor">#A4BAD3</color>
     <color name="secondaryDarkColor">#29434e</color>
     <color name="buttonBackground">#1d3741</color>
+    <color name="colorAccent">#946809</color>
 
     <color name="primaryColorPom">#D9B77A</color>
     <color name="primaryDarkColorPom">#A08248</color>
     <color name="primaryTextColorPom">#362500</color>
     <color name="secondaryDarkColorPom">#B68A1B</color>
     <color name="buttonBackgroundPom">#946809</color>
+    <color name="colorAccentPom">#1d3741</color>
 
 
     <color name="kartkowkaGreen">#059700</color>

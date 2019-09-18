@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -19,12 +23,13 @@ import java.util.Locale;
 public class ZolodkiFragment extends Fragment implements View.OnClickListener {
 
     View view;
-    String kategoria;
-    List<User> users1;
-    List<User> users2;
-    List<User> users3;
-    List<User> users4;
-    List<User> users5;
+    String kategoria, dzien, godzina;
+
+    List<User> users1,users2,users3,users4,users5,listaZastepcza;
+    User listazGodzina;
+    Date date;
+    DateFormat dateFormat1;
+    DateFormat dateFormat2;
 
     public ZolodkiFragment() {
     }
@@ -34,11 +39,52 @@ public class ZolodkiFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_zolodki, container, false);
-        users1 = MainActivity.baza.myDao().loadUsersByZolodek("1");
-        users2 = MainActivity.baza.myDao().loadUsersByZolodek("2");
-        users3 = MainActivity.baza.myDao().loadUsersByZolodek("3");
-        users4 = MainActivity.baza.myDao().loadUsersByZolodek("4");
-        users5 = MainActivity.baza.myDao().loadUsersByZolodek("5");
+
+
+        listazGodzina = MainActivity.bazaKategorii.myDao().loadData();
+
+        date = Calendar.getInstance().getTime();
+        dateFormat1 = new SimpleDateFormat("dd");
+        dateFormat2 = new SimpleDateFormat("hh");
+        dzien = dateFormat1.format(date);
+        godzina = dateFormat2.format(date);
+
+        boolean czyKolejnyDzien = listazGodzina.getName().equals(dzien);
+
+        if (!czyKolejnyDzien) {
+            listaZastepcza = MainActivity.bazaZolodkowaZastepcza.myDao().getUsers();
+
+            for (User s : listaZastepcza) {
+                User use = new User();
+                use.setCategory(s.getCategory());
+                use.setZolodek(s.getZolodek());
+                use.setSurname(s.getSurname());
+                use.setName(s.getName());
+                MainActivity.bazaZolodkowa.myDao().addUser(use);
+                MainActivity.bazaZolodkowaZastepcza.myDao().deleteUsers(s);
+            }
+
+            User user = new User();
+            Date date1 = Calendar.getInstance().getTime();
+            DateFormat dateFormat3 = new SimpleDateFormat("dd");
+            DateFormat dateFormat4 = new SimpleDateFormat("hh");
+            String dzien1 = dateFormat3.format(date1);
+            String godzina1 = dateFormat4.format(date1);
+            user.setName(godzina1);
+            user.setSurname(dzien1);
+            user.setCategory("Data");
+            MainActivity.bazaKategorii.myDao().deleteUsers(listazGodzina);
+            MainActivity.bazaKategorii.myDao().addUser(user);
+        }else{
+
+        }
+
+
+        users1 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("1");
+        users2 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("2");
+        users3 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("3");
+        users4 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("4");
+        users5 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("5");
 
 //        String slowka, slowek;
         String poprawnaodmiana1;

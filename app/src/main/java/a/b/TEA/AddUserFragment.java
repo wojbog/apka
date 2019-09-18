@@ -149,6 +149,7 @@ public class AddUserFragment extends Fragment {
                         user.setZolodek("1");
 
                         MainActivity.baza.myDao().addUser(user);
+                        MainActivity.bazaZolodkowa.myDao().addUser(user);
                         zrobToast("Dodano!");
 
                         Username.setText("");

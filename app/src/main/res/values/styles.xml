@@ -8,8 +8,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/buttonBackground</item>
+        <item name="colorAccent">@color/primaryTextColor</item>
         <item name="primaryTextColor">@color/primaryTextColor</item>
+        <item name="android:textColorHint">@color/primaryTextColor</item>
+        <item name="android:textColorHintInverse">@color/primaryTextColor</item>
         <item name="buttonNormalColor">@color/buttonBackground</item>
         <item name="android:windowBackground">@color/secondaryDarkColor</item>
         <item name="android:navigationBarColor">@color/secondaryDarkColor</item>
@@ -19,8 +21,10 @@
     <style name="AppTheme.pomaranczowy">
         <item name="colorPrimary">@color/primaryColorPom</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorPom</item>
-        <item name="colorAccent">@color/buttonBackgroundPom</item>
+        <item name="colorAccent">@color/primaryColorPom</item>
         <item name="primaryTextColor">@color/primaryTextColorPom</item>
+        <item name="android:textColorHint">@color/primaryTextColorPom</item>
+        <item name="android:textColorHintInverse">@color/primaryTextColorPom</item>
         <item name="buttonNormalColor">@color/buttonBackgroundPom</item>
         <item name="android:windowBackground">@color/secondaryDarkColorPom</item>
         <item name="android:navigationBarColor">@color/secondaryDarkColorPom</item>

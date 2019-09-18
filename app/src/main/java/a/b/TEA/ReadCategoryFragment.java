@@ -77,18 +77,9 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                         .commit();
             }
         });
-
-//        // Set the adapter
-//        if (view instanceof RecyclerView) {
-//            Context context = view.getContext();
-//            RecyclerView recyclerView = (RecyclerView) view;
-//            if (mColumnCount <= 1) {
-//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-//            } else {
-//                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-//            }
-//            recyclerView.setAdapter(new AdapterReadCategoryFragment(felix,this));
-//        }
+        if (userList.size() == 0) {
+            listaUserZLayatu.add(new Listakategorii("Tu będzie Kategoria"));
+        }
 
 
         recyclerView = view.findViewById(R.id.list);

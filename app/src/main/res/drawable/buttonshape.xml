@@ -7,7 +7,7 @@
         android:bottomRightRadius="10dp"
         />
     <solid
-        android:color="?attr/colorAccent"
+        android:color="?attr/buttonNormalColor"
         />
 <!--    <padding
         android:left="3dp"

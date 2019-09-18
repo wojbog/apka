@@ -16,6 +16,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -40,12 +44,13 @@ public class ZolodekNumerFragment extends Fragment {
         ktoryZoladek = ktory;
     }
 
+    //TODO: zaktualizowac dzien jak wszedzie bedzie 0
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_zolodek_numer, container, false);
-        users = MainActivity.baza.myDao().loadUsersByZolodek(ktoryZoladek);
+        users = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek(ktoryZoladek);
 
         losy = new int[users.size()];
 
@@ -95,7 +100,9 @@ public class ZolodekNumerFragment extends Fragment {
                     if (ktoryZoladek.equals("3")) ustawZolodek="4";
                     if (ktoryZoladek.equals("4")) ustawZolodek="5";
                     users.get(los).setZolodek(ustawZolodek);
-                    MainActivity.baza.myDao().updateUser(users.get(los));
+
+                    MainActivity.bazaZolodkowaZastepcza.myDao().addUser(users.get(los));
+                    MainActivity.bazaZolodkowa.myDao().deleteUsers(users.get(los));
                 }
 
                 losuj();
@@ -152,6 +159,11 @@ public class ZolodekNumerFragment extends Fragment {
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
+    }
+
+    private void odpowiedniaPora()
+    {
+
     }
 
 }
