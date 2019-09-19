@@ -11,6 +11,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -40,12 +41,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //TODO: Ustawienia, oceń nas, motywy, czas oczekiwania na nowe słówka
-        //TODO: zaawansowane fiszki / szybkie fiszki
-        //TODO: ładniejsze animacje
-        //TODO: nowa baza zastępcza dla słówek które mają być usunięte i dodane następnego dnia
+        //TODO: Ustawienia, oceń nas, motywy
+        //TODO: naprawić update user w przejrzyj słówka
 
-        setTheme(R.style.AppTheme);
+       setTheme(R.style.AppTheme);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
@@ -66,17 +66,18 @@ public class MainActivity extends AppCompatActivity {
             user.setCategory("Data");
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
-
-//        User user = new User();
-//        Date date = Calendar.getInstance().getTime();
-//        DateFormat dateFormat1 = new SimpleDateFormat("dd");
-//        DateFormat dateFormat2 = new SimpleDateFormat("hh");
-//        String dzien = dateFormat1.format(date);
-//        String godzina = dateFormat2.format(date);
-//        user.setName(godzina);
-//        user.setSurname(dzien);
-//        user.setCategory("Data");
-//        MainActivity.bazaKategorii.myDao().updateUser(user);
+//TODO
+        User user = new User();
+        Date date1 = Calendar.getInstance().getTime();
+        DateFormat dateFormat3 = new SimpleDateFormat("dd");
+        DateFormat dateFormat4 = new SimpleDateFormat("hh");
+        String dzien1 = dateFormat3.format(date1);
+        String godzina1 = dateFormat4.format(date1);
+        user.setName(godzina1);
+        user.setSurname(dzien1);
+        user.setCategory("Data");
+        MainActivity.bazaKategorii.myDao().deleteUsers(MainActivity.bazaKategorii.myDao().loadData());
+        MainActivity.bazaKategorii.myDao().addUser(user);
 
         Reminder(3600);
 
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz Kategorię", false)).commit();
+            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz Kategorię")).commit();
         }
 
     }

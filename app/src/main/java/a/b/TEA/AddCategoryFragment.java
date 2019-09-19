@@ -27,9 +27,8 @@ public class AddCategoryFragment extends Fragment {
     InterstitialAd mInterstitialAd;
     boolean vi;
 
-    public AddCategoryFragment(String s, boolean visibility) {
+    public AddCategoryFragment(String s) {
         skont=s;
-        vi=visibility;
     }
 
 

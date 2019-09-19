@@ -13,9 +13,10 @@ public class FiszkiWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, int[] appWidgetIds) {
 
+        //TODO
         User user = MainActivity.baza.myDao().loadLos();
-        String imie = user.getName();
-        String nazwisko = user.getSurname();
+        String imie = "Aktualnie trwają";
+        String nazwisko = "Prace nad widżetem";
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fiszki_widget);
 
         views.setTextViewText(R.id.kartaWTV, imie+"\n-=-=-=-=-=-=-=-\n"+nazwisko);

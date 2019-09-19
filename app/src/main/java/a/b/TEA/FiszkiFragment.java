@@ -33,9 +33,8 @@ public class FiszkiFragment extends Fragment {
     private Random random = new Random();
 
 
-    public FiszkiFragment(String kate, boolean visibility) {
+    public FiszkiFragment(String kate) {
         kategoria = kate;
-        vi=visibility;
     }
 
 

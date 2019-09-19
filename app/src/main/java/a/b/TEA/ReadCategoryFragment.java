@@ -28,16 +28,14 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
     private RecyclerView.LayoutManager layoutManager;
 
     private String klucz, skont;
-    boolean vi;
     private int mColumnCount = 1;
     View layout, view;
 
 
 
 
-    public ReadCategoryFragment(String skond, boolean visibility) {
+    public ReadCategoryFragment(String skond) {
         skont = skond;
-        vi = visibility;
     }
 
     @Override
@@ -47,6 +45,21 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
         layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) getActivity().findViewById(R.id.custom_toast_container));
         final ArrayList<Listakategorii> listaUserZLayatu = new ArrayList<>();
         final List<User> userList = MainActivity.bazaKategorii.myDao().loadAllCategory();
+        User listazgadzina = MainActivity.bazaKategorii.myDao().loadData();
+        List<User> users = MainActivity.baza.myDao().getUsers();
+
+        if (userList.size() != 0) {
+            TextView catInfTV = view.findViewById(R.id.catInfTV);
+            catInfTV.setText("");
+        } else{
+            TextView catInfTV2 = view.findViewById(R.id.catInfTV2);
+            catInfTV2.setText("");
+        }
+
+        if (users.size() != 0) {
+            TextView catInfTV2 = view.findViewById(R.id.catInfTV2);
+            catInfTV2.setText("");
+        }
 
 
 //        AdView mAdView;
@@ -72,15 +85,14 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                 android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan, new AddCategoryFragment(skont, vi))
+                        .replace(R.id.stefan, new AddCategoryFragment(skont))
                         .addToBackStack(null)
                         .commit();
             }
         });
-        if (userList.size() == 0) {
-            listaUserZLayatu.add(new Listakategorii("Tu będzie Kategoria"));
-        }
 
+//        String data = listazgadzina.getSurname();
+//        listaUserZLayatu.add(new Listakategorii(data));
 
         recyclerView = view.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
@@ -146,7 +158,15 @@ public class ReadCategoryFragment extends Fragment implements AdapterReadCategor
             MainActivity.fragmentManager.beginTransaction()
                     .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                             android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                    .replace(R.id.stefan, new KartkowkaFragment(klucz, vi))
+                    .replace(R.id.stefan, new KartkowkaFragment(klucz))
+                    .addToBackStack(null)
+                    .commit();
+        }
+        if (skont.equals("wybierzKategorieFiszki")) {
+            MainActivity.fragmentManager.beginTransaction()
+                    .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                            android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                    .replace(R.id.stefan, new FiszkiFragment(klucz))
                     .addToBackStack(null)
                     .commit();
         }

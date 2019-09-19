@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -17,10 +20,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             TAG="LOGHomeFragment",
             kategoria;
     View view;
-    boolean vi=false;
-    Button bnfiszki, BNkartkowka, bnviewusers, bnZolodek;
+    Button BNkartkowka, bnviewusers, bnZolodek, fiszkiBtn;
+    List<User> users1,users2,users3,users4,users5;
 
-    public HomeFragment(String kat, boolean visibility) { kategoria = kat; vi=visibility;}
+    public HomeFragment(String kat) { kategoria = kat;}
 
 
     @Override
@@ -42,6 +45,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         bnZolodek = view.findViewById(R.id.fiszkiZolodkiBtn);
         bnZolodek.setOnClickListener(this);
 
+        fiszkiBtn = view.findViewById(R.id.fiszkiBtn);
+        fiszkiBtn.setOnClickListener(this);
+
         Button bnDodaj = view.findViewById(R.id.add);
         bnDodaj.setOnClickListener(this);
 
@@ -56,7 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.bn_view_users:
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan,new ReadUserFragment(kategoria, vi))
+                        .replace(R.id.stefan,new ReadUserFragment(kategoria))
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -65,14 +71,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if (!kategoria.equals("Wybierz Kategorię")) {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new KartkowkaFragment(kategoria, vi))
+                            .replace(R.id.stefan, new KartkowkaFragment(kategoria))
                             .addToBackStack(null)
                             .commit();
                 }else {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieKartkowka", vi))
+                            .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieKartkowka"))
+                            .addToBackStack(null)
+                            .commit();
+                }
+                break;
+
+            case R.id.fiszkiBtn:
+                if (!kategoria.equals("Wybierz Kategorię")) {
+                    MainActivity.fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                            .replace(R.id.stefan, new FiszkiFragment(kategoria))
+                            .addToBackStack(null)
+                            .commit();
+                }else {
+                    MainActivity.fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                            .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieFiszki"))
                             .addToBackStack(null)
                             .commit();
                 }
@@ -85,6 +108,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         .replace(R.id.stefan, new ZolodkiFragment())
                         .addToBackStack(null)
                         .commit();
+
                 break;
 
             case R.id.add:
@@ -92,7 +116,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie", vi))
+                            .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie"))
                             .addToBackStack(null)
                             .commit();
                 } else {

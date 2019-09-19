@@ -26,7 +26,7 @@ public interface MyDao {
     @Query("select * from users")
     List<User> getUsers();
 
-    @Query("select * from users order by kategoria ASC")
+    @Query("select * from users order by kategoria,imie ASC ")
     List<User> loadUserOrderByKategoria();
 
     @Query("select * from users where kategoria = :cat")

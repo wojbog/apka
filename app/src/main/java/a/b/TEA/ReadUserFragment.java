@@ -25,23 +25,13 @@ public class ReadUserFragment extends Fragment {
     private RecyclerView recyclerView;
     public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    List<User> andrzej;
-    List<User> usna;
-
+    private List<User> users, andrzej, usna;
     String kategoria;
     View view;
-    boolean vi;
 
 
-
-    TextView textView;
-String TAG="ReadUserFragment";
-
-
-    public ReadUserFragment(String k, boolean visibility) {
+    public ReadUserFragment(String k) {
         kategoria = k;
-        vi = visibility;
     }
 
 
@@ -49,7 +39,6 @@ String TAG="ReadUserFragment";
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_read_user, container, false);
-        final List<User> users;
 
         if (!kategoria.equals("Wybierz Kategorię")) {
             users = MainActivity.baza.myDao().loadUserByKategoria(kategoria);

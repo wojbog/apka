@@ -33,7 +33,7 @@ public class ZolodekNumerFragment extends Fragment {
     private Animation animationMove = null;
 
     private Random random = new Random();
-    private List<User> users;
+    private List<User> users, userZBazy;
 
     private boolean odwrocone;
     private String  ustawZolodek,ktoryZoladek, imie, nazwisko;
@@ -51,6 +51,7 @@ public class ZolodekNumerFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_zolodek_numer, container, false);
         users = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek(ktoryZoladek);
+        userZBazy = MainActivity.baza.myDao().loadUsersByZolodek(ktoryZoladek);
 
         losy = new int[users.size()];
 
@@ -94,13 +95,21 @@ public class ZolodekNumerFragment extends Fragment {
                 if (ktoryZoladek.equals("5")) {
                     users.get(los).setZolodek("Nauczone");
                     MainActivity.baza.myDao().updateUser(users.get(los));
+                    MainActivity.bazaZolodkowa.myDao().updateUser(users.get(los));
                 } else {
                     if (ktoryZoladek.equals("1")) ustawZolodek="2";
                     if (ktoryZoladek.equals("2")) ustawZolodek="3";
                     if (ktoryZoladek.equals("3")) ustawZolodek="4";
                     if (ktoryZoladek.equals("4")) ustawZolodek="5";
-                    users.get(los).setZolodek(ustawZolodek);
 
+                    User user = new User();
+                    user.setZolodek(ustawZolodek);
+                    user.setSurname(users.get(los).getSurname());
+                    user.setName(users.get(los).getName());
+                    user.setCategory(users.get(los).getCategory());
+
+                    MainActivity.baza.myDao().deleteUsers(userZBazy.get(los));
+                    MainActivity.baza.myDao().addUser(user);
                     MainActivity.bazaZolodkowaZastepcza.myDao().addUser(users.get(los));
                     MainActivity.bazaZolodkowa.myDao().deleteUsers(users.get(los));
                 }

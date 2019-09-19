@@ -43,9 +43,8 @@ public class KartkowkaFragment extends Fragment {
     Button odw;
 
 
-    public KartkowkaFragment(String k, boolean visibility) {
+    public KartkowkaFragment(String k) {
         kateg = k;
-        vi=visibility;
     }
 
 
@@ -301,7 +300,7 @@ public class KartkowkaFragment extends Fragment {
                         R.id.stefan, new KoniecKartkowkiFragment(
                             String.format(Locale.getDefault(), "Dobrych:\n%d", dobrych),
                             String.format(Locale.getDefault(), "złych:\n%d", zlych),
-                            kateg, vi
+                            kateg
                         )
                     )
                     .addToBackStack(null)

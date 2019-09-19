@@ -49,9 +49,9 @@ public class ZolodkiFragment extends Fragment implements View.OnClickListener {
         dzien = dateFormat1.format(date);
         godzina = dateFormat2.format(date);
 
-        boolean czyKolejnyDzien = listazGodzina.getName().equals(dzien);
+        boolean cztTenSamDzien = listazGodzina.getSurname().equals(dzien);
 
-        if (!czyKolejnyDzien) {
+        if (!cztTenSamDzien) {
             listaZastepcza = MainActivity.bazaZolodkowaZastepcza.myDao().getUsers();
 
             for (User s : listaZastepcza) {

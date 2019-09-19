@@ -12,13 +12,11 @@ import android.widget.TextView;
 public class KoniecKartkowkiFragment extends Fragment {
 
     private String dobrych, zlych, kategoria;
-    boolean vi;
 
-    public KoniecKartkowkiFragment(String dobryh, String zlyh, String kateg, boolean visibility) {
+    public KoniecKartkowkiFragment(String dobryh, String zlyh, String kateg) {
         dobrych = dobryh;
         zlych = zlyh;
         kategoria = kateg;
-        vi=visibility;
     }
 
 

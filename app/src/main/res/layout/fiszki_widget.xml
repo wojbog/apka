@@ -13,7 +13,7 @@
         android:background="@drawable/fiszkishape"
         android:gravity="center"
         android:padding="20dp"
-        android:text="@string/przykladowe_slowko"
+        android:text="Uruchom apkę i\nDodaj słówka"
         android:textColor="@color/primaryTextColor"
         android:textSize="60sp" />
 
