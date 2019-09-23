@@ -110,7 +110,7 @@ public class ZolodekNumerFragment extends Fragment {
 
                     MainActivity.baza.myDao().deleteUsers(userZBazy.get(los));
                     MainActivity.baza.myDao().addUser(user);
-                    MainActivity.bazaZolodkowaZastepcza.myDao().addUser(users.get(los));
+                    MainActivity.bazaZolodkowaZastepcza.myDao().addUser(user);
                     MainActivity.bazaZolodkowa.myDao().deleteUsers(users.get(los));
                 }
 

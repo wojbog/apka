@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartoweActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/texeView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:text="INSTRUKCJA OBSŁUGI\nKliknij jak przeczytasz\n\nDODAJ SŁÓWKA - Możesz dodawać słówka i przypisywać je do kategorii.\n\nPRZEJRZYJ SŁÓWKA - Usuń słówka przesunięciem w bok lub po osiągnięciu najwyższego stopnia nauczenia, jednym przyciskiem.\n\n SZYBKIE FISZKI - Idealne przed sprawdzianem, kartkówką czy odpowiedzią na szybkie powtórzenie sobie słówek.\n\nZAAWANSOWANE FISZKI - Sposób nauki polegający na tym że słówka są grupowane w stopień nauczania i każdego dnia przechodzą na kolejny. Dzięki temu każde słówko powtórzysz aż 5 razy!\n\nKARTKÓWKA - Zmierz się z słówkami i sprawdź czy naprawdę umiesz. Możesz zmienić z którego języka tłumaczysz na który.\n\nAUTORZY:\nMateusz Idziejczak\nWojciech Bogacz"
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

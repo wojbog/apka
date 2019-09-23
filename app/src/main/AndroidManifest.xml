@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".StartoweActivity"></activity>
         <activity
-            android:name="a.b.TEA.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
@@ -20,7 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="a.b.TEA.FiszkiWidget">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7457190986528845~5066555891" />
+
+        <receiver android:name=".FiszkiWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -29,11 +34,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/fiszki_widget_info" />
         </receiver>
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7457190986528845~5066555891"/>
-<!--        android:value="ca-app-pub-3940256099942544~3347511713"/>testowe-->
     </application>
 
 </manifest>

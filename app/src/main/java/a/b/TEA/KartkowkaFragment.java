@@ -135,19 +135,21 @@ public class KartkowkaFragment extends Fragment {
             if (!odwrotnie) odw.setVisibility(View.INVISIBLE);
             dobrych++;
 
-            ktoryZoladek = users.get(los).getZolodek();
-
-            if (ktoryZoladek.equals("5")) {
-                users.get(los).setZolodek("Nauczone");
-                MainActivity.baza.myDao().updateUser(users.get(los));
-            } else {
-                if (ktoryZoladek.equals("1")) ustawZolodek="2";
-                if (ktoryZoladek.equals("2")) ustawZolodek="3";
-                if (ktoryZoladek.equals("3")) ustawZolodek="4";
-                if (ktoryZoladek.equals("4")) ustawZolodek="5";
-                users.get(los).setZolodek(ustawZolodek);
-                MainActivity.baza.myDao().updateUser(users.get(los));
-            }
+//            ktoryZoladek = users.get(los).getZolodek();
+//
+//            if (ktoryZoladek.equals("5")) {
+//                users.get(los).setZolodek("Nauczone");
+//                MainActivity.baza.myDao().updateUser(users.get(los));
+////                MainActivity.bazaZolodkowa.myDao().updateUser(users.get(los));
+//            } else {
+//                if (ktoryZoladek.equals("1")) ustawZolodek="2";
+//                if (ktoryZoladek.equals("2")) ustawZolodek="3";
+//                if (ktoryZoladek.equals("3")) ustawZolodek="4";
+//                if (ktoryZoladek.equals("4")) ustawZolodek="5";
+//                users.get(los).setZolodek(ustawZolodek);
+//                MainActivity.baza.myDao().updateUser(users.get(los));
+////                MainActivity.bazaZolodkowa.myDao().updateUser(users.get(los));
+//            }
 
             TextView dobrychTV = view.findViewById(R.id.dobrychTV);
             final Animation animationScale;

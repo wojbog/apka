@@ -11,12 +11,13 @@
         android:id="@+id/gratulacje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="104dp"
         android:text="@string/gratulacje"
         android:textAlignment="center"
-        android:textSize="50sp"
         android:textColor="?attr/primaryTextColor"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +52,7 @@
         android:id="@+id/zakonczBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/buttonshapepusty"
         android:text="@string/zako_cz"
         android:textColor="?attr/primaryTextColor"
@@ -61,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dobrychTVkoniec" />
 
-<!--    <com.google.android.gms.ads.AdView-->
+    <!--    <com.google.android.gms.ads.AdView-->
 <!--        android:id="@+id/adViewKoniecKArtkowki"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
