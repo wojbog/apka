@@ -20,7 +20,7 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
            jedynka = itemView.findViewById(R.id.nad);
            dwojka = itemView.findViewById(R.id.pod);
            kolejny = itemView.findViewById(R.id.numerek);
-           ijeszczejeden = itemView.findViewById(R.id.zolo);
+//           ijeszczejeden = itemView.findViewById(R.id.zolo);
        }
    }
    Adapterek(List<User> lista){
@@ -39,7 +39,7 @@ public class Adapterek extends RecyclerView.Adapter<Adapterek.ExampleViewHolder>
     holder.jedynka.setText(currentItem.getName());
     holder.dwojka.setText(currentItem.getSurname());
     holder.kolejny.setText(currentItem.getCategory());
-    holder.ijeszczejeden.setText(String.format("Stopień nauczenia: %s", currentItem.getZolodek()));
+//    holder.ijeszczejeden.setText(String.format("Stopień nauczenia: %s", currentItem.getZolodek()));
     }
 public void setMlist(List<User> notes)
 {

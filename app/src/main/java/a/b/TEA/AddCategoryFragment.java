@@ -24,8 +24,8 @@ public class AddCategoryFragment extends Fragment {
     private static String ka = "hdshjaiasaslokasjdjasadkjjdiayucxzpw";
     View layout;
 
-    InterstitialAd mInterstitialAd;
-    boolean vi;
+    private InterstitialAd mInterstitialAd;
+    private int ileDoReklam =1;
 
     public AddCategoryFragment(String s) {
         skont=s;
@@ -99,8 +99,11 @@ public class AddCategoryFragment extends Fragment {
                 else if (!kategoria.equals(""))
                 {
                     if (mInterstitialAd.isLoaded()) {
-                        mInterstitialAd.show();
+                        if (ileDoReklam % 2 == 0) {
+                            mInterstitialAd.show();
+                        }
                     }
+                    ileDoReklam++;
                     User user = new User();
                     user.setName(kategoria);
                     user.setSurname(su);

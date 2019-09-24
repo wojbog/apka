@@ -137,7 +137,7 @@ public class AddUserFragment extends Fragment {
                     else if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {
                         if (mInterstitialAd.isLoaded()) {
-                            if (ileDoReklam % 2 == 0) {
+                            if (ileDoReklam % 4 == 0) {
                                 mInterstitialAd.show();
                             }
                         }

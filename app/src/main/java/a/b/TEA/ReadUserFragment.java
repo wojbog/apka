@@ -49,7 +49,6 @@ public class ReadUserFragment extends Fragment {
             User e = new User();
             e.setName("Tu będzie słówko");
             e.setSurname("Tu będzie tłumaczenie");
-            e.setZolodek("2");
             e.setCategory("Tu będzie kategoria");
             andrzej.add(e);
         }

@@ -44,8 +44,6 @@ public class ZolodekNumerFragment extends Fragment {
         ktoryZoladek = ktory;
     }
 
-    //TODO: zaktualizowac dzien jak wszedzie bedzie 0
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -108,8 +106,6 @@ public class ZolodekNumerFragment extends Fragment {
                     user.setName(users.get(los).getName());
                     user.setCategory(users.get(los).getCategory());
 
-                    MainActivity.baza.myDao().deleteUsers(userZBazy.get(los));
-                    MainActivity.baza.myDao().addUser(user);
                     MainActivity.bazaZolodkowaZastepcza.myDao().addUser(user);
                     MainActivity.bazaZolodkowa.myDao().deleteUsers(users.get(los));
                 }

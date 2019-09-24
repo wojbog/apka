@@ -36,6 +36,48 @@ public class ZolodkiFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_zolodki, container, false);
 
+
+        User listazGodzina;
+        listazGodzina = MainActivity.bazaKategorii.myDao().loadData();
+        Date date;
+        DateFormat dateFormat1;
+        DateFormat dateFormat2;
+        String dzien, godzina;
+        List<User> listaZastepcza;
+        date = Calendar.getInstance().getTime();
+        dateFormat1 = new SimpleDateFormat("dd");
+        dateFormat2 = new SimpleDateFormat("hh");
+        dzien = dateFormat1.format(date);
+        godzina = dateFormat2.format(date);
+
+        boolean cztTenSamDzien = listazGodzina.getSurname().equals(dzien);
+
+        if (!cztTenSamDzien) {
+            listaZastepcza = MainActivity.bazaZolodkowaZastepcza.myDao().getUsers();
+
+            for (User s : listaZastepcza) {
+                User use = new User();
+                use.setCategory(s.getCategory());
+                use.setZolodek(s.getZolodek());
+                use.setSurname(s.getSurname());
+                use.setName(s.getName());
+                MainActivity.bazaZolodkowa.myDao().addUser(use);
+                MainActivity.bazaZolodkowaZastepcza.myDao().deleteUsers(s);
+            }
+
+            User user = new User();
+            Date date1 = Calendar.getInstance().getTime();
+            DateFormat dateFormat3 = new SimpleDateFormat("dd");
+            DateFormat dateFormat4 = new SimpleDateFormat("hh");
+            String dzien1 = dateFormat3.format(date1);
+            String godzina1 = dateFormat4.format(date1);
+            user.setName(godzina1);
+            user.setSurname(dzien1);
+            user.setCategory("Data");
+            MainActivity.bazaKategorii.myDao().deleteUsers(listazGodzina);
+            MainActivity.bazaKategorii.myDao().addUser(user);
+        }
+
         users1 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("1");
         users2 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("2");
         users3 = MainActivity.bazaZolodkowa.myDao().loadUsersByZolodek("3");

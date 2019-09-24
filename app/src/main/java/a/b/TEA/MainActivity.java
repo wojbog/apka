@@ -37,17 +37,11 @@ public class MainActivity extends AppCompatActivity {
   String TAG = "LOGMainActivity";
     private long backPressedTime = 0;
     Timer timer;
-    User listazGodzina;
-    Date date;
-    DateFormat dateFormat1;
-    DateFormat dateFormat2;
-    String dzien, godzina;
-    List<User> listaZastepcza;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //TODO: Ustawienia, oceń nas, motywy, informacje o aplikacji
+        //TODO: Ustawienia, oceń nas, motywy
 
        setTheme(R.style.AppTheme);
 
@@ -58,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         bazaZolodkowa = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowa").allowMainThreadQueries().build();
         bazaZolodkowaZastepcza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowaZastepcza").allowMainThreadQueries().build();
-        listazGodzina = bazaKategorii.myDao().loadData();
+
 
         if (bazaKategorii.myDao().loadUserByKategoria("Data").size()==0) {
             User user = new User();
@@ -73,40 +67,6 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
 
-
-        date = Calendar.getInstance().getTime();
-        dateFormat1 = new SimpleDateFormat("dd");
-        dateFormat2 = new SimpleDateFormat("hh");
-        dzien = dateFormat1.format(date);
-        godzina = dateFormat2.format(date);
-
-        boolean cztTenSamDzien = listazGodzina.getSurname().equals(dzien);
-
-        if (!cztTenSamDzien) {
-            listaZastepcza = MainActivity.bazaZolodkowaZastepcza.myDao().getUsers();
-
-            for (User s : listaZastepcza) {
-                User use = new User();
-                use.setCategory(s.getCategory());
-                use.setZolodek(s.getZolodek());
-                use.setSurname(s.getSurname());
-                use.setName(s.getName());
-                MainActivity.bazaZolodkowa.myDao().addUser(use);
-                MainActivity.bazaZolodkowaZastepcza.myDao().deleteUsers(s);
-            }
-
-            User user = new User();
-            Date date1 = Calendar.getInstance().getTime();
-            DateFormat dateFormat3 = new SimpleDateFormat("dd");
-            DateFormat dateFormat4 = new SimpleDateFormat("hh");
-            String dzien1 = dateFormat3.format(date1);
-            String godzina1 = dateFormat4.format(date1);
-            user.setName(godzina1);
-            user.setSurname(dzien1);
-            user.setCategory("Data");
-            MainActivity.bazaKategorii.myDao().deleteUsers(listazGodzina);
-            MainActivity.bazaKategorii.myDao().addUser(user);
-        }
 
 //
 //        User user = new User();

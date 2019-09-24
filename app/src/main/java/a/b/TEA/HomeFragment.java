@@ -1,5 +1,6 @@
 package a.b.TEA;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -21,6 +22,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             kategoria;
     View view;
     Button BNkartkowka, bnviewusers, bnZolodek, fiszkiBtn;
+    ImageView imageView4;
     List<User> users1,users2,users3,users4,users5;
 
     public HomeFragment(String kat) { kategoria = kat;}
@@ -35,6 +37,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        mAdView = view.findViewById(R.id.adViewHome);
 //        AdRequest adRequest = new AdRequest.Builder().build();
 //        mAdView.loadAd(adRequest);
+
+        imageView4 = view.findViewById(R.id.imageView4);
+        imageView4.setOnClickListener(this);
 
         bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);
@@ -58,6 +63,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch(view.getId())
         {
+
+            case R.id.imageView4:
+                startActivity(new Intent(getActivity(), StartoweActivity.class));
+                break;
 
             case R.id.bn_view_users:
                 MainActivity.fragmentManager.beginTransaction()

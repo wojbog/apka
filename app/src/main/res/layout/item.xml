@@ -64,7 +64,7 @@
             android:layout_marginStart="217dp"
             android:layout_marginLeft="217dp"
             android:layout_marginTop="53dp"
-            android:text="@string/stopie_nauczenia_nauczone"
+            android:text=""
             android:textColor="?attr/primaryTextColor" />
 
     </RelativeLayout>

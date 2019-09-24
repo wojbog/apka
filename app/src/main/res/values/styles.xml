@@ -8,7 +8,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/primaryTextColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="primaryTextColor">@color/primaryTextColor</item>
         <item name="android:textColorHint">@color/primaryTextColor</item>
         <item name="android:textColorHintInverse">@color/primaryTextColor</item>
@@ -29,6 +29,19 @@
         <item name="android:windowBackground">@color/secondaryDarkColorPom</item>
         <item name="android:navigationBarColor">@color/secondaryDarkColorPom</item>
         <item name="android:statusBarColor">@color/secondaryDarkColorPom</item>
+    </style>
+
+    <style name="AppTheme.niebieski">
+        <item name="colorPrimary">@color/primaryColorBlue</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColorBlue</item>
+        <item name="colorAccent">@color/primaryColorBlue</item>
+        <item name="primaryTextColor">@color/primaryTextColorBlue</item>
+        <item name="android:textColorHint">@color/primaryTextColorBlue</item>
+        <item name="android:textColorHintInverse">@color/primaryTextColorBlue</item>
+        <item name="buttonNormalColor">@color/buttonBackgroundBlue</item>
+        <item name="android:windowBackground">@color/secondaryDarkColorBlue</item>
+        <item name="android:navigationBarColor">@color/secondaryDarkColorBlue</item>
+        <item name="android:statusBarColor">@color/secondaryDarkColorBlue</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
