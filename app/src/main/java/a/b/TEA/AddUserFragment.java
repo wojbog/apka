@@ -83,56 +83,10 @@ public class AddUserFragment extends Fragment {
 
                     if (
                             nazwisko.contains("\\")||
-                            nazwisko.contains("@")||
-                            nazwisko.contains("#")||
-                            nazwisko.contains("$")||
-                            nazwisko.contains("%")||
-                            nazwisko.contains("^")||
-                            nazwisko.contains("*")||
-                            nazwisko.contains("(")||
-                            nazwisko.contains(")")||
-                            nazwisko.contains("-")||
-                            nazwisko.contains("_")||
-                            nazwisko.contains("=")||
-                            nazwisko.contains("{")||
-                            nazwisko.contains("}")||
-                            nazwisko.contains("[")||
-                            nazwisko.contains("]")||
-                            nazwisko.contains(":")||
-                            nazwisko.contains(";")||
-                            nazwisko.contains("<")||
-                            nazwisko.contains(">")||
-                            nazwisko.contains(",")||
-                            nazwisko.contains(".")||
-                            nazwisko.contains("|")||
                             nazwisko.contains("\"")||
-                            nazwisko.contains("+")||
 
                             imie.contains("\\")||
-                            imie.contains("@")||
-                            imie.contains("#")||
-                            imie.contains("$")||
-                            imie.contains("%")||
-                            imie.contains("^")||
-                            imie.contains("*")||
-                            imie.contains("(")||
-                            imie.contains(")")||
-                            imie.contains("-")||
-                            imie.contains("_")||
-                            imie.contains("=")||
-                            imie.contains("{")||
-                            imie.contains("}")||
-                            imie.contains("[")||
-                            imie.contains("]")||
-                            imie.contains(":")||
-                            imie.contains(";")||
-                            imie.contains("<")||
-                            imie.contains(">")||
-                            imie.contains(",")||
-                            imie.contains(".")||
-                            imie.contains("|")||
-                            imie.contains("\"")||
-                            imie.contains("+")
+                            imie.contains("\"")
                     ) zrobToast("Nieodpowiedni znak!");
                     else if ((!imie.equals(""))&&(!nazwisko.equals("")))
                     {

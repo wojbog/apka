@@ -42,8 +42,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         //TODO: Ustawienia, oceń nas, motywy
+        //TODO: jedna baza danych ale dodana kolumna na nastepny dzien
+        //TODO: plama od kawy
 
-       setTheme(R.style.AppTheme);
+        final String PREFS_NAME = "MyPrefsFile";
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.getBoolean("my_theme", true)) {
+            setTheme(R.style.AppTheme_niebieski);
+        }else {
+            setTheme(R.style.AppTheme);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -67,21 +75,7 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
 
-
-//
-//        User user = new User();
-//        Date date1 = Calendar.getInstance().getTime();
-//        DateFormat dateFormat3 = new SimpleDateFormat("dd");
-//        DateFormat dateFormat4 = new SimpleDateFormat("hh");
-//        String dzien1 = dateFormat3.format(date1);
-//        String godzina1 = dateFormat4.format(date1);
-//        user.setName(godzina1);
-//        user.setSurname(dzien1);
-//        user.setCategory("Data");
-//        MainActivity.bazaKategorii.myDao().deleteUsers(MainActivity.bazaKategorii.myDao().loadData());
-//        MainActivity.bazaKategorii.myDao().addUser(user);
-
-        Reminder(3600);
+        Reminder(7200);
 
         //---------reklamy-----------
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -96,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
         //first time?
-        final String PREFS_NAME = "MyPrefsFile";
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        if (settings.getBoolean("my_first_time", true)) {
+        final String PREFS_NAMEa = "MyPrefsFile";
+        SharedPreferences settingsa = getSharedPreferences(PREFS_NAMEa, 0);
+        if (settingsa.getBoolean("my_first_time", true)) {
 
             startActivity(new Intent(MainActivity.this, StartoweActivity.class));
             Toast.makeText(getApplicationContext(), "Dziękujemy za pobranie aplikacji!", Toast.LENGTH_LONG).show();
@@ -117,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment("Wybierz Kategorię")).commit();
+            fragmentManager.beginTransaction().replace(R.id.stefan,new HomeFragment()).commit();
         }
 
     }

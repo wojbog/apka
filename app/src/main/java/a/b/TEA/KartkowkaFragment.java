@@ -100,32 +100,7 @@ public class KartkowkaFragment extends Fragment {
 
         if (
                 nazwiskoWpisane.contains("\\")||
-                nazwiskoWpisane.contains("@")||
-                nazwiskoWpisane.contains("#")||
-                nazwiskoWpisane.contains("$")||
-                nazwiskoWpisane.contains("%")||
-                nazwiskoWpisane.contains("^")||
-                nazwiskoWpisane.contains("&")||
-                nazwiskoWpisane.contains("*")||
-                nazwiskoWpisane.contains("(")||
-                nazwiskoWpisane.contains(")")||
-                nazwiskoWpisane.contains("-")||
-                nazwiskoWpisane.contains("_")||
-                nazwiskoWpisane.contains("=")||
-                nazwiskoWpisane.contains("{")||
-                nazwiskoWpisane.contains("}")||
-                nazwiskoWpisane.contains("[")||
-                nazwiskoWpisane.contains("]")||
-                nazwiskoWpisane.contains(":")||
-                nazwiskoWpisane.contains(";")||
-                nazwiskoWpisane.contains("<")||
-                nazwiskoWpisane.contains(">")||
-                nazwiskoWpisane.contains(",")||
-                nazwiskoWpisane.contains(".")||
-                nazwiskoWpisane.contains("/")||
-                nazwiskoWpisane.contains("|")||
-                nazwiskoWpisane.contains("\"")||
-                nazwiskoWpisane.contains("+")
+                nazwiskoWpisane.contains("\"")
 
         ) zrobToast("Nieodpowiedni znak!");
 

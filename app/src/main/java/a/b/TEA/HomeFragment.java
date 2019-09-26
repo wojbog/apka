@@ -1,6 +1,7 @@
 package a.b.TEA;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -18,14 +19,14 @@ import java.util.List;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private String
-            TAG="LOGHomeFragment",
-            kategoria;
+            TAG="LOGHomeFragment";
     View view;
     Button BNkartkowka, bnviewusers, bnZolodek, fiszkiBtn;
     ImageView imageView4;
-    List<User> users1,users2,users3,users4,users5;
 
-    public HomeFragment(String kat) { kategoria = kat;}
+    public HomeFragment() {
+
+    }
 
 
     @Override
@@ -66,48 +67,35 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.imageView4:
                 startActivity(new Intent(getActivity(), StartoweActivity.class));
+
                 break;
 
             case R.id.bn_view_users:
                 MainActivity.fragmentManager.beginTransaction()
                         .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                        .replace(R.id.stefan,new ReadUserFragment(kategoria))
+                        .replace(R.id.stefan,new ReadUserFragment("Wybierz Kategorię"))
                         .addToBackStack(null)
                         .commit();
                 break;
 
             case R.id.bn_kartkowka:
-                if (!kategoria.equals("Wybierz Kategorię")) {
-                    MainActivity.fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new KartkowkaFragment(kategoria))
-                            .addToBackStack(null)
-                            .commit();
-                }else {
-                    MainActivity.fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieKartkowka"))
-                            .addToBackStack(null)
-                            .commit();
-                }
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieKartkowka"))
+                        .addToBackStack(null)
+                        .commit();
+
                 break;
 
             case R.id.fiszkiBtn:
-                if (!kategoria.equals("Wybierz Kategorię")) {
-                    MainActivity.fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new FiszkiFragment(kategoria))
-                            .addToBackStack(null)
-                            .commit();
-                }else {
                     MainActivity.fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
                                     android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(R.id.stefan, new ReadCategoryFragment("wybierzKategorieFiszki"))
                             .addToBackStack(null)
                             .commit();
-                }
+
                 break;
 
             case R.id.fiszkiZolodkiBtn:
@@ -121,21 +109,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.add:
-                if (kategoria.equals("Wybierz Kategorię")) {
-                    MainActivity.fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie"))
-                            .addToBackStack(null)
-                            .commit();
-                } else {
-                    MainActivity.fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
-                                    android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(R.id.stefan, new AddUserFragment(kategoria))
-                            .addToBackStack(null)
-                            .commit();
-                }
+
+                MainActivity.fragmentManager.beginTransaction()
+                        .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right,
+                                android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                        .replace(R.id.stefan, new ReadCategoryFragment("dodajKategorie"))
+                        .addToBackStack(null)
+                        .commit();
 
                 break;
 
@@ -154,5 +134,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    private void zmienMotyw() {
+                final String PREFS_NAME = "MyPrefsFile";
+                SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+                if (settings.getBoolean("my_theme", true)) {
+
+                    getActivity().setTheme(R.style.AppTheme_niebieski);
+                    Toast.makeText(getContext(), "Zmieniono motyw!", Toast.LENGTH_LONG).show();
+                    settings.edit().putBoolean("my_theme", false).apply();
+                    getActivity().recreate();
+                }else {
+
+                    getActivity().setTheme(R.style.AppTheme);
+                    Toast.makeText(getContext(), "Zmieniono motyw!", Toast.LENGTH_LONG).show();
+                    settings.edit().putBoolean("my_theme", true).apply();
+                    getActivity().recreate();
+                }
     }
 }

@@ -8,55 +8,6 @@
     tools:context="a.b.TEA.KartkowkaFragment">
 
     <TextView
-        android:id="@+id/slowkoTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/przykladowe_slowko"
-        android:textAlignment="center"
-        android:textColor="?attr/primaryTextColor"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/tlumaczenieET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/podaj_tlumaczenie"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="?attr/primaryTextColor"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bn_sprawdz"
-        android:layout_width="207dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/buttonshape"
-        android:text="@string/zatwierdz"
-        android:textColor="?attr/primaryTextColor"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/dobrychNapis"
         android:layout_width="205dp"
         android:layout_height="20dp"
@@ -85,18 +36,6 @@
         app:layout_constraintVertical_bias="0.159" />
 
     <TextView
-        android:id="@+id/zlychTV"
-        android:layout_width="206dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_11"
-        android:textAlignment="center"
-        android:textColor="@color/kartkowkaRed"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/dobrychTV"
         android:layout_width="205dp"
         android:layout_height="50dp"
@@ -108,22 +47,83 @@
         app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/zlychTV"
+        android:layout_width="206dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_11"
+        android:textAlignment="center"
+        android:textColor="@color/kartkowkaRed"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/slowkoTV"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/odw"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="428dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/buttonshapepusty"
         android:text="@string/zmie_j_zyki"
         android:textColor="?attr/primaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/slowkoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/przykladowe_slowko"
+        android:textAlignment="center"
+        android:textColor="?attr/primaryTextColor"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <com.google.android.gms.ads.AdView-->
+    <EditText
+        android:id="@+id/tlumaczenieET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/podaj_tlumaczenie"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="?attr/primaryTextColor"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slowkoTV" />
+
+    <Button
+        android:id="@+id/bn_sprawdz"
+        android:layout_width="207dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/zatwierdz"
+        android:textColor="?attr/primaryTextColor"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlumaczenieET" />
+
+    <!--    <com.google.android.gms.ads.AdView-->
 <!--        android:id="@+id/adViewKartkowka"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

@@ -68,31 +68,8 @@ public class AddCategoryFragment extends Fragment {
 
 
                 if (
-                        kc("|")||
                         kc("\\")||
-                        kc("!")||
-                        kc("@")||
-                        kc("#")||
-                        kc("$")||
-                        kc("%")||
-                        kc("^")||
-                        kc("&")||
-                        kc("*")||
-                        kc("(")||
-                        kc(")")||
-                        kc("_")||
-                        kc("=")||
-                        kc("+")||
-                        kc("{")||
-                        kc("[")||
-                        kc("}")||
-                        kc("]")||
-                        kc(";")||
-                        kc("'")||
-                        kc("\"")||
-                        kc("<")||
-                        kc(">")||
-                        kc("?")
+                        kc("\"")
                 ) {
                     zrobToast("Nieodpowiedni znak!");
                 }

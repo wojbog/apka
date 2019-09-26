@@ -21,7 +21,7 @@
     <style name="AppTheme.pomaranczowy">
         <item name="colorPrimary">@color/primaryColorPom</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorPom</item>
-        <item name="colorAccent">@color/primaryColorPom</item>
+        <item name="colorAccent">@color/colorAccentPom</item>
         <item name="primaryTextColor">@color/primaryTextColorPom</item>
         <item name="android:textColorHint">@color/primaryTextColorPom</item>
         <item name="android:textColorHintInverse">@color/primaryTextColorPom</item>
@@ -34,7 +34,7 @@
     <style name="AppTheme.niebieski">
         <item name="colorPrimary">@color/primaryColorBlue</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorBlue</item>
-        <item name="colorAccent">@color/primaryColorBlue</item>
+        <item name="colorAccent">@color/colorAccentBlue</item>
         <item name="primaryTextColor">@color/primaryTextColorBlue</item>
         <item name="android:textColorHint">@color/primaryTextColorBlue</item>
         <item name="android:textColorHintInverse">@color/primaryTextColorBlue</item>
