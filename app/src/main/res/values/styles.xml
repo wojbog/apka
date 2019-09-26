@@ -1,14 +1,15 @@
 <resources>
     <style name="AppTheme.Launcher" parent="AppTheme">
         <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="android:navigationBarColor">@color/primaryColor</item>
-        <item name="android:statusBarColor">@color/primaryColor</item>
+        <item name="android:navigationBarColor">?attr/secondaryDarkColor</item>
+        <item name="android:statusBarColor">?attr/secondaryDarkColor</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="secondaryDarkColor">@color/secondaryDarkColor</item>
         <item name="primaryTextColor">@color/primaryTextColor</item>
         <item name="android:textColorHint">@color/primaryTextColor</item>
         <item name="android:textColorHintInverse">@color/primaryTextColor</item>
@@ -22,6 +23,7 @@
         <item name="colorPrimary">@color/primaryColorPom</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorPom</item>
         <item name="colorAccent">@color/colorAccentPom</item>
+        <item name="secondaryDarkColor">@color/secondaryDarkColorPom</item>
         <item name="primaryTextColor">@color/primaryTextColorPom</item>
         <item name="android:textColorHint">@color/primaryTextColorPom</item>
         <item name="android:textColorHintInverse">@color/primaryTextColorPom</item>
@@ -35,6 +37,7 @@
         <item name="colorPrimary">@color/primaryColorBlue</item>
         <item name="colorPrimaryDark">@color/primaryDarkColorBlue</item>
         <item name="colorAccent">@color/colorAccentBlue</item>
+        <item name="secondaryDarkColor">@color/secondaryDarkColorBlue</item>
         <item name="primaryTextColor">@color/primaryTextColorBlue</item>
         <item name="android:textColorHint">@color/primaryTextColorBlue</item>
         <item name="android:textColorHintInverse">@color/primaryTextColorBlue</item>

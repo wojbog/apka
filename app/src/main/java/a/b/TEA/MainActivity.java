@@ -1,8 +1,14 @@
 package a.b.TEA;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.room.Room;
+import androidx.work.Constraints;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -29,6 +35,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
   public static FragmentManager fragmentManager;
@@ -36,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
   String TAG = "LOGMainActivity";
     private long backPressedTime = 0;
+    PeriodicWorkRequest uploadWorkRequest;
     Timer timer;
 
     @Override
@@ -60,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         bazaZolodkowa = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowa").allowMainThreadQueries().build();
         bazaZolodkowaZastepcza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowaZastepcza").allowMainThreadQueries().build();
+        Constraints constraints = new Constraints.Builder()
+                .setRequiresCharging(true)
+                .build();
+        uploadWorkRequest = new PeriodicWorkRequest.Builder(UploadWorker.class, 15, TimeUnit.MINUTES).setConstraints(constraints).build();
 
 
         if (bazaKategorii.myDao().loadUserByKategoria("Data").size()==0) {
@@ -75,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
 
-        Reminder(7200);
+        Reminder(5);
+        WorkManager.getInstance(getApplicationContext()).enqueue(uploadWorkRequest);
 
         //---------reklamy-----------
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -134,14 +147,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //---------powiadomienia----------
-    class RemindTask extends TimerTask {
+    public class RemindTask extends TimerTask {
         public void run() {
+
+            timer.cancel(); //Wyłączamy taska
+        }
+    }
+
+    public class UploadWorker extends Worker {
+        public UploadWorker(
+                @NonNull Context context,
+                @NonNull WorkerParameters params) {
+            super(context, params);
+        }
+
+        @Override
+        public Result doWork() {
+
             final int PRIMARY_FOREGROUND_NOTIF_SERVICE_ID = 1001;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
                 String id = "_channel_01";
                 int importance = NotificationManager.IMPORTANCE_LOW;
-                NotificationChannel mChannel = new NotificationChannel(id, "notification", importance);
+                NotificationChannel mChannel = new NotificationChannel(id, "Przypominenie o nauce", importance);
                 mChannel.enableLights(true);
                 Intent intent = new Intent(getApplication(), MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -161,7 +189,8 @@ public class MainActivity extends AppCompatActivity {
                     mNotificationManager.notify(PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, notification);
                 }
             }
-            timer.cancel(); //Wyłączamy taska
+
+            return Result.success();
         }
     }
 }
