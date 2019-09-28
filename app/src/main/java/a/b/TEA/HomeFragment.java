@@ -21,8 +21,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private String
             TAG="LOGHomeFragment";
     View view;
-    Button BNkartkowka, bnviewusers, bnZolodek, fiszkiBtn;
-    ImageView imageView4;
+    Button BNkartkowka, bnviewusers, bnZolodek, fiszkiBtn,bnUstawienia,bnDodaj;
+    //ImageView imageView4;
 
     public HomeFragment() {
 
@@ -39,8 +39,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        AdRequest adRequest = new AdRequest.Builder().build();
 //        mAdView.loadAd(adRequest);
 
-        imageView4 = view.findViewById(R.id.imageView4);
-        imageView4.setOnClickListener(this);
+        bnUstawienia = view.findViewById(R.id.ustawienia);
+        bnUstawienia.setOnClickListener(this);
 
         bnviewusers = view.findViewById(R.id.bn_view_users);
         bnviewusers.setOnClickListener(this);
@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         fiszkiBtn = view.findViewById(R.id.fiszkiBtn);
         fiszkiBtn.setOnClickListener(this);
 
-        Button bnDodaj = view.findViewById(R.id.add);
+        bnDodaj = view.findViewById(R.id.add);
         bnDodaj.setOnClickListener(this);
 
         return view;
@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch(view.getId())
         {
 
-            case R.id.imageView4:
+            case R.id.ustawienia:
                 startActivity(new Intent(getActivity(), StartoweActivity.class));
 
                 break;

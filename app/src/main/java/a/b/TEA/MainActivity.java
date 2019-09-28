@@ -49,17 +49,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        setTheme(R.style.AppTheme);
         //TODO: Ustawienia, oceń nas, motywy
         //TODO: jedna baza danych ale dodana kolumna na nastepny dzien
         //TODO: plama od kawy
 
         final String PREFS_NAME = "MyPrefsFile";
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        if (settings.getBoolean("my_theme", true)) {
+        /*if (settings.getBoolean("my_theme", true)) {
             setTheme(R.style.AppTheme_niebieski);
         }else {
             setTheme(R.style.AppTheme);
-        }
+        }*/
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
