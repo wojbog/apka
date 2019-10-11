@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">TEA</string>
 
-    <string name="przykladowe_slowko">Przykładowe słówko</string>
-    <string name="przykladowe_tlumaczenie">Przykładowe tłumaczenie</string>
-    <string name="podaj_tlumaczenie">Podaj tłumaczenie</string>
+    <string name="przykladowe_slowko">Przykładowy klucz</string>
+    <string name="przykladowe_tlumaczenie">Przykładowa wartość</string>
+    <string name="podaj_tlumaczenie">Podaj wartość</string>
     <string name="zlych_odpowiedzi">Złych odpowiedzi:</string>
     <string name="dobrych_odpowiedzi">Dobrych odpowiedzi:</string>
     <string name="_34">34</string>
@@ -13,23 +13,23 @@
     <string name="zatwierdz">Zatwierdź</string>
     <string name="koniec">KONIEC!!</string>
     <string name="odwroc">Odwróć</string>
-    <string name="jakies_tlumaczenie">Jakieś Tłumaczenie</string>
+    <string name="jakies_tlumaczenie">Jakiaś wartość</string>
     <string name="jakias_kategoria">Jakaś kategoria</string>
     <string name="kolejne"><![CDATA[Kolejne --->]]></string>
     <string name="appwidget_text">TEA widget</string>
     <string name="add_widget">Dodaj widżet</string>
     <string name="tea_tests_exams_answers">TEA - Test Exam Answer</string>
-    <string name="przejrzyj_s_wka">Przejrzyj słówka</string>
+    <string name="przejrzyj_s_wka">Przejrzyj fiszki</string>
     <string name="kartk_wka">Kartkówka</string>
-    <string name="dodaj_s_wka">Dodaj słówka</string>
-    <string name="zmie_j_zyki">Zmień języki</string>
+    <string name="dodaj_s_wka">Dodaj fiszki</string>
+    <string name="zmie_j_zyki">Zmień strony</string>
     <string name="gratulacje">Gratulacje!</string>
     <string name="z_ych_n34">złych: \n34</string>
     <string name="dobrych_n11">złych: \n34</string>
     <string name="zako_cz">Zakończ</string>
-    <string name="tlumaczenie">Tłumaczenie</string>
-    <string name="slowko">Słówko</string>
-    <string name="dodaj_slowko">Dodaj słówko</string>
+    <string name="tlumaczenie">Wartość</string>
+    <string name="slowko">Klucz</string>
+    <string name="dodaj_slowko">Dodaj fiszkę</string>
     <string name="zapisz">Zapisz</string>
     <string name="przesu_aby_usun">Przesuń aby usunąć</string>
     <string name="wpisz_kategori">Wpisz kategorię</string>
@@ -47,4 +47,6 @@
     <string name="_3_stopien_nauczania">3 stopień nauczania</string>
     <string name="_4_stopien_nauczania">4 stopień nauczania</string>
     <string name="_5_stopien_nauczania">5 stopień nauczania</string>
+    <string name="szybkie_fiszki">Szybkie fiszki</string>
+    <string name="informacje">Informacje</string>
 </resources>

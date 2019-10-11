@@ -11,6 +11,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:background="@drawable/fiszkishape"
+        android:fontFamily="@font/montserratregular"
         android:gravity="center"
         android:padding="20dp"
         android:text="Uruchom apkę i\nDodaj słówka"

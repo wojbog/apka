@@ -11,6 +11,7 @@
         android:gravity="center"
         android:layout_width="350dp"
         android:layout_height="40dp"
+        android:fontFamily="@font/montserratregular"
         android:textColor="?attr/primaryTextColor"
         android:textAlignment="center"
         android:textSize="18sp"

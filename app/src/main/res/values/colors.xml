@@ -20,8 +20,8 @@
     <color name="primaryColor">#7E7E7E</color>
     <color name="primaryDarkColor">#4D4D4D</color>
     <color name="primaryTextColor">#F2ECFF</color>
-    <color name="secondaryDarkColor">#363636</color>
-    <color name="buttonBackground">#3C3C3C</color>
+    <color name="secondaryDarkColor">#252525</color>
+    <color name="buttonBackground">#313131</color>
     <color name="colorAccent">#00C896</color>
 
     <color name="primaryColorPom">#D9B77A</color>

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
   String TAG = "LOGMainActivity";
     private long backPressedTime = 0;
-    PeriodicWorkRequest uploadWorkRequest;
+//    PeriodicWorkRequest uploadWorkRequest;
     Timer timer;
 
     @Override
@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
         bazaKategorii = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychKategorii").allowMainThreadQueries().build();
         bazaZolodkowa = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowa").allowMainThreadQueries().build();
         bazaZolodkowaZastepcza = Room.databaseBuilder(getApplicationContext(),MyappDatabase.class,"BazaDanychZolodkowaZastepcza").allowMainThreadQueries().build();
-        Constraints constraints = new Constraints.Builder()
-                .setRequiresCharging(true)
-                .build();
-        uploadWorkRequest = new PeriodicWorkRequest.Builder(UploadWorker.class, 15, TimeUnit.MINUTES).setConstraints(constraints).build();
+//        Constraints constraints = new Constraints.Builder()
+//                .setRequiresCharging(true)
+//                .build();
+//        uploadWorkRequest = new PeriodicWorkRequest.Builder(UploadWorker.class, 15, TimeUnit.MINUTES).setConstraints(constraints).build();
 
 
         if (bazaKategorii.myDao().loadUserByKategoria("Data").size()==0) {
@@ -88,20 +88,20 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
 
-        Reminder(5);
-        WorkManager.getInstance(getApplicationContext()).enqueue(uploadWorkRequest);
+        Reminder(3600);
+//        WorkManager.getInstance(getApplicationContext()).enqueue(uploadWorkRequest);
 
         //---------reklamy-----------
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView mAdView;
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("ED43A8DEDBA2148151ACA37D39F3416F").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build();
-        mAdView.loadAd(adRequest);
+// TODO       MobileAds.initialize(this, new OnInitializationCompleteListener() {
+//            @Override
+//            public void onInitializationComplete(InitializationStatus initializationStatus) {
+//            }
+//        });
+//
+//    TODO    AdView mAdView;
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().addTestDevice("9F87D8CA19743A1844252D935162F743").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build();
+//        mAdView.loadAd(adRequest);
 
         //first time?
         final String PREFS_NAMEa = "MyPrefsFile";
@@ -150,21 +150,6 @@ public class MainActivity extends AppCompatActivity {
     //---------powiadomienia----------
     public class RemindTask extends TimerTask {
         public void run() {
-
-            timer.cancel(); //Wyłączamy taska
-        }
-    }
-
-    public class UploadWorker extends Worker {
-        public UploadWorker(
-                @NonNull Context context,
-                @NonNull WorkerParameters params) {
-            super(context, params);
-        }
-
-        @Override
-        public Result doWork() {
-
             final int PRIMARY_FOREGROUND_NOTIF_SERVICE_ID = 1001;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
@@ -190,8 +175,21 @@ public class MainActivity extends AppCompatActivity {
                     mNotificationManager.notify(PRIMARY_FOREGROUND_NOTIF_SERVICE_ID, notification);
                 }
             }
-
-            return Result.success();
+            timer.cancel(); //Wyłączamy taska
         }
     }
+
+//    public class UploadWorker extends Worker {
+//        public UploadWorker(
+//                @NonNull Context context,
+//                @NonNull WorkerParameters params) {
+//            super(context, params);
+//        }
+//
+//        @Override
+//        public Result doWork() {
+//
+//            return Result.success();
+//        }
+//    }
 }

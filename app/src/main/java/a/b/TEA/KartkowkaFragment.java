@@ -168,7 +168,7 @@ public class KartkowkaFragment extends Fragment {
         else if (odwrotnie) slowkoTV.setText(nazwisko);
         dobrychTV.setText(String.format(Locale.getDefault(), "%d", dobrych));
         zlychTV.setText(String.format(Locale.getDefault(), "%d", zlych));
-        tlumaczenieET.setHint("Tu wpisz tłumaczenie");
+        tlumaczenieET.setHint("Tu wpisz odpowiedź");
         tlumaczenieET.setText("");
     }
 

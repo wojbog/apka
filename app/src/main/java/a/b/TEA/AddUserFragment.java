@@ -69,9 +69,9 @@ public class AddUserFragment extends Fragment {
 
         categoryname.setText(kategoria);
         Username.setText("");
-        Username.setHint("Słówko");
+        Username.setHint(R.string.slowko);
         Usersurname.setText("");
-        Usersurname.setHint("Tłumaczenie");
+        Usersurname.setHint(R.string.tlumaczenie);
 
         BNsave.setOnClickListener(new View.OnClickListener() {
             @Override
