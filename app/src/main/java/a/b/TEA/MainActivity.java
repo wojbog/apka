@@ -88,20 +88,20 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.bazaKategorii.myDao().addUser(user);
         }
 
-        Reminder(3600);
+        Reminder(7200);
 //        WorkManager.getInstance(getApplicationContext()).enqueue(uploadWorkRequest);
 
         //---------reklamy-----------
-// TODO       MobileAds.initialize(this, new OnInitializationCompleteListener() {
-//            @Override
-//            public void onInitializationComplete(InitializationStatus initializationStatus) {
-//            }
-//        });
-//
-//    TODO    AdView mAdView;
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().addTestDevice("9F87D8CA19743A1844252D935162F743").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build();
-//        mAdView.loadAd(adRequest);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdView mAdView;
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("2A1965EA634A02D70CBC9CF1070DCF26").addTestDevice("531DB919ED797626DB5AE53A00FFBB9F").build();
+        mAdView.loadAd(adRequest);
 
         //first time?
         final String PREFS_NAMEa = "MyPrefsFile";

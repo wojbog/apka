@@ -22,12 +22,12 @@
     <TextView
         android:id="@+id/nazwa_TEA"
         android:layout_width="match_parent"
-        android:layout_height="121dp"
+        android:layout_height="100dp"
         android:fontFamily="@font/montserratregular"
         android:gravity="center"
         android:text="Tea"
         android:textColor="@color/colorAccent"
-        android:textSize="100sp"
+        android:textSize="85sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +35,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="408dp"
-        android:layout_height="673dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nazwa_TEA">
@@ -47,10 +47,10 @@
 
             <Button
                 android:id="@+id/add"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/plus"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
@@ -62,10 +62,10 @@
 
             <Button
                 android:id="@+id/bn_view_users"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/see"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
@@ -77,10 +77,10 @@
 
             <Button
                 android:id="@+id/fiszkiBtn"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/fiszki"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
@@ -92,10 +92,10 @@
 
             <Button
                 android:id="@+id/fiszkiZolodkiBtn"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/zolade8k"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
@@ -107,10 +107,10 @@
 
             <Button
                 android:id="@+id/bn_kartkowka"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/kart"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
@@ -122,10 +122,10 @@
 
             <Button
                 android:id="@+id/ustawienia"
-                android:layout_width="176dp"
-                android:layout_height="176dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/settings"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
